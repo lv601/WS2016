@@ -5,4 +5,4 @@
 + Norbert Auer [norbert.auer@edu.fh-campuswien.ac.at]
 
 ## Studenten
-
++ Bianca Allegra Buchner [bianca_allegra.buchner@stud.fh-campuswien.ac.at]
