@@ -13,7 +13,7 @@
 :P lv wars
 
 
->>>>>>> ceda362e07871e8c1a18a0aeaee6dc43da7391e7
+
 + alexamb Alexander Amberger
 + Bianca Allegra Buchner 
 + jkrainer Julie Krainer
@@ -24,3 +24,4 @@
 + einmal gehts noch
 + neuer Eintrag
 + ich wars nicht
++ Claudia
