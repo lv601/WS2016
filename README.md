@@ -5,5 +5,4 @@
 + Norbert Auer [norbert.auer@edu.fh-campuswien.ac.at]
 
 ## Studenten
-
-Josef Moser
+jkrainer Julie Krainer
