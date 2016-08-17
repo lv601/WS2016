@@ -5,6 +5,7 @@
 + Norbert Auer [norbert.auer@edu.fh-campuswien.ac.at]
 
 ## Studenten
++ Bianca Allegra Buchner 
 + jkrainer Julie Krainer
 + AnnaMajewski Anna Majewski
 + josmos Josef Moser
