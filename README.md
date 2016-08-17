@@ -7,5 +7,5 @@
 ## Studenten
 + jkrainer Julie Krainer
 + josmos Josef Moser
-+ Shelley Mangan
++ ShellMangan - Shelley Mangan
 >>>>>>> 0f7ad2c3b7df762244bad6d57c5a068e05adc2ae
