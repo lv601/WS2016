@@ -6,3 +6,5 @@
 
 ## Studenten
 + Bianca Allegra Buchner [bianca_allegra.buchner@stud.fh-campuswien.ac.at]
++ jkrainer Julie Krainer
+
