@@ -1,4 +1,3 @@
-
 # Einführung in die Programmierung - Sommersemester 2016
 ## FH-Campus Wien 
 
@@ -6,4 +5,9 @@
 + Norbert Auer [norbert.auer@edu.fh-campuswien.ac.at]
 
 ## Studenten
-Claudia
++ Claudia
++ alexamb Alexander Amberger
++ Bianca Allegra Buchner 
++ jkrainer Julie Krainer
++ josmos Josef Moser
+
