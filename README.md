@@ -1,3 +1,5 @@
+
+
 # Einführung in die Programmierung - Sommersemester 2016
 ## FH-Campus Wien 
 
@@ -8,4 +10,9 @@
 
 :P lv wars
 
+
++ alexamb Alexander Amberger
++ Bianca Allegra Buchner 
++ jkrainer Julie Krainer
++ josmos Josef Moser
 
