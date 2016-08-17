@@ -7,5 +7,9 @@
 + Norbert Auer [norbert.auer@edu.fh-campuswien.ac.at]
 
 ## Studenten
-jkrainer Julie Krainer
-alexamb Alexander Amberger
+
++ alexamb Alexander Amberger
++ Bianca Allegra Buchner 
++ jkrainer Julie Krainer
++ josmos Josef Moser
+
