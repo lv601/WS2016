@@ -5,7 +5,8 @@
 + Norbert Auer [norbert.auer@edu.fh-campuswien.ac.at]
 
 ## Studenten
++ Bianca Allegra Buchner 
 + jkrainer Julie Krainer
 + josmos Josef Moser
-+ ShellMangan - Shelley Mangan
->>>>>>> 0f7ad2c3b7df762244bad6d57c5a068e05adc2ae
++ ShellMangan Shelley Mangan
+
