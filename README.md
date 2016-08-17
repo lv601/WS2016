@@ -8,9 +8,6 @@
 
  Studenten
 
-:P lv wars
-
-
 + alexamb Alexander Amberger
 + Bianca Allegra Buchner 
 + jkrainer Julie Krainer
