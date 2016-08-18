@@ -4,8 +4,7 @@
 ## FH-Campus Wien 
 
 ## Lektoren
-+ Norbert Auer [norbert.auer@edu.fh-campuswien.ac.at]
-
++ [nauer] Norbert Auer [norbert.auer@edu.fh-campuswien.ac.at]
 
 ## Studenten
 + alexamb Alexander Amberger
