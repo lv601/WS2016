@@ -1,4 +1,6 @@
-# Einführung in die Programmierung - Sommersemester 2016
+# Einführung in die Programmierung 
+*(Wintersemester 2016/2017)*
+
 ## FH-Campus Wien 
 
 ## Lektoren
@@ -16,6 +18,6 @@
 + Alexander Tolios
 + Claudia
 + Michael
-+ *Thomas*
++ Thomas
 
 
