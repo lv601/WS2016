@@ -14,6 +14,6 @@
 + ClemensBioinf Clemens Spielvogel
 + ShellMangan Shelley Mangan
 + Alexander Tolios
-+ Claudia
++ Claudia Juno CBTJ
 + Thomas
 
