@@ -1,19 +1,21 @@
-# Einführung in die Programmierung - Sommersemester 2016
-## FH-Campus Wien 
+# Einführung in die Programmierung
+*(Wintersemester 2016/2017)*
+
+## FH-Campus Wien
 
 ## Lektoren
-+ Norbert Auer [norbert.auer@edu.fh-campuswien.ac.at]
-
++ Norbert Auer [**nauer**](https://github.com/nauer) \[norbert.auer@edu.fh-campuswien.ac.at\]
 
 ## Studenten
-+ alexamb Alexander Amberger
-+ Bianca Allegra Buchner 
-+ jkrainer Julie Krainer
-+ AnnaMajewski Anna Majewski
-+ josmos Josef Moser
-+ ClemensBioinf Clemens Spielvogel
-+ ShellMangan Shelley Mangan
++ Alexander Amberger **alexamb**
++ Alexander Bindeus **genio0815**
++ Bianca Allegra Buchner
++ Julie Krainer **jkrainer**
++ Anna Majewski **AnnaMajewski**
++ Josef Moser **josmos**
++ Clemens Spielvogel **ClemensBioinf**
++ Shelley Mangan **ShellMangan**
 + Alexander Tolios
 + Claudia Juno CBTJ
++ Michael
 + Thomas
-
