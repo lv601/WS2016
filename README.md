@@ -17,7 +17,7 @@
 + Shelley Mangan **ShellMangan**
 + Alexander Tolios
 + Claudia Juno CBTJ
-+ Michael
++ Michael Lehrach **PrometheusABW**
 + Thomas
 + Jose Basilio **zebasilio**
 + Frank Ruge **frankruge**
