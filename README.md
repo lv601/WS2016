@@ -18,6 +18,6 @@
 + Alexander Tolios
 + Claudia
 + Michael
-+ Thomas
++ ThomasFH2016 | Thomas Schwarz
 
 
