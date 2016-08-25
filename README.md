@@ -15,10 +15,18 @@
 + Josef Moser **josmos**
 + Clemens Spielvogel **ClemensBioinf**
 + Shelley Mangan **ShellMangan**
-+ Alexander Tolios
-+ Claudia Juno CBTJ
++ Alexander Tolios **toliosalexander**
++ Claudia
 + Michael
-+ Thomas
++ Claudia Juno CBTJ
++ Michael Lehrach **PrometheusABW**
++ Thomas Schwarz **ThomasFH2016**
 + Jose Basilio **zebasilio**
 + Frank Ruge **frankruge**
 + Alma Beganovic **almabeganovic**
++ Anna Tomaselli **anna-veronika**
++ Tamas Gutsohnn **Tgutso**
++ Eva Niessner **evni**
++ Stefan Rieger **shpoyi**
++ Martin Gollobich **lv601
+
