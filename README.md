@@ -9,16 +9,14 @@
 ## Studenten
 + Alexander Amberger **alexamb**
 + Alexander Bindeus **genio0815**
-+ Bianca Allegra Buchner
++ Bianca Allegra Buchner **Github Account missing**
 + Julie Krainer **jkrainer**
 + Anna Majewski **AnnaMajewski**
 + Josef Moser **josmos**
 + Clemens Spielvogel **ClemensBioinf**
 + Shelley Mangan **ShellMangan**
 + Alexander Tolios **toliosalexander**
-+ Claudia
-+ Michael
-+ Claudia Juno CBTJ
++ Claudia Juno **CBTJ**
 + Michael Lehrach **PrometheusABW**
 + Thomas Schwarz **ThomasFH2016**
 + Jose Basilio **zebasilio**
@@ -28,5 +26,5 @@
 + Tamas Gutsohnn **Tgutso**
 + Eva Niessner **evni**
 + Stefan Rieger **shpoyi**
-+ Martin Gollobich **lv601
++ Martin Gollobich **lv601**
 
