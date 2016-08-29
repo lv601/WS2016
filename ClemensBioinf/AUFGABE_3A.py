@@ -19,5 +19,5 @@ while right == False:
         print("Die Zahl muss zwischen 1 und 10 sein.")
     if guessCount == 5 and right == False:
         print("Sie haben verloren.")
-    else:
+    elif guessCount < 5 and right == False:
         print("Sie haben noch {} Versuche. Neuer Versuch: ".format(5 - guessCount), end = "")
