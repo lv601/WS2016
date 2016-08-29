@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Ask for input
 string = input("Geben Sie einen Text ein: ")
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from random import randint
 
 # Get a random number between 1 and 10

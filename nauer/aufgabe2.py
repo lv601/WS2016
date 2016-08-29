@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Wrap it by a list [] to allow more entries
 Adressbuch = [{'Vorname':"Max", 'Nachname': "Mustermann",
                'Alter': 43, 'Geschlecht': "m",
