@@ -22,3 +22,12 @@ Nach Abschluss dieser Vorlesung können Sie natürlich diese Projekte in Eigenve
 ![Python universal](examples/python.png "Python universal")
 
 Wie gesagt Python wird heute bereits universal für so ziemlich alles eingesetzt. Lassen Sie sich von meinen Vorschlägen inspirieren aber bedenken Sie, dass Sie bei den meisten Projekten Zeit und manchmal sogar Geld (kauf eines Raspberry) investieren müssen um sich in die zu verwendeten Frameworks oder andere Technologien (HTML, Image Processing) einzuarbeiten.
+
+
+
+
+###################################
+
+Vorschläge für Python-Projekte:
+
+Vorschlag von Tolios, Alexander: Schreiben einer OMR-Software zur automatischen Erkennung sowie Auswertung von gescannten Dokumenten (z.B. Fragebögen).
