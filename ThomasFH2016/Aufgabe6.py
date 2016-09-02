@@ -55,6 +55,19 @@ def get_gc_content(db, index):
     sequence = db[index]['sequence']
     return (sequence.count('C') + sequence.count('G'))/len(sequence)
 
+def add_sequence_object(db, id, description, sequence, **features):
+#   MISSING: 'raw' sequence
+    newEntry = {'id':id, 'description':description, 'sequence':sequence}
+    newEntry.update(features)
+    db.append(newEntry)
+
+#   MISSING
+# def get_output(db, index, type='markdown'):
+#    if type == 'markdown':
+#        file_handle = open('output.md', 'w')
+
+
+
 db = parse_fasta('../examples/sequence.fasta')
 #print(get_raw(db,1))
 #print(get_id(db,1))
@@ -63,6 +76,10 @@ db = parse_fasta('../examples/sequence.fasta')
 #print(get_fasta(db,1))
 #print(get_feature(db, 1, 'id'))
 
-print(add_feature(db, 1, 'organism', 'test'))
-print(get_feature(db, 1, 'organism'))
-print(get_gc_content(db,1))
+#print(add_feature(db, 1, 'organism', 'test'))
+#print(get_feature(db, 1, 'organism'))
+#print(get_gc_content(db,1))
+
+#add_sequence_object(db, 'test_id', 'test_description', get_sequence(db, 1), organisms='mus musculus', feature2='value2')
+#print(db[len(db)-1])
+
