@@ -1,4 +1,4 @@
-print("Enter a string: ", end = "")
+print("Enter a string: ", end="")
 str = input()
 
 start = 0
