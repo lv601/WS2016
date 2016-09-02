@@ -147,6 +147,5 @@ def get_output(db, index, type="markdown"):
 
 
 #fasta_parser("../examples/sequence.fasta")
-db = genbank_parser("../examples/sequence.gb")
-#print(db)
+#db = genbank_parser("../examples/sequence.gb")
 
