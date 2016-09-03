@@ -14,7 +14,7 @@ for i in range (1, 6):
         print ("Das ist nicht die richtige Zahl")
 
 if eingabe ==zahl:
-    print ("Sie haben die Zahl eraten!")
+        print ("Sie haben die Zahl eraten!")
 else:
     print ("Das Spiel wird beebdet")
 
