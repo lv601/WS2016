@@ -9,7 +9,7 @@
 ## Studenten
 + Alexander Amberger **alexamb**
 + Alexander Bindeus **genio0815**
-+ Bianca Allegra Buchner **Github Account missing**
++ Bianca Allegra Buchner **23reever**
 + Julie Krainer **jkrainer**
 + Anna Majewski **AnnaMajewski**
 + Josef Moser **josmos**
