@@ -21,7 +21,7 @@ buch = {"Vorname":"Max",
 
 ## Wrap it up in a list
 addressbuch = [buch]
-pprint(addressbuch), auskommentiert weil ich in aufgabe5.py diese Datei importiere
+pprint(addressbuch)
 
 ## Zusätzliche Aufgaben:
 # Geben Sie den IQ aus.
