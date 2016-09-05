@@ -1,8 +1,6 @@
 # Programmieraufgaben - Anna Majewski
 *(Wintersemester 2016/2017)*
 
-## FH-Campus Wien
-
 ## Aufgaben
 + Aufgabe 2 - aufgabe2.py
 + Aufgabe 3 - aufgabe3_a.py, aufgabe3_b.py
