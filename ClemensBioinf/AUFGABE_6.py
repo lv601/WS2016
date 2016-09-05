@@ -29,21 +29,23 @@ def genbank_parser(path):
     for line in open(path, "r"):
         total_raw += line
 
-    for entry in total_raw.split("//"):
+    for entry in total_raw.split("//")[:-1]:
         curr_attribute = ""
         curr_entry = {}
         curr_entry["raw"] = ""
         curr_entry["sequence"] = ""
         curr_entry["features"] = {}
         curr_entry["features"]["description"] = ""
+        curr_entry["description"] = ""
         collect_notes = False
         for line in entry.split("\n"):
             if "".join(line.split(" ")[0]) != "":
                 curr_attribute = "".join(line.split(" ")[0])
-            if curr_attribute == "LOCUS":
-                curr_entry["id"] = line.split(" ")[7]
+            if curr_attribute == "VERSION":
+                curr_entry["id"] = line.split(" ")[7] + "|" + line.split(" ")[5]
+                curr_entry["id"] = "gi|" + curr_entry["id"][3:]
             elif curr_attribute == "DEFINITION":
-                curr_entry["description"] = line.lstrip("DEFINITION").strip(" ")
+                curr_entry["description"] += (" ".join(line.lstrip("DEFINITION").strip(" ").split("\n"))) + " "
             elif curr_attribute == "ORIGIN":
                 raw_seq = line.lstrip("ORIGIN")
                 seq = ""
@@ -66,13 +68,84 @@ def genbank_parser(path):
                         collect_notes = True
                     curr_entry["features"]["description"] += line.lstrip('                     /note="').rstrip('"')+" "
                 elif "/db_xref=" in line:
-                    curr_entry["features"]["id"] = line.lstrip('                     /db_xref="').rstrip('"')
+                    curr_entry["features"]["gene_id"] = line.lstrip('                     /db_xref="').rstrip('"')\
+                        .lstrip("GeneID:")
 
             curr_entry["raw"] += line
 
         data.append(curr_entry)
     return data
 
-#fasta_parser("WS2016/examples/sequence.fasta")
 
-#genbank_parser("WS2016/examples/sequence.gb")
+def get_raw(db,	index):
+    return db[index]["raw"]
+
+def get_id(db, index):
+    return db[index]["id"]
+
+def get_description(db,	index):
+    return db[index]["description"]
+
+def get_sequence(db, index):
+    return db[index]["sequence"]
+
+def get_fasta(db, index):
+    header = ""
+    seq = ""
+    char_count = 0
+    for char in db[index]["id"] + "| " + db[index]["description"]:
+        char_count += 1
+        if char_count % 80 == 0:
+            header += "\n"
+        header += char
+
+    char_count = -1
+    for char in db[index]["sequence"]:
+        char_count += 1
+        if char_count % 80 == 0:
+            seq += "\n"
+        seq += char
+
+    return header + seq
+
+def get_feature(db, index, feature):
+    return db[index]["features"][feature]
+
+def add_feature(db, index, feature, value):
+    db[index]["features"][feature] = value
+    return db
+
+def add_sequence_object(db, id, description, sequence, **features):
+    db.append({"id":id, "description":description, "sequence":sequence, "features":features})
+    return db
+
+def get_gc_content(db, index):
+    seq = db[index]["sequence"].lower()
+    return str(round((seq.count("c") + seq.count("g")) * 100 / len(seq),2)) + "%"
+
+def get_output(db, index, type="markdown"):
+    if type == "markdown":
+        output_features = ""
+        for feature in db[index]["features"].keys():
+            output_features += "* " + feature.upper() + ": " + db[index]["features"][feature] + "\n"
+        return "#__" + db[index]["features"]["name"] + ": " + db[index]["id"].split("|")[2] + "__\n" + \
+               "##" + db[index]["description"] + "\n\n" + "__Features:__\n" + output_features + "\n---\n" + \
+               "__Sequence__:\n" + db[index]["sequence"] + "\n\n---"
+    elif type == "csv": # Verbesserungswürdig. Seperator = ~
+        attributes = ""
+        attribute_content = ""
+        for attribute in db[index].keys():
+            if attribute == "features":
+                for feature in db[index]["features"].keys():
+                    attributes += feature.upper() + "~"
+                    attribute_content += db[index]["features"][feature] + "~"
+            else:
+                attributes += attribute.upper() + "~"
+                attribute_content += db[index][attribute] +  "~"
+        return attributes + "\n" + attribute_content
+
+
+
+#fasta_parser("../examples/sequence.fasta")
+#db = genbank_parser("../examples/sequence.gb")
+
