@@ -18,3 +18,6 @@ for i in range(8):
 		flaglist.append(2**i)
 		
 print("The flags are set:", flaglist)
+
+
+
