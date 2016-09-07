@@ -8,6 +8,7 @@
 from pprint import pprint
 
 def fasta_parser(filename):
+    """fasta parser, reads fasta file and introduces content into list"""
     file_handle = open(filename, "r")
 # Öffnet eine Datei in read mode
     position = 0
@@ -39,6 +40,7 @@ my_db = fasta_parser("sequence.fasta")
 # F1: get_raw(db,	index))	-	gibt	den	raw	String	des	indizierten	Sequenz-Objekt	zurück
 
 def get_raw(db, index):
+    """reads database and returns field 'raw'"""
 # Die Datenbank wird durch die 1. Funktion beschrieben.
 # Index ist ein bestimmter Datensatz.
     return db[index]['raw']
@@ -48,6 +50,7 @@ print(get_raw(my_db, 9))
 # F2: get_id(db,	index))	-	gibt	die	id	des	indizierten	Sequenz-Objekt	zurück
 
 def get_id(db, index):
+    """reads database and returns field 'id' """
     return db[index]['id']
 # Wie die Funktion von vorhin, nur auf ein anderes Feld wird zugegriffen.
 
@@ -56,6 +59,7 @@ print(get_id(my_db, 9))
 # F3: get_description(db,	index))	-	gibt	die	description	des	indizierten	Sequenz-Objekt	zurück
 
 def get_description(db, index):
+    """reads database and returns field 'description' """
     return db[index]['desc']
 # Wie die Funktionen vorher, nur auf ein anderes Feld wird zugegriffen.
 
@@ -64,12 +68,14 @@ print(get_description(my_db, 9))
 # F4: get_sequence(db,	index)	-	gibt	die	sequence	des	indizierten	Sequenz-Objekt	zurück
 
 def get_sequence(db, index):
+    """reads database and returns field 'sequence' """
     return db[index]['sequence']
 # Wie die anderen Fkt, Sequenz als Feld.
 
 # F5: get_fasta(db,	index) - Kreiert aus id, desc + seq eine Fasta Seq mit max 80 Zeichen pro Zeile.
 
 def get_fasta(db, index):
+    """reads database and returns fasta file with max. 80 chars in line"""
     fasta_seq = db[index]['id']+db[index]['desc']+db[index]['sequence']
 # fasta_seq ist die gesamte Sequenz, die sich aus den Teilen zusammensetzt.
     new_seq = ""
@@ -90,6 +96,7 @@ print(get_fasta(my_db, 9))
 # F6: get_feature(db,	index,	feature)	-	Gibt	das	gesuchte	Feature	zurück
 
 def get_feature(db, index, feature):
+    """reads database and returns any field given """
     return(db[index][feature])
 
 print(get_feature(my_db, 9, "id"))
@@ -97,6 +104,7 @@ print(get_feature(my_db, 9, "id"))
 # F7: add_feature(db,	index,	feature,	value)	-	Fügt	ein	neues	Feature	zu	einem	bestehenden	Daten-Objekt	hinzu.
 
 def add_feature(db, index, feature, value):
+    """reads database and adds any given feature into database"""
     db[index][feature] = value
     return db[index]
 
@@ -105,10 +113,10 @@ print(add_feature(my_db, 9, "organism", "bacteria"))
 # F8: add_sequence_object(db,id,description,sequence,**features)-Fügt ein komplett neues Daten-Objekt, ohne	zuvor ein File zu parsen, hinzu.
 
 def add_sequence_object(db, id, description, sequence, **features):
+    """reads database and adds new entry into database"""
     db.append({"id":id, "desc":description, "sequence":sequence, **features})
     return(db)
 # Hier wird an eine bereits bestehende db ein Objekt angefügt.
-# Mir ist aber nicht klar, WO ich diese DB definieren soll. Soll das der User selbst machen?
 
 my_other_db = []
 # Habe hier eine leere DB definiert.
@@ -119,6 +127,7 @@ print(add_sequence_object(my_other_db, ">gi|123456789|ref|XM_000000.2", "PREDICT
 # F9: get_gc_content(db,	index)	-	Berechnet	den	GC-Gehalt	von	Nucleotid	Sequenzen.
 
 def get_gc_content(db, index):
+    """reads database and returns GC content of the sequence in % """
     seq = db[index]["sequence"]
     count = 0
     for ind, char in enumerate(seq):
@@ -135,6 +144,7 @@ print(get_gc_content(my_db, 9))
 #F10: get_output(db,	index,	type='markdown')	-	Formatiert	den	Output	zum	Beispiel	als	markdown,	html	oder	csv	output	(Advanced)
 
 def get_output(db, index, type):
+    """reads database and returns a desired output in html, markdown  or standard"""
     if type == "markdown":
 # Wenn markdown ausgesucht wurde, dann wird der Text in Markdown dargestellt.
         output = "# H1" + db[index]["id"] + "*" + db[index]["desc"] + "*" + "\n" + "```" + db[index]["sequence"] + "```"
@@ -147,4 +157,5 @@ def get_output(db, index, type):
         output = db[index]["id"] + db[index]["desc"] + db[index]["sequence"]
     return output
 
+print(get_output(my_db, 9, type="markdown"))
 print(get_output(my_db, 9, type="html"))

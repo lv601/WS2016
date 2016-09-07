@@ -10,6 +10,7 @@ from random import randint
 # Importieren von randint aus random
 
 def guess_game(min, max, guesses):
+    """number guess game in range from 'min' to 'max', with 'guesses' guesses"""
 # min und max bestimmen die Range der zufälligen Zahl
 # guesses bestimmt die Anzahl der Versuche.
     zahl = randint(min,max)

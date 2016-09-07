@@ -5,6 +5,8 @@
 ## Zuerst Code von Aufgabe 3b kopieren, da sie ausführbar bleiben soll.
 
 def substring_gen(sublen, string = ""):
+    """generates substrings with a length of 'sublen' of the string 'string'
+    if string is not included in call to function, string will be asked for"""
     # sublen ist die Länge in die der String zerlegt werden soll.
     # string ist nicht von vornherein erforderlich,
     # a) sollte er nicht eingegeben werden, wird er durch input erfragt.

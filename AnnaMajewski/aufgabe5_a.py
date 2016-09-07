@@ -24,6 +24,7 @@ buch = {"Vorname":"Max",
 addressbuch = [buch]
 
 def neu_buch(book, **kwargs):
+    """adds new entry with kwargs into addressbook"""
     addressbuch.append(dict(**kwargs))
 # neu_buch ist eine Funktion, die man zum Hinzufügen von Einträgen nutzen kann
 # **kwargs = keywordarguments, die man eingeben kann.
