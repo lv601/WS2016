@@ -6,6 +6,7 @@
 + Aufgabe 3 - aufgabe3_a.py, aufgabe3_b.py
 + Aufgabe 5 - aufgabe5_a.py, aufgabe5_b.py, aufgabe5_c.py
 + Aufgabe 6 - aufgabe6.py
++ Aufgabe 4 - aufgabe4.py
 
 ## Infos
 *Nachdem jeder meine lokalen Dateien auf seinem PC liegen hat,
