@@ -15,8 +15,8 @@ def parse_fasta(file):
             fastaDict['raw'] = line
             fastaList.append(fastaDict)
         else:
-            fastaList[len(fastaList)-1]['sequence'] += line.strip('\n')
-            fastaList[len(fastaList)-1]['raw'] += line
+            fastaList[-1]['sequence'] += line.strip('\n')
+            fastaList[-1]['raw'] += line
     return fastaList
 
 def get_raw(db, index):
