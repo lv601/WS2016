@@ -5,18 +5,18 @@
 def parse_fasta(file):
     file_handle = open(file,'r')
     fastaList = []
-    fastaDict = {}
     for line in file_handle:
+        fastaDict = {}
         if line.startswith('>'):
             #fasta_header = line
             fastaDict['id'] = line.split(" ")[0]
-            fastaDict["description"] = (" ".join(line.split(" ")[1:])).strip('\n')
+            fastaDict["description"] = (" ".join(line.split(" ")[1:])).strip()
             fastaDict["sequence"] = ""
             fastaDict['raw'] = line
             fastaList.append(fastaDict)
         else:
-            fastaList[len(fastaList)-1]['sequence'] += line.strip('\n')
-            fastaList[len(fastaList)-1]['raw'] += line
+            fastaList[-1]['sequence'] += line.strip('\n')
+            fastaList[-1]['raw'] += line
     return fastaList
 
 def get_raw(db, index):
@@ -33,7 +33,7 @@ def get_sequence(db, index):
 
 def get_fasta(db, index):
     fasta = get_id(db, index) + get_description(db, index) + '\n'
-    fasta += insert_linebreak(get_sequence(db, index),80)
+    fasta += insert_linebreak(get_sequence(db, index), 80)
     return fasta
 
 def insert_linebreak(string, length):
