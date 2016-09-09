@@ -11,7 +11,7 @@ dict = [{"Vorname": "Max", "Nachname": "Mustermann",
 #print(len(dict["Hobbies"]))
 
 from pprint import pprint
-pprint(dict)
+# pprint(dict)
 
 dict[0]['Eigenschaften']['IQ']
 len(dict[0]['Hobbies'])
@@ -25,5 +25,5 @@ dict.append({'Vorname':"Pia", 'Nachname': "Musterfrau",
                                       'Haarfarbe': 'brünett'},
                    'Organisationen' : 'PyLadies'})
 
-pprint(dict)
-len(dict)
+# pprint(dict)
+print(len(dict))

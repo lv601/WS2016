@@ -1,0 +1,1137 @@
+LOCUS       XM_007620033            7009 bp    mRNA    linear   ROD 27-MAY-2016
+DEFINITION  PREDICTED: Cricetulus griseus zinc finger protein 862 (Znf862),
+            transcript variant X7, mRNA.
+ACCESSION   XM_007620033
+VERSION     XM_007620033.2  GI:1032940704
+DBLINK      BioProject: PRJNA239316
+KEYWORDS    RefSeq.
+SOURCE      Cricetulus griseus (Chinese hamster)
+  ORGANISM  Cricetulus griseus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Cricetidae; Cricetinae; Cricetulus.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_006878416.1) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            On May 27, 2016 this sequence version replaced gi:625253769.
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Version          :: Cricetulus griseus Annotation
+                                           Release 102
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 7.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..7009
+                     /organism="Cricetulus griseus"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:10029"
+                     /chromosome="Unknown"
+                     /country="China"
+                     /collection_date="Feb-2011"
+     gene            1..7009
+                     /gene="Znf862"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon. Supporting evidence
+                     includes similarity to: 10 Proteins, and 100% coverage of
+                     the annotated genomic feature by RNAseq alignments,
+                     including 19 samples with support for all annotated
+                     introns"
+                     /db_xref="GeneID:100766003"
+     CDS             5249..5644
+                     /gene="Znf862"
+                     /codon_start=1
+                     /product="zinc finger protein 862 isoform X4"
+                     /protein_id="XP_007618223.1"
+                     /db_xref="GI:625253770"
+                     /db_xref="GeneID:100766003"
+                     /translation="MNQRRFAWSRACATGITLRMLTALLQDVHLLGESAVRPSNPPEQ
+                     SIAHPVMTAHSFALPVIIFTTFWGLIGIAGPWFVPKGPNRGVIITMLVATAVCCYLFW
+                     LIAILAQLNPLFGPQLKNETIWYVRFLWE"
+ORIGIN      
+        1 ttgtatggga accaaagatg agcccatatg tttccagtcc cacactgagc cagggtctaa
+       61 gcaagtcgac ccacaaagga gggacctgtg tatggagtgt gcaggtgctc agccacttgc
+      121 agggaggaac tggagacagg agaactatcc tggagcagcg tgtgaccgag ctagagagat
+      181 ctggagctca ggcccgtgac agcaggtgta ctgccacatg caatttggag tcatctgccc
+      241 cagctgtagg tctagctcct ctgcaagcca gtatcctggt gctaggattt tcatctagta
+      301 gtgagttagc acacaacagt ctgaccagta gagcacatgg cactaagatg aagcctactg
+      361 ctggaaatta aaattcatgg gcttgaggtg ttgggccatg gtggtgtcgt gttctaatct
+      421 gggttgggtt gactttgggg caggcggtgt ggttacagga gagaagacag cagtgagggt
+      481 gaggtggcta tgaaggaagt agtgtggaga ggtatttcat ttggggctgt gggaatccct
+      541 ggagcagggg agcctgaaaa cagatgggga gcctctgtta gcccatcagt cagagaatga
+      601 ggttgtattc tatcataggg caaagtactg acatcggatt gggaaattcc cctctcctcc
+      661 agtcctggag accaaagccc tccaccagtg agggttctcc acactgcctg gtgcttgtct
+      721 ctttcatttt tccagccaat caccttccta ctgctcccac tgctttttct tttttccttc
+      781 tgagcctgtg gtcattggca gtgaacttga gtatcagggg taacaaagct ttatgggaag
+      841 actgatgacc ggcaccccaa atggacagga agtagagatg tgtgtccttc catgtgatag
+      901 caaagagtga cctcaatgat tctgtcttct gcactggggt gagggaggaa gagctgtcct
+      961 ctccatggaa ttgatacaga gctctggaag gagggggatg gcagctctcc ataaggaaga
+     1021 gcccatggtc cggaagacat ccgtcacacc gtctggggag ccatgaggtg cagaagggtc
+     1081 acatggtgaa ggttcctgga ccctataaca tcccaaaggc catgcggttc tgaagagtgg
+     1141 cctggccaag gctttggggc actttgatca tggagagaga ctttctgaag attctaggct
+     1201 gtcctcatgg gcccagaatg tgggcagtga caaagggttg aagcagacat tcccaaggga
+     1261 caaggccctc aaggcgcagc aataccaccc attgcaaagc catgttagag acatacttac
+     1321 ctcaagtctg tttttgccaa agaaggaatt ctgctatgag tttgccccat acattctggt
+     1381 gtcagaggac tttcctaaaa tgggaaagtg ggggtagtag gtgaaaggga caccctagct
+     1441 ctctgcatcc ctggcccaga taggaggtgg cctctgagga agatcacttt ggtggtggaa
+     1501 atgaccatgg tccagggacc ttggcttgct gcagaagccc ccaggattgg ctattctgga
+     1561 ccactgcaga ggctcataca gtataatcaa ggagacccta cccctcaagg cctgtcttta
+     1621 acacaaaaca gactaatatt ctaagaaagg aggtctcagc acaactccta tacagtgaga
+     1681 aatgcatgcg tcctctgaag ggggcctggt ctcccttctc catcctggag ccctaaggtt
+     1741 agttgctgtg gcaccaggca gtgtctgagg agtgcacgag aggtgggagt caggaggcgt
+     1801 ggaatccagg ctagctcttc cgcagacaat gtgtctatga ttaatccctt cctcttctgt
+     1861 gcctcagttt cactcctcat gtgatggttg ccacagagaa tcaagtgcct gttggctccc
+     1921 tgtagctgaa gcattagtcg gtgggagcct caaagtcctg gcaagaaggg cttgtctaca
+     1981 gcacttagct cctactctac ccttgtcctt agtggtaaag gcatcagctt tgctgctagg
+     2041 gtcctattgg aggaggaagt gctgtccaca catactgtcc acaggacagg tgcacccgtt
+     2101 ctgcagaatg ccctgcagac tgctgggaag ccccagggct tgccaagcat gccccatcct
+     2161 ggatgcatac aatcttactc ccccaaccag ctcggcagct atggtttctc ataagctttc
+     2221 ccaggatctt tgtgggtttc ctctagctta aaagccactt cccttctcat agaaggacct
+     2281 ccagtaaagt tttgtctttg ggccctctca catttccccc tttattgtga gctgaagctc
+     2341 tgctccttcc agggcagcct ggccttgcag gctgggcggt tgcctgtttg gttaggatga
+     2401 tctgtctagg ttctaccatt agctccaggt tagagaactg ccgggaacaa ggatgactgg
+     2461 tctgggatgc tctgggctcc tggtttcaag gatgtgcaaa ttaggttaaa acaccatgtt
+     2521 caagtcttac cttttgttat ttgataaagc agaacttgcc tttttgctgt ccttgtatgt
+     2581 atggccttcc tctctgaatc ctgagtgagc caagaggttc tgcccatgag tatgagaaga
+     2641 tggaaatgcg agtgacttgt accctgaatt aggatcaagc attccatggt cactgttgct
+     2701 tagcacatca tagctatcag aggtttttat ccaaaagcct gctttcaagg gacaatcacc
+     2761 cattttcacc agtagcgcca aaaccgtgac accacccaac agaattccca agaaactgtt
+     2821 tcaggatacc ctctgcagtt ccactcagaa gtcaggtgcc atctgctagc tctcctggca
+     2881 ggatggagca aagtggcaca gatattggaa tactatcaaa tctctggcca ggagactcag
+     2941 tccatcacat ctgcatgtgt gtggatttca gtggcactag agaaacattg caagcaacag
+     3001 catgggtgac tgtttctggt ctggagtgct agagcgctgc agctgcagct gggagaggca
+     3061 gccctcagag gtgctggaga ctcctcccgg ccttccagga aggtgtagcc tagaaacagg
+     3121 ctgccatggg cagtctcggc tggcatggcc ttgctttctc tttagcagga aagcttccag
+     3181 agaaggcagt acctaccagg tagcaaagca gtctcttcaa ggaacatgcc agaaggtgag
+     3241 ggggtgagct aatacctggg ggcctgttgt gcctctgcct ggtgagggga acccagggtg
+     3301 caactgcttg ctatttgcac cttccaagtg acatagcccc tgttgctggg gactccagga
+     3361 cagagcctcc tcggtgtagg tcttcccatg ggtcagtaca atcctcagac cccggaaggc
+     3421 ttttcgccgg agtccacctc ctagcgaggg caggtcctga agatgggtgg acatgctagt
+     3481 gcagcaatgg gaggaatcag gcaccagaca cttcttagtt tccttttagg agagatggac
+     3541 agagaggaag tgcatcccct gtggagacac agggcccagc agggcattta aagggttggt
+     3601 gagaaaggga agagagccag gccgtggtgg tcaggagaat cctgcagcct gactgacaag
+     3661 cagccagagt gcttctatat ttatacagaa ctcagtaagc aggggtacac tcatgttgtt
+     3721 ccaaaacata gatcatatca cttttggttt tggacatgtg tttaacattt tctcttattc
+     3781 atcttttagt catcattaat gtactatgac aaaacagtta tcattttcaa tcattttcca
+     3841 agctttggca tcactgatac acagaattat cttttataat cattcttact tattaacccc
+     3901 taacccaatt tttaagaatc tagaggcaca tgagagcctg tacttaggct ggtagctttt
+     3961 atggctacaa ggacactaga ccaaaacaaa atctccaagc ctgcctgggc atgttgccat
+     4021 gtcccaagaa gtatattatt aactcttaat ggtcagagtg tccatgaaaa atcctcaggc
+     4081 caaagctgct gcggttattc aaattctggc gtagtgcaaa gttcacatta tagaatgctt
+     4141 ttctcatctt tctacaccat tctttgccca ccagtctgaa tctctgtgtg ggacagcagt
+     4201 aacttcagct aatctaattt tgttgctgta tatgccacgg aattccctga gtatatagtg
+     4261 agaagaggcc aacgcctcta acccattgaa ttatgttgac ctttttgagt ttactttgtt
+     4321 tagagacctc tggtttcttt gtgtgtgtca cgacctccaa ggtataagga agactttcaa
+     4381 gtagataagg atatctccct aaaagcagga ggggtggtaa gttcaggact tttctgagga
+     4441 cgcttagaaa cagtactcct gggagaaggc ataaatgatt cataagaaaa tttccaacaa
+     4501 ctcaataccc ccaaattata caaatattta aagtcctcca agtatgcaac aggcagagat
+     4561 catcaaaacc acgtggtggc atgtcagcca tcatgcagct cagctttgct ggacctttgt
+     4621 caagtagctg tgctggcttt atgagttgtg ccgtccctat cagaaatgac tgtgccactg
+     4681 ggcctttccc tgggcttttt gaacgctgcc tctgtccata actcttgcta ccctcagcac
+     4741 ccaaaggtat gttaacctct gtacccaaga atggatgcct gaagtgactc atattttacc
+     4801 ctatttccat acgtagtcag gactgttgcc agagtgcctt gtgcagatgt acacgcgact
+     4861 gtatggcaga aagccacgca caatgacaca gacttgtagt cacagacgtg gaagactgag
+     4921 tgaggcaaga gagagttcaa ggcctgcttg ggccgtgagg atatcaacat aagagaaacc
+     4981 cctgcagtag aaatgcttgt ggttcgtagc tcggcatagg gactacacat ctatcagata
+     5041 gaatgctggc cacatttggg ggcaaagacc atgtccccag atacccaggg ctgccagatc
+     5101 acaacacgtg acccaccgcg tcctggtggg aataagacgg cgcaaatact actcagccaa
+     5161 tcaaaataag gattcctcgg aagccccgcc cttagccctg agtgacagct ggtgtgcagg
+     5221 ctgcgttccc agcgggcggg gtttagagat gaaccagcgc agattcgctt ggtccagggc
+     5281 ctgtgctaca gggatcacgt tgcgcatgct cacggccctc ctccaggacg tgcacctgct
+     5341 tggagaatcc gccgttcgac ccagcaaccc acccgagcag agcatcgcgc acccagtcat
+     5401 gacagcacac tcctttgccc tcccagtcat catcttcacc acgttctggg gcctcatcgg
+     5461 catcgctggg ccctggtttg tgcccaaagg acccaaccgc ggggtgatca tcaccatgct
+     5521 ggtagccact gctgtctgct gttacctctt ctggctcatt gccatcttgg cgcagctgaa
+     5581 ccccctgttt gggccacaac tgaagaatga gaccatttgg tacgtgcgct tcctgtggga
+     5641 gtgaccacgg agagtgatca gctggctgct ggccccaggt gccctgctgt ggatggccca
+     5701 gccttgatgt ccctggagac cctgcattcc cattggcccc accaatcagt ggatccttct
+     5761 gtgttctccg tgctagcact gtgggattca cacccccaga gccagccttg tttcagcttc
+     5821 ccagccatga gaaagccctg tgctcagtcg ggccacagca ggtccaacct gtgcttaaat
+     5881 ccccccactt ggcagttttc tctctcttcc aagcagatcc tagctaaggg tctggacatc
+     5941 tgtttccatc ctgagagcag aagccaggac tcagcccagt cccagaaagg acatgattct
+     6001 ttgtggagaa gggacatatg gcccaggata ctccagggtt ttcaactctg tctcaccttg
+     6061 tgaaatattg ggtcagggtc acaggccttc tctccagctc tggtgtggat tattctttaa
+     6121 gtttcaaaca cttctagatg tgacaacact ggagatgttg gtgtcttaaa gaaacagtca
+     6181 caccaaaaac cctgcactgt actttgggtc aagatagaaa cttccatgtt tagtttttta
+     6241 tagcagtgaa gacattcaac atgggaggga gattgtgtgt ctttggtatg ttctagtcac
+     6301 tttcctctcc ctctgtagat aagctcaccc actctccaga acctgtcagt tggggtgcag
+     6361 ccattcctac caggaggtca cactcttcat tgggttgtgt tggggcagat ccaagagctg
+     6421 gtcccaagag cactggagag atttggagct gggattgggg gacaggcaaa ggtaatgttt
+     6481 atgggcttct actggcacta tgcctccctg gcttctgaga ccctctgtcc ccaagctaat
+     6541 gtgctctgtg ccggcacaag gaaagacaga gaatgcagac cacaggggat cagcctaggg
+     6601 aactcctcca gcccatgccc tcacccctct gacagtgtga gtatggattt catattctta
+     6661 gctgagttgc cagagcctag ctaggacaga gccctgtata atccctggtt cccagccagt
+     6721 gactgagttc ccaggggaag aaaaacagcc ttgattattt aatgactatt tattttgtct
+     6781 tcctcccctt gcaggggtca ttttgggagt ggcagtagaa tacactatag ctcagattcc
+     6841 tgggcactgg gcctgctggt tgcccaaagc ttaggttggg gcctccgtgg gcaacaactc
+     6901 ccttcctacc ctaacccctg aagccttcct gtgtggtggg gcctggtgag catgaattgt
+     6961 gttgaaagct gaatcctgtc taataaataa tggtgatgca agattgtga
+//
+
+LOCUS       XM_016967941            1154 bp    mRNA    linear   ROD 27-MAY-2016
+DEFINITION  PREDICTED: Cricetulus griseus transmembrane protein 176B
+            (Tmem176b), transcript variant X3, mRNA.
+ACCESSION   XM_016967941
+VERSION     XM_016967941.1  GI:1032940695
+DBLINK      BioProject: PRJNA239316
+KEYWORDS    RefSeq.
+SOURCE      Cricetulus griseus (Chinese hamster)
+  ORGANISM  Cricetulus griseus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Cricetidae; Cricetinae; Cricetulus.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_006878416.1) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Version          :: Cricetulus griseus Annotation
+                                           Release 102
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 7.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1154
+                     /organism="Cricetulus griseus"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:10029"
+                     /chromosome="Unknown"
+                     /country="China"
+                     /collection_date="Feb-2011"
+     gene            1..1154
+                     /gene="Tmem176b"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon. Supporting evidence
+                     includes similarity to: 16 Proteins, and 100% coverage of
+                     the annotated genomic feature by RNAseq alignments,
+                     including 15 samples with support for all annotated
+                     introns"
+                     /db_xref="GeneID:100764547"
+     CDS             115..918
+                     /gene="Tmem176b"
+                     /codon_start=1
+                     /product="transmembrane protein 176B isoform X2"
+                     /protein_id="XP_016823430.1"
+                     /db_xref="GI:1032940696"
+                     /db_xref="GeneID:100764547"
+                     /translation="MTQTTVTVNGVEMASALPQSTHVNIHIHQKPAWEQLLKAMGSLK
+                     FLPCPQDTEPSKASIHHGQLALGVTQILLGLVSCVLGVCIYLGPWTELCSSGCAFWSG
+                     SVAIIAGAGTIIHEKRQGKLSGHISRLLILACIATAVASTVLGVSSLIWQTSAFYQVK
+                     IRSTCDSLQSSTDSEYGRVRFTDDSVWKTERCKEYLGMMMNLFLAICIMLTVVCILKI
+                     VVSLASLGLSLQSMCGRSSQTLDEEETGKKLLGGDSTPPSPTKEIPGIL"
+ORIGIN      
+        1 ctcttatcta ccttgggggt catcagctcc aagtcagctc ctcccagacc cctctgctcc
+       61 agccctacct ttctcagagg atagcagagt tgccactctg aggccccagg aaagatgacc
+      121 caaaccacag tgactgtgaa tggggttgaa atggcctctg cactccccca gtccactcat
+      181 gtcaacatcc acattcacca gaaaccagct tgggagcagc tgctgaaagc catgggctcc
+      241 ctgaagtttc tcccctgtcc tcaggacact gagccctcca aggccagcat ccatcacggg
+      301 cagctggctc taggggtcac ccagatattg ctggggcttg tgagctgtgt tcttggagtg
+      361 tgtatctact taggaccctg gactgagctg tgttcctctg gctgtgcctt ctggtcaggg
+      421 tctgtggcga ttatagctgg agctggcacc attattcatg agaagcgaca gggaaaactg
+      481 tctggccata tatcacgtct gctcatcctg gcttgcattg ccacagctgt ggcctctact
+      541 gttttgggtg tgagcagctt aatctggcaa accagtgctt tctaccaagt caagatcagg
+      601 tccacatgtg actccttaca gtctagcacg gacagtgagt atgggagagt gcgattcact
+      661 gatgactcag tctggaagac ggagaggtgc aaagaatacc tgggcatgat gatgaacctg
+      721 ttcctagcaa tctgcatcat gctcaccgtt gtctgtatcc tgaagattgt tgtgtctttg
+      781 gcttccctgg gactgagtct ccaaagtatg tgtggccgga gctcccagac cctggatgag
+      841 gaagagacag ggaaaaagct tcttgggggg gattcaacac ctccctcccc aaccaaggag
+      901 attcctggta tcctatgagc ttctacaaag accctgcgtg agcccgcacg tgtccctgaa
+      961 cagactgatc ccgagagggc agcatctgtt cccagggcct ctgctggccc tgcagcacac
+     1021 agctggttcc ctatgcagcc ccctttctct tcctgtctcc ccactgtcct cactccaatg
+     1081 tcctttgttc cataaataga tactgtgtca ttttcccaat gctaattaaa cagaaacaac
+     1141 cccccaaaaa aata
+//
+
+LOCUS       XM_007620031            1678 bp    mRNA    linear   ROD 27-MAY-2016
+DEFINITION  PREDICTED: Cricetulus griseus GTPase, IMAP family member 6
+            (Gimap6), mRNA.
+ACCESSION   XM_007620031
+VERSION     XM_007620031.2  GI:1032940689
+DBLINK      BioProject: PRJNA239316
+KEYWORDS    RefSeq.
+SOURCE      Cricetulus griseus (Chinese hamster)
+  ORGANISM  Cricetulus griseus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Cricetidae; Cricetinae; Cricetulus.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_006878416.1) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            On May 27, 2016 this sequence version replaced gi:625253762.
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Version          :: Cricetulus griseus Annotation
+                                           Release 102
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 7.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1678
+                     /organism="Cricetulus griseus"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:10029"
+                     /chromosome="Unknown"
+                     /country="China"
+                     /collection_date="Feb-2011"
+     gene            1..1678
+                     /gene="Gimap6"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon. Supporting evidence
+                     includes similarity to: 6 Proteins, and 100% coverage of
+                     the annotated genomic feature by RNAseq alignments"
+                     /db_xref="GeneID:100772540"
+     CDS             579..1493
+                     /gene="Gimap6"
+                     /codon_start=1
+                     /product="GTPase IMAP family member 6"
+                     /protein_id="XP_007618221.2"
+                     /db_xref="GI:1032940690"
+                     /db_xref="GeneID:100772540"
+                     /translation="MYQLHRGAESIGSYTMETFFWLLGSTYKKYCSLALPGKSEISRE
+                     CNAAGDRKRSHSCLSVSPMVEEGECGHSPQKNPTRQVSLDSVQGLTKGLKEKEVSPKR
+                     LQILLVGKTGSGKSATGNSILGRQVFESKISARPVTRTFQKGSREWAGKELEVIDTPD
+                     ILSPQDKPEVAAEKICGVLASPGPHVVLLVIQVGRYTAEDQEAARRLQEIFGKGILAY
+                     TILVFTRKEDLDEGSLEEYIQENNNKSLDDLDVACERRHCAFNNRARGHEQEKQLKDL
+                     MEKIEIILWENEGHCYTTELPNVSSKTV"
+ORIGIN      
+        1 ggagaggaca catgagtctg gtgttctcgg tgtacgaatg ttatggtgtt tgtggagatc
+       61 tcataagaaa gaaaaaacct ccctcagtct ctcataccta cagatgaagg aagattattg
+      121 acaggtggat gacagcactg atgctgaaga cacggctgag cttgccattt ttattagcac
+      181 tattgatgac aagtataaca tccctgaaga aatggcatct tagtgccatt aaaacacaca
+      241 actggggacc aggaggtggc tccgcagttt tcaaatggaa tgtcaagagc tgtaatttga
+      301 cacacagcat aaagaaggac caaaccttgc ctttcctggg cttcctactt caccatcatg
+      361 cctgattcat gccatccgtt ttggggcagc acttacattc gtgagcaacc gtctacaaga
+      421 atgaaatgcg ctaggaggaa gattagaacc agaacaccga caagcacccg ggaagcccac
+      481 ccaggactgc agctactgga aatgagccag ggagctgctc tatgaagggc tgttcttgac
+      541 ctcagcacat attgtgctga taaaatatgg cttgagggat gtatcagctt cacaggggag
+      601 cagagtccat tggctcatac actatggaaa cttttttctg gctgctggga tccacctaca
+      661 aaaaatactg cagtttggcc ctgccaggaa agtcagaaat ttcacgggag tgcaatgctg
+      721 caggagacag gaaacggagc cattcttgcc tgtcagtcag tcccatggtg gaagaaggag
+      781 aatgtggaca cagtccccag aagaacccca caaggcaggt gtccctggac tccgtacaag
+      841 ggttgacaaa aggtctaaag gagaaagagg tctccccaaa gagactgcag atccttctgg
+      901 tggggaaaac aggaagtggg aaaagtgcaa caggaaatag catccttggc aggcaagtat
+      961 ttgagtccaa aatcagcgct agaccagtga ccaggacctt ccagaagggg agtagagagt
+     1021 gggctggaaa ggagcttgag gtgatcgaca ccccagacat tttgtcacct caggacaaac
+     1081 ctgaggtagc agctgaaaag atctgtggag tcttggcctc tccggggccc catgttgtgc
+     1141 tcctggtgat tcaggtgggc aggtacactg cagaagacca ggaagctgcc aggcgcctcc
+     1201 aggagatctt tggaaaaggg atcctggctt acaccattct ggtgttcact cggaaggaag
+     1261 acctggacga gggctcgttg gaagaatata tccaagagaa caacaataag agcctggatg
+     1321 atctggatgt tgcatgtgag aggcgacact gtgccttcaa caacagggca cgagggcatg
+     1381 agcaggagaa acaactgaag gaccttatgg agaaaattga aattatcttg tgggaaaatg
+     1441 agggccactg ttacaccaca gaacttccaa atgtttccag caaaacagtt taaccacaga
+     1501 gcaaggtttg aggaggaatc cctcaagaac tcctggctgg aaaggctgtc ccagatccag
+     1561 atggcctctg agaagacctg aaggtacctg atagggaggg catccataca agcgcagact
+     1621 ggccataagc aggagtgtct tagtgaagag acactatgac catggcaact cctacaaa
+//
+
+LOCUS       XM_007610107            1851 bp    mRNA    linear   ROD 27-MAY-2016
+DEFINITION  PREDICTED: Cricetulus griseus FGGY carbohydrate kinase domain
+            containing (Fggy), transcript variant X6, mRNA.
+ACCESSION   XM_007610107
+VERSION     XM_007610107.2  GI:1032928336
+DBLINK      BioProject: PRJNA239316
+KEYWORDS    RefSeq.
+SOURCE      Cricetulus griseus (Chinese hamster)
+  ORGANISM  Cricetulus griseus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Cricetidae; Cricetinae; Cricetulus.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_006869649.1) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            On May 27, 2016 this sequence version replaced gi:625234286.
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Version          :: Cricetulus griseus Annotation
+                                           Release 102
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 7.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1851
+                     /organism="Cricetulus griseus"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:10029"
+                     /chromosome="Unknown"
+                     /country="China"
+                     /collection_date="Feb-2011"
+     gene            1..1851
+                     /gene="Fggy"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon. Supporting evidence
+                     includes similarity to: 100% coverage of the annotated
+                     genomic feature by RNAseq alignments, including 14 samples
+                     with support for all annotated introns"
+                     /db_xref="GeneID:100763881"
+     CDS             98..1657
+                     /gene="Fggy"
+                     /codon_start=1
+                     /product="FGGY carbohydrate kinase domain-containing
+                     protein isoform X5"
+                     /protein_id="XP_007608297.1"
+                     /db_xref="GI:625234287"
+                     /db_xref="GeneID:100763881"
+                     /translation="MMSGGDQEPGHYYVGIDVGTGSVRAALVDQRGILLAFAERPIKK
+                     WEPQFNHHEQSSEDIWAACCHVTKKIVQGIDVHRIRGLGFDATCSLVVLDKQFHPLPV
+                     NHEGDSYRNIIMWLDHRAVSQVHRINKTKHDVLQYVGGVMSVEMQAPKLLWLKENLRE
+                     TCWDKAGHFFDLPDFLSWKATGVTARSLCSLVCKWTYSAEKGWDDSFWKMIGLEDLIG
+                     DNYSKIGVIGADVRGYGLVCEEQPVTSRLAVICGTSSCHMGISKDPIFVPGVWGPYFS
+                     AMVPGFWLNEGGQSVTGKLIDHMVQSHAAFPELQAKATARCQSIYAYLNSHLDLIKKA
+                     QPVGFLTVDLHVWPDFHGNRSPLADLTLKGMVTGLTLSQGLDDLAILYLATVQAIAFG
+                     TRFIIEAMQTAGHSLSTLFLCGGLSKNPLFVQMHADITGMPVVLSQEVESVLVGAAVL
+                     GACASGDFTSVQEAMARMSKVGKVVFPRREDKKISRKYLYVKMRKFLHKRVMYHIQVY
+                     TDIMTRSIKYF"
+ORIGIN      
+        1 tgcctggacc gccctcctgg gtgcggcgtg gctgtgcgtg gtggcctgct ggcctgctag
+       61 ctagaatgtg atttcatatt ggacaagcaa aggaaccatg atgtctggtg gagaccagga
+      121 gccaggtcac tattatgtgg gcatcgatgt tggaacaggt agtgtgcgtg cagccctggt
+      181 agaccagaga ggaatacttc tggcttttgc agaacggcca attaagaagt gggagccaca
+      241 attcaaccac catgagcagt cctcagagga catctgggca gcgtgttgcc atgtcacaaa
+      301 gaaaattgtt caaggaattg atgtacaccg aatccgagga cttgggtttg atgccacgtg
+      361 ttctttggtt gtcttggaca aacagtttca tcctttacca gtaaaccatg aaggggattc
+      421 ctatcgaaac attatcatgt ggctggacca tcgagcagtc agccaggttc acaggatcaa
+      481 caagaccaag catgatgtcc ttcagtatgt aggtggtgtg atgtctgtgg agatgcaggc
+      541 cccaaagctc ctctggctga aggagaactt gagagagact tgctgggaca aggcgggaca
+      601 tttctttgat ctcccagact tcttatcatg gaaggcaaca ggtgtcacag cacggtctct
+      661 ctgctcactg gtgtgcaaat ggacatactc agcagagaaa ggttgggatg acagcttctg
+      721 gaagatgatt ggtttggaag atctcattgg tgataattac agcaaaatag gagtaattgg
+      781 agcagatgtg agaggttatg gtctcgtctg tgaggaacag ccagtgacat cacggctagc
+      841 tgtcatctgt ggaacatcat cttgtcacat ggggatcagc aaagatccaa tttttgtgcc
+      901 aggcgtttgg ggaccttatt tctcagccat ggttcctggc ttctggctga atgaaggtgg
+      961 tcagagtgtg actggaaaat tgatagacca tatggtgcag agccatgctg cttttcctga
+     1021 actacaagcc aaggccacag ccagatgcca gagtatatat gcatatttga acagtcacct
+     1081 ggatctgatt aagaaggctc agcctgtggg tttcctcact gttgatttac atgtttggcc
+     1141 agatttccat ggcaaccgat ctcccttagc agatctgact ctaaagggca tggtcactgg
+     1201 attgacactg tctcagggcc ttgatgatct tgccatcctc tacctcgcca ctgttcaagc
+     1261 cattgctttt gggactcgtt tcatcattga ggccatgcag acagcagggc actctctcag
+     1321 taccctcttc ttatgtggag gcctaagcaa gaaccccctt tttgtgcaga tgcatgctga
+     1381 cattactggc atgcctgtgg tcctgtcaca agaggtggag tctgtcctcg tgggtgctgc
+     1441 tgttctgggt gcctgtgcct ctggggactt cacatctgtg caggaggcaa tggcgagaat
+     1501 gagcaaagtg gggaaagttg tgttcccaag acgtgaggat aaaaaaatat cccgtaaata
+     1561 tctctacgtg aagatgagga agtttctgca caaacgggtt atgtatcata tccaagttta
+     1621 cacagatatt atgacaagaa gtatcaagta tttctgaaga tggtggaaca ccagaaggag
+     1681 tattcggcaa tcatgaatgg aaactgaaca gcgtttgtgg gtgccaatcc agaaagactc
+     1741 tgtgccattt gttaggcgtc cctgcatttc catcttatat tcaatgccct ttaggtatta
+     1801 tgttggcata cctgtctcat cttctaataa aaattttggc atgcacaagc a
+//
+
+LOCUS       XM_016964907            1711 bp    mRNA    linear   ROD 27-MAY-2016
+DEFINITION  PREDICTED: Cricetulus griseus FGGY carbohydrate kinase domain
+            containing (Fggy), transcript variant X5, mRNA.
+ACCESSION   XM_016964907
+VERSION     XM_016964907.1  GI:1032928334
+DBLINK      BioProject: PRJNA239316
+KEYWORDS    RefSeq.
+SOURCE      Cricetulus griseus (Chinese hamster)
+  ORGANISM  Cricetulus griseus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Cricetidae; Cricetinae; Cricetulus.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_006869649.1) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Version          :: Cricetulus griseus Annotation
+                                           Release 102
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 7.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1711
+                     /organism="Cricetulus griseus"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:10029"
+                     /chromosome="Unknown"
+                     /country="China"
+                     /collection_date="Feb-2011"
+     gene            1..1711
+                     /gene="Fggy"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon. Supporting evidence
+                     includes similarity to: 1 Protein, and 100% coverage of
+                     the annotated genomic feature by RNAseq alignments,
+                     including 9 samples with support for all annotated
+                     introns"
+                     /db_xref="GeneID:100763881"
+     CDS             98..1696
+                     /gene="Fggy"
+                     /codon_start=1
+                     /product="FGGY carbohydrate kinase domain-containing
+                     protein isoform X4"
+                     /protein_id="XP_016820396.1"
+                     /db_xref="GI:1032928335"
+                     /db_xref="GeneID:100763881"
+                     /translation="MMSGGDQEPGHYYVGIDVGTGSVRAALVDQRGILLAFAERPIKK
+                     WEPQFNHHEQSSEDIWAACCHVTKKIVQGIDVHRIRGLGFDATCSLVVLDKQFHPLPV
+                     NHEGDSYRNIIMWLDHRAVSQVHRINKTKHDVLQYVGGVMSVEMQAPKLLWLKENLRE
+                     TCWDKAGHFFDLPDFLSWKATGVTARSLCSLVCKWTYSAEKGWDDSFWKMIGLEDLIG
+                     DNYSKIGNLVLPPGTSLGSGLTPEAAKELGLPPGIAVAASLIDAHAGGLGVIGADVRG
+                     YGLVCEEQPVTSRLAVICGTSSCHMGISKDPIFVPGVWGPYFSAMVPGFWLNEGGQSV
+                     TGKLIDHMVQSHAAFPELQAKATARCQSIYAYLNSHLDLIKKAQPVGFLTVDLHVWPD
+                     FHGNRSPLADLTLKGMVTGLTLSQGLDDLAILYLATVQAIAFGTRFIIEAMQTAGHSL
+                     STLFLCGGLSKNPLFVQMHADITGMPVVLSQEVESVLVGAAVLGACASGDFTSVQMEL
+                     LLFYETFSLKDGMLYVLKVFNLYL"
+ORIGIN      
+        1 tgcctggacc gccctcctgg gtgcggcgtg gctgtgcgtg gtggcctgct ggcctgctag
+       61 ctagaatgtg atttcatatt ggacaagcaa aggaaccatg atgtctggtg gagaccagga
+      121 gccaggtcac tattatgtgg gcatcgatgt tggaacaggt agtgtgcgtg cagccctggt
+      181 agaccagaga ggaatacttc tggcttttgc agaacggcca attaagaagt gggagccaca
+      241 attcaaccac catgagcagt cctcagagga catctgggca gcgtgttgcc atgtcacaaa
+      301 gaaaattgtt caaggaattg atgtacaccg aatccgagga cttgggtttg atgccacgtg
+      361 ttctttggtt gtcttggaca aacagtttca tcctttacca gtaaaccatg aaggggattc
+      421 ctatcgaaac attatcatgt ggctggacca tcgagcagtc agccaggttc acaggatcaa
+      481 caagaccaag catgatgtcc ttcagtatgt aggtggtgtg atgtctgtgg agatgcaggc
+      541 cccaaagctc ctctggctga aggagaactt gagagagact tgctgggaca aggcgggaca
+      601 tttctttgat ctcccagact tcttatcatg gaaggcaaca ggtgtcacag cacggtctct
+      661 ctgctcactg gtgtgcaaat ggacatactc agcagagaaa ggttgggatg acagcttctg
+      721 gaagatgatt ggtttggaag atctcattgg tgataattac agcaaaatag gaaatctcgt
+      781 gctgcctcct ggaacttctc ttggaagtgg gctcacacca gaggcagcca aagagctggg
+      841 tcttcccccg ggcattgctg tggcagcctc actcattgac gcccatgcag gaggactagg
+      901 agtaattgga gcagatgtga gaggttatgg tctcgtctgt gaggaacagc cagtgacatc
+      961 acggctagct gtcatctgtg gaacatcatc ttgtcacatg gggatcagca aagatccaat
+     1021 ttttgtgcca ggcgtttggg gaccttattt ctcagccatg gttcctggct tctggctgaa
+     1081 tgaaggtggt cagagtgtga ctggaaaatt gatagaccat atggtgcaga gccatgctgc
+     1141 ttttcctgaa ctacaagcca aggccacagc cagatgccag agtatatatg catatttgaa
+     1201 cagtcacctg gatctgatta agaaggctca gcctgtgggt ttcctcactg ttgatttaca
+     1261 tgtttggcca gatttccatg gcaaccgatc tcccttagca gatctgactc taaagggcat
+     1321 ggtcactgga ttgacactgt ctcagggcct tgatgatctt gccatcctct acctcgccac
+     1381 tgttcaagcc attgcttttg ggactcgttt catcattgag gccatgcaga cagcagggca
+     1441 ctctctcagt accctcttct tatgtggagg cctaagcaag aacccccttt ttgtgcagat
+     1501 gcatgctgac attactggca tgcctgtggt cctgtcacaa gaggtggagt ctgtcctcgt
+     1561 gggtgctgct gttctgggtg cctgtgcctc tggggacttc acatctgtgc agatggagct
+     1621 gctactgttc tatgaaacat tttcacttaa agatggtatg ttatacgttc taaaagtttt
+     1681 taatctgtac ctttaaagaa caagtgtggt g
+//
+
+LOCUS       XR_001722022            1017 bp    RNA     linear   ROD 27-MAY-2016
+DEFINITION  PREDICTED: Cricetulus griseus uncharacterized LOC107977882
+            (LOC107977882), transcript variant X1, ncRNA.
+ACCESSION   XR_001722022
+VERSION     XR_001722022.1  GI:1032928337
+DBLINK      BioProject: PRJNA239316
+KEYWORDS    RefSeq.
+SOURCE      Cricetulus griseus (Chinese hamster)
+  ORGANISM  Cricetulus griseus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Cricetidae; Cricetinae; Cricetulus.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_006869649.1) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Version          :: Cricetulus griseus Annotation
+                                           Release 102
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 7.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1017
+                     /organism="Cricetulus griseus"
+                     /mol_type="transcribed RNA"
+                     /db_xref="taxon:10029"
+                     /chromosome="Unknown"
+                     /country="China"
+                     /collection_date="Feb-2011"
+     gene            1..1017
+                     /gene="LOC107977882"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon. Supporting evidence
+                     includes similarity to: 100% coverage of the annotated
+                     genomic feature by RNAseq alignments, including 2 samples
+                     with support for all annotated introns"
+                     /db_xref="GeneID:107977882"
+     ncRNA           1..1017
+                     /ncRNA_class="lncRNA"
+                     /gene="LOC107977882"
+                     /product="uncharacterized LOC107977882, transcript variant
+                     X1"
+                     /db_xref="GeneID:107977882"
+ORIGIN      
+        1 atttatctgc tttgaatgaa tctgtggaaa gaagcaggaa accccagagc tggttcctct
+       61 cctcacttgt aaatgctttg aattagtgac accagggaat gagacattaa acagtgtcag
+      121 agggctgaaa ggaagagaaa gaagagagca cagagctctc cttatactag caagttccag
+      181 cttccctaga gaaagaacat ggacttgaga aagaatcatt tcagcgtgtg tacagagtgt
+      241 gaacttgagt aatttgcttt tcttctatca ggctttcagc gccctgatct gctcctacac
+      301 agggtgacag acacacagca caccaaggtg ttctctcaac ttctgactca gtccagccaa
+      361 gaggagtttc catgtagaaa gcagtttgat tggtttcact gaactggtca aggtattaag
+      421 tcaagaggga agttgcttaa gggagaaata gtctggtcta caatctacag gggctgtgtt
+      481 gctgaatggg catgttccat atgcccctgc aatgattctg caaaagggat agtactgtgg
+      541 agactaggga gcctctgttc tcaagacaca cctggcccat gggtaagtat gagcactaac
+      601 aaaacaattc tgttggtgac atggatgaat ctgcatctat atattaaaaa tagtaagatt
+      661 ctaaaaacag ttattaggag aagataatta gtggatatca tttatgtcta tacagcagta
+      721 ataagcaaac caaaaatatt tatttaggct cagaggtagt gtccttgggt ccttggctca
+      781 gacgataaag cttggggttc aatccctagc accactacca gtcatgataa taataaataa
+      841 taaaaaaata aaaaaatatg tgagttcaat tcccagcacc cacatttggc tgctcacaaa
+      901 catctttcac tatagctcct aagtacaatt ccttttccgg gcactcccat gtgccatata
+      961 ttgacatata catatacaca taaataaatc taaataataa taatgaacat tggttta
+//
+
+LOCUS       XM_007610106            1791 bp    mRNA    linear   ROD 27-MAY-2016
+DEFINITION  PREDICTED: Cricetulus griseus FGGY carbohydrate kinase domain
+            containing (Fggy), transcript variant X4, mRNA.
+ACCESSION   XM_007610106
+VERSION     XM_007610106.2  GI:1032928333
+DBLINK      BioProject: PRJNA239316
+KEYWORDS    RefSeq.
+SOURCE      Cricetulus griseus (Chinese hamster)
+  ORGANISM  Cricetulus griseus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Cricetidae; Cricetinae; Cricetulus.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_006869649.1) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            On May 27, 2016 this sequence version replaced gi:625234284.
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Version          :: Cricetulus griseus Annotation
+                                           Release 102
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 7.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1791
+                     /organism="Cricetulus griseus"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:10029"
+                     /chromosome="Unknown"
+                     /country="China"
+                     /collection_date="Feb-2011"
+     gene            1..1791
+                     /gene="Fggy"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon. Supporting evidence
+                     includes similarity to: 1 Protein, and 100% coverage of
+                     the annotated genomic feature by RNAseq alignments,
+                     including 17 samples with support for all annotated
+                     introns"
+                     /db_xref="GeneID:100763881"
+     CDS             98..1696
+                     /gene="Fggy"
+                     /codon_start=1
+                     /product="FGGY carbohydrate kinase domain-containing
+                     protein isoform X3"
+                     /protein_id="XP_007608296.1"
+                     /db_xref="GI:625234285"
+                     /db_xref="GeneID:100763881"
+                     /translation="MMSGGDQEPGHYYVGIDVGTGSVRAALVDQRGILLAFAERPIKK
+                     WEPQFNHHEQSSEDIWAACCHVTKKIVQGIDVHRIRGLGFDATCSLVVLDKQFHPLPV
+                     NHEGDSYRNIIMWLDHRAVSQVHRINKTKHDVLQYVGGVMSVEMQAPKLLWLKENLRE
+                     TCWDKAGHFFDLPDFLSWKATGVTARSLCSLVCKWTYSAEKGWDDSFWKMIGLEDLIG
+                     DNYSKIGNLVLPPGTSLGSGLTPEAAKELGLPPGIAVAASLIDAHAGGLGVIGADVRG
+                     YGLVCEEQPVTSRLAVICGTSSCHMGISKDPIFVPGVWGPYFSAMVPGFWLNEGGQSV
+                     TGKLIDHMVQSHAAFPELQAKATARCQSIYAYLNSHLDLIKKAQPVGFLTVDLHVWPD
+                     FHGNRSPLADLTLKGMVTGLTLSQGLDDLAILYLATVQAIAFGTRFIIEAMQTAGHSL
+                     STLFLCGGLSKNPLFVQMHADITGMPVVLSQEVESVLVGAAVLGACASGDFTSVQVMS
+                     LEEHLFILSHSEYSLTLFGTRSRG"
+ORIGIN      
+        1 tgcctggacc gccctcctgg gtgcggcgtg gctgtgcgtg gtggcctgct ggcctgctag
+       61 ctagaatgtg atttcatatt ggacaagcaa aggaaccatg atgtctggtg gagaccagga
+      121 gccaggtcac tattatgtgg gcatcgatgt tggaacaggt agtgtgcgtg cagccctggt
+      181 agaccagaga ggaatacttc tggcttttgc agaacggcca attaagaagt gggagccaca
+      241 attcaaccac catgagcagt cctcagagga catctgggca gcgtgttgcc atgtcacaaa
+      301 gaaaattgtt caaggaattg atgtacaccg aatccgagga cttgggtttg atgccacgtg
+      361 ttctttggtt gtcttggaca aacagtttca tcctttacca gtaaaccatg aaggggattc
+      421 ctatcgaaac attatcatgt ggctggacca tcgagcagtc agccaggttc acaggatcaa
+      481 caagaccaag catgatgtcc ttcagtatgt aggtggtgtg atgtctgtgg agatgcaggc
+      541 cccaaagctc ctctggctga aggagaactt gagagagact tgctgggaca aggcgggaca
+      601 tttctttgat ctcccagact tcttatcatg gaaggcaaca ggtgtcacag cacggtctct
+      661 ctgctcactg gtgtgcaaat ggacatactc agcagagaaa ggttgggatg acagcttctg
+      721 gaagatgatt ggtttggaag atctcattgg tgataattac agcaaaatag gaaatctcgt
+      781 gctgcctcct ggaacttctc ttggaagtgg gctcacacca gaggcagcca aagagctggg
+      841 tcttcccccg ggcattgctg tggcagcctc actcattgac gcccatgcag gaggactagg
+      901 agtaattgga gcagatgtga gaggttatgg tctcgtctgt gaggaacagc cagtgacatc
+      961 acggctagct gtcatctgtg gaacatcatc ttgtcacatg gggatcagca aagatccaat
+     1021 ttttgtgcca ggcgtttggg gaccttattt ctcagccatg gttcctggct tctggctgaa
+     1081 tgaaggtggt cagagtgtga ctggaaaatt gatagaccat atggtgcaga gccatgctgc
+     1141 ttttcctgaa ctacaagcca aggccacagc cagatgccag agtatatatg catatttgaa
+     1201 cagtcacctg gatctgatta agaaggctca gcctgtgggt ttcctcactg ttgatttaca
+     1261 tgtttggcca gatttccatg gcaaccgatc tcccttagca gatctgactc taaagggcat
+     1321 ggtcactgga ttgacactgt ctcagggcct tgatgatctt gccatcctct acctcgccac
+     1381 tgttcaagcc attgcttttg ggactcgttt catcattgag gccatgcaga cagcagggca
+     1441 ctctctcagt accctcttct tatgtggagg cctaagcaag aacccccttt ttgtgcagat
+     1501 gcatgctgac attactggca tgcctgtggt cctgtcacaa gaggtggagt ctgtcctcgt
+     1561 gggtgctgct gttctgggtg cctgtgcctc tggggacttc acatctgtgc aggtgatgag
+     1621 cctagaggaa catctattca ttctgagcca ttcagaatat tctctaacct tatttgggac
+     1681 tagaagcagg ggatgagaag gtgaccagca agggatccta tttgattgtc ccaaggaggc
+     1741 aatggcgaga atgagcaaag tggggaaagt tgtgttccca agacgtgagg a
+//
+
+LOCUS       XM_007610105            1900 bp    mRNA    linear   ROD 27-MAY-2016
+DEFINITION  PREDICTED: Cricetulus griseus FGGY carbohydrate kinase domain
+            containing (Fggy), transcript variant X3, mRNA.
+ACCESSION   XM_007610105
+VERSION     XM_007610105.2  GI:1032928332
+DBLINK      BioProject: PRJNA239316
+KEYWORDS    RefSeq.
+SOURCE      Cricetulus griseus (Chinese hamster)
+  ORGANISM  Cricetulus griseus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Cricetidae; Cricetinae; Cricetulus.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_006869649.1) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            On May 27, 2016 this sequence version replaced gi:625234282.
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Version          :: Cricetulus griseus Annotation
+                                           Release 102
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 7.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1900
+                     /organism="Cricetulus griseus"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:10029"
+                     /chromosome="Unknown"
+                     /country="China"
+                     /collection_date="Feb-2011"
+     gene            1..1900
+                     /gene="Fggy"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon. Supporting evidence
+                     includes similarity to: 9 Proteins, and 100% coverage of
+                     the annotated genomic feature by RNAseq alignments,
+                     including 22 samples with support for all annotated
+                     introns"
+                     /db_xref="GeneID:100763881"
+     CDS             98..1756
+                     /gene="Fggy"
+                     /codon_start=1
+                     /product="FGGY carbohydrate kinase domain-containing
+                     protein isoform X2"
+                     /protein_id="XP_007608295.1"
+                     /db_xref="GI:625234283"
+                     /db_xref="GeneID:100763881"
+                     /translation="MMSGGDQEPGHYYVGIDVGTGSVRAALVDQRGILLAFAERPIKK
+                     WEPQFNHHEQSSEDIWAACCHVTKKIVQGIDVHRIRGLGFDATCSLVVLDKQFHPLPV
+                     NHEGDSYRNIIMWLDHRAVSQVHRINKTKHDVLQYVGGVMSVEMQAPKLLWLKENLRE
+                     TCWDKAGHFFDLPDFLSWKATGVTARSLCSLVCKWTYSAEKGWDDSFWKMIGLEDLIG
+                     DNYSKIGNLVLPPGTSLGSGLTPEAAKELGLPPGIAVAASLIDAHAGGLGVIGADVRG
+                     YGLVCEEQPVTSRLAVICGTSSCHMGISKDPIFVPGVWGPYFSAMVPGFWLNEGGQSV
+                     TGKLIDHMVQSHAAFPELQAKATARCQSIYAYLNSHLDLIKKAQPVGFLTVDLHVWPD
+                     FHGNRSPLADLTLKGMVTGLTLSQGLDDLAILYLATVQAIAFGTRFIIEAMQTAGHSL
+                     STLFLCGGLSKNPLFVQMHADITGMPVVLSQEVESVLVGAAVLGACASGDFTSVQEAM
+                     ARMSKVGKVVFPRREDKKYYDKKYQVFLKMVEHQKEYSAIMNGN"
+ORIGIN      
+        1 tgcctggacc gccctcctgg gtgcggcgtg gctgtgcgtg gtggcctgct ggcctgctag
+       61 ctagaatgtg atttcatatt ggacaagcaa aggaaccatg atgtctggtg gagaccagga
+      121 gccaggtcac tattatgtgg gcatcgatgt tggaacaggt agtgtgcgtg cagccctggt
+      181 agaccagaga ggaatacttc tggcttttgc agaacggcca attaagaagt gggagccaca
+      241 attcaaccac catgagcagt cctcagagga catctgggca gcgtgttgcc atgtcacaaa
+      301 gaaaattgtt caaggaattg atgtacaccg aatccgagga cttgggtttg atgccacgtg
+      361 ttctttggtt gtcttggaca aacagtttca tcctttacca gtaaaccatg aaggggattc
+      421 ctatcgaaac attatcatgt ggctggacca tcgagcagtc agccaggttc acaggatcaa
+      481 caagaccaag catgatgtcc ttcagtatgt aggtggtgtg atgtctgtgg agatgcaggc
+      541 cccaaagctc ctctggctga aggagaactt gagagagact tgctgggaca aggcgggaca
+      601 tttctttgat ctcccagact tcttatcatg gaaggcaaca ggtgtcacag cacggtctct
+      661 ctgctcactg gtgtgcaaat ggacatactc agcagagaaa ggttgggatg acagcttctg
+      721 gaagatgatt ggtttggaag atctcattgg tgataattac agcaaaatag gaaatctcgt
+      781 gctgcctcct ggaacttctc ttggaagtgg gctcacacca gaggcagcca aagagctggg
+      841 tcttcccccg ggcattgctg tggcagcctc actcattgac gcccatgcag gaggactagg
+      901 agtaattgga gcagatgtga gaggttatgg tctcgtctgt gaggaacagc cagtgacatc
+      961 acggctagct gtcatctgtg gaacatcatc ttgtcacatg gggatcagca aagatccaat
+     1021 ttttgtgcca ggcgtttggg gaccttattt ctcagccatg gttcctggct tctggctgaa
+     1081 tgaaggtggt cagagtgtga ctggaaaatt gatagaccat atggtgcaga gccatgctgc
+     1141 ttttcctgaa ctacaagcca aggccacagc cagatgccag agtatatatg catatttgaa
+     1201 cagtcacctg gatctgatta agaaggctca gcctgtgggt ttcctcactg ttgatttaca
+     1261 tgtttggcca gatttccatg gcaaccgatc tcccttagca gatctgactc taaagggcat
+     1321 ggtcactgga ttgacactgt ctcagggcct tgatgatctt gccatcctct acctcgccac
+     1381 tgttcaagcc attgcttttg ggactcgttt catcattgag gccatgcaga cagcagggca
+     1441 ctctctcagt accctcttct tatgtggagg cctaagcaag aacccccttt ttgtgcagat
+     1501 gcatgctgac attactggca tgcctgtggt cctgtcacaa gaggtggagt ctgtcctcgt
+     1561 gggtgctgct gttctgggtg cctgtgcctc tggggacttc acatctgtgc aggaggcaat
+     1621 ggcgagaatg agcaaagtgg ggaaagttgt gttcccaaga cgtgaggata aaaaatatta
+     1681 tgacaagaag tatcaagtat ttctgaagat ggtggaacac cagaaggagt attcggcaat
+     1741 catgaatgga aactgaacag cgtttgtggg tgccaatcca gaaagactct gtgccatttg
+     1801 ttaggcgtcc ctgcatttcc atcttatatt caatgccctt taggtattat gttggcatac
+     1861 ctgtctcatc ttctaataaa aattttggca tgcacaagca
+//
+
+LOCUS       XM_016964906            2277 bp    mRNA    linear   ROD 27-MAY-2016
+DEFINITION  PREDICTED: Cricetulus griseus FGGY carbohydrate kinase domain
+            containing (Fggy), transcript variant X2, mRNA.
+ACCESSION   XM_016964906
+VERSION     XM_016964906.1  GI:1032928330
+DBLINK      BioProject: PRJNA239316
+KEYWORDS    RefSeq.
+SOURCE      Cricetulus griseus (Chinese hamster)
+  ORGANISM  Cricetulus griseus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Cricetidae; Cricetinae; Cricetulus.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_006869649.1) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Version          :: Cricetulus griseus Annotation
+                                           Release 102
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 7.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..2277
+                     /organism="Cricetulus griseus"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:10029"
+                     /chromosome="Unknown"
+                     /country="China"
+                     /collection_date="Feb-2011"
+     gene            1..2277
+                     /gene="Fggy"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon. Supporting evidence
+                     includes similarity to: 1 Protein, and 100% coverage of
+                     the annotated genomic feature by RNAseq alignments,
+                     including 13 samples with support for all annotated
+                     introns"
+                     /db_xref="GeneID:100763881"
+     CDS             395..2083
+                     /gene="Fggy"
+                     /codon_start=1
+                     /product="FGGY carbohydrate kinase domain-containing
+                     protein isoform X1"
+                     /protein_id="XP_016820395.1"
+                     /db_xref="GI:1032928331"
+                     /db_xref="GeneID:100763881"
+                     /translation="MMSGGDQEPGHYYVGIDVGTGSVRAALVDQRGILLAFAERPIKK
+                     WEPQFNHHEQSSEDIWAACCHVTKKIVQGIDVHRIRGLGFDATCSLVVLDKQFHPLPV
+                     NHEGDSYRNIIMWLDHRAVSQVHRINKTKHDVLQYVGGVMSVEMQAPKLLWLKENLRE
+                     TCWDKAGHFFDLPDFLSWKATGVTARSLCSLVCKWTYSAEKGWDDSFWKMIGLEDLIG
+                     DNYSKIGNLVLPPGTSLGSGLTPEAAKELGLPPGIAVAASLIDAHAGGLGVIGADVRG
+                     YGLVCEEQPVTSRLAVICGTSSCHMGISKDPIFVPGVWGPYFSAMVPGFWLNEGGQSV
+                     TGKLIDHMVQSHAAFPELQAKATARCQSIYAYLNSHLDLIKKAQPVGFLTVDLHVWPD
+                     FHGNRSPLADLTLKGMVTGLTLSQGLDDLAILYLATVQAIAFGTRFIIEAMQTAGHSL
+                     STLFLCGGLSKNPLFVQMHADITGMPVVLSQEVESVLVGAAVLGACASGDFTSVQEAM
+                     ARMSKVGKVVFPRREDKKISRKYLYVKMRKFLHKRVMYHIQVYTDIMTRSIKYF"
+ORIGIN      
+        1 tgcctggacc gccctcctgg gtgcggcgtg gctgtgcgtg gtggcctgct ggcctgctag
+       61 ctagaatgtg atttcatatt ggacaagaag cagtaactga acatctgccg gctgacttgt
+      121 tttagaatcc ccaagagcca tgtggctaag gaaccatcat ttctctgaag tcgagggtgt
+      181 acattgctgc tcaggttaaa gttggaccac aagagctctg actgcctggc tggccaggag
+      241 gacagctgtg ctgtgccagt gaagttactg tctggaggct gcaccacttg agactggaga
+      301 gtgagagccc tgggagatga ctgtgccatg tggctcaccc tgtgagcagc cccatgggcc
+      361 cagggattcc tgagggttcc caggcaaagg aaccatgatg tctggtggag accaggagcc
+      421 aggtcactat tatgtgggca tcgatgttgg aacaggtagt gtgcgtgcag ccctggtaga
+      481 ccagagagga atacttctgg cttttgcaga acggccaatt aagaagtggg agccacaatt
+      541 caaccaccat gagcagtcct cagaggacat ctgggcagcg tgttgccatg tcacaaagaa
+      601 aattgttcaa ggaattgatg tacaccgaat ccgaggactt gggtttgatg ccacgtgttc
+      661 tttggttgtc ttggacaaac agtttcatcc tttaccagta aaccatgaag gggattccta
+      721 tcgaaacatt atcatgtggc tggaccatcg agcagtcagc caggttcaca ggatcaacaa
+      781 gaccaagcat gatgtccttc agtatgtagg tggtgtgatg tctgtggaga tgcaggcccc
+      841 aaagctcctc tggctgaagg agaacttgag agagacttgc tgggacaagg cgggacattt
+      901 ctttgatctc ccagacttct tatcatggaa ggcaacaggt gtcacagcac ggtctctctg
+      961 ctcactggtg tgcaaatgga catactcagc agagaaaggt tgggatgaca gcttctggaa
+     1021 gatgattggt ttggaagatc tcattggtga taattacagc aaaataggaa atctcgtgct
+     1081 gcctcctgga acttctcttg gaagtgggct cacaccagag gcagccaaag agctgggtct
+     1141 tcccccgggc attgctgtgg cagcctcact cattgacgcc catgcaggag gactaggagt
+     1201 aattggagca gatgtgagag gttatggtct cgtctgtgag gaacagccag tgacatcacg
+     1261 gctagctgtc atctgtggaa catcatcttg tcacatgggg atcagcaaag atccaatttt
+     1321 tgtgccaggc gtttggggac cttatttctc agccatggtt cctggcttct ggctgaatga
+     1381 aggtggtcag agtgtgactg gaaaattgat agaccatatg gtgcagagcc atgctgcttt
+     1441 tcctgaacta caagccaagg ccacagccag atgccagagt atatatgcat atttgaacag
+     1501 tcacctggat ctgattaaga aggctcagcc tgtgggtttc ctcactgttg atttacatgt
+     1561 ttggccagat ttccatggca accgatctcc cttagcagat ctgactctaa agggcatggt
+     1621 cactggattg acactgtctc agggccttga tgatcttgcc atcctctacc tcgccactgt
+     1681 tcaagccatt gcttttggga ctcgtttcat cattgaggcc atgcagacag cagggcactc
+     1741 tctcagtacc ctcttcttat gtggaggcct aagcaagaac cccctttttg tgcagatgca
+     1801 tgctgacatt actggcatgc ctgtggtcct gtcacaagag gtggagtctg tcctcgtggg
+     1861 tgctgctgtt ctgggtgcct gtgcctctgg ggacttcaca tctgtgcagg aggcaatggc
+     1921 gagaatgagc aaagtgggga aagttgtgtt cccaagacgt gaggataaaa aaatatcccg
+     1981 taaatatctc tacgtgaaga tgaggaagtt tctgcacaaa cgggttatgt atcatatcca
+     2041 agtttacaca gatattatga caagaagtat caagtatttc tgaagatggt ggaacaccag
+     2101 aaggagtatt cggcaatcat gaatggaaac tgaacagcgt ttgtgggtgc caatccagaa
+     2161 agactctgtg ccatttgtta ggcgtccctg catttccatc ttatattcaa tgccctttag
+     2221 gtattatgtt ggcatacctg tctcatcttc taataaaaat tttggcatgc acaagca
+//
+
+LOCUS       XM_007610102            1980 bp    mRNA    linear   ROD 27-MAY-2016
+DEFINITION  PREDICTED: Cricetulus griseus FGGY carbohydrate kinase domain
+            containing (Fggy), transcript variant X1, mRNA.
+ACCESSION   XM_007610102
+VERSION     XM_007610102.2  GI:1032928329
+DBLINK      BioProject: PRJNA239316
+KEYWORDS    RefSeq.
+SOURCE      Cricetulus griseus (Chinese hamster)
+  ORGANISM  Cricetulus griseus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Cricetidae; Cricetinae; Cricetulus.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_006869649.1) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            On May 27, 2016 this sequence version replaced gi:625234278.
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Version          :: Cricetulus griseus Annotation
+                                           Release 102
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 7.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..1980
+                     /organism="Cricetulus griseus"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:10029"
+                     /chromosome="Unknown"
+                     /country="China"
+                     /collection_date="Feb-2011"
+     gene            1..1980
+                     /gene="Fggy"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon. Supporting evidence
+                     includes similarity to: 1 Protein, and 100% coverage of
+                     the annotated genomic feature by RNAseq alignments,
+                     including 19 samples with support for all annotated
+                     introns"
+                     /db_xref="GeneID:100763881"
+     CDS             98..1786
+                     /gene="Fggy"
+                     /codon_start=1
+                     /product="FGGY carbohydrate kinase domain-containing
+                     protein isoform X1"
+                     /protein_id="XP_007608292.1"
+                     /db_xref="GI:625234279"
+                     /db_xref="GeneID:100763881"
+                     /translation="MMSGGDQEPGHYYVGIDVGTGSVRAALVDQRGILLAFAERPIKK
+                     WEPQFNHHEQSSEDIWAACCHVTKKIVQGIDVHRIRGLGFDATCSLVVLDKQFHPLPV
+                     NHEGDSYRNIIMWLDHRAVSQVHRINKTKHDVLQYVGGVMSVEMQAPKLLWLKENLRE
+                     TCWDKAGHFFDLPDFLSWKATGVTARSLCSLVCKWTYSAEKGWDDSFWKMIGLEDLIG
+                     DNYSKIGNLVLPPGTSLGSGLTPEAAKELGLPPGIAVAASLIDAHAGGLGVIGADVRG
+                     YGLVCEEQPVTSRLAVICGTSSCHMGISKDPIFVPGVWGPYFSAMVPGFWLNEGGQSV
+                     TGKLIDHMVQSHAAFPELQAKATARCQSIYAYLNSHLDLIKKAQPVGFLTVDLHVWPD
+                     FHGNRSPLADLTLKGMVTGLTLSQGLDDLAILYLATVQAIAFGTRFIIEAMQTAGHSL
+                     STLFLCGGLSKNPLFVQMHADITGMPVVLSQEVESVLVGAAVLGACASGDFTSVQEAM
+                     ARMSKVGKVVFPRREDKKISRKYLYVKMRKFLHKRVMYHIQVYTDIMTRSIKYF"
+ORIGIN      
+        1 tgcctggacc gccctcctgg gtgcggcgtg gctgtgcgtg gtggcctgct ggcctgctag
+       61 ctagaatgtg atttcatatt ggacaagcaa aggaaccatg atgtctggtg gagaccagga
+      121 gccaggtcac tattatgtgg gcatcgatgt tggaacaggt agtgtgcgtg cagccctggt
+      181 agaccagaga ggaatacttc tggcttttgc agaacggcca attaagaagt gggagccaca
+      241 attcaaccac catgagcagt cctcagagga catctgggca gcgtgttgcc atgtcacaaa
+      301 gaaaattgtt caaggaattg atgtacaccg aatccgagga cttgggtttg atgccacgtg
+      361 ttctttggtt gtcttggaca aacagtttca tcctttacca gtaaaccatg aaggggattc
+      421 ctatcgaaac attatcatgt ggctggacca tcgagcagtc agccaggttc acaggatcaa
+      481 caagaccaag catgatgtcc ttcagtatgt aggtggtgtg atgtctgtgg agatgcaggc
+      541 cccaaagctc ctctggctga aggagaactt gagagagact tgctgggaca aggcgggaca
+      601 tttctttgat ctcccagact tcttatcatg gaaggcaaca ggtgtcacag cacggtctct
+      661 ctgctcactg gtgtgcaaat ggacatactc agcagagaaa ggttgggatg acagcttctg
+      721 gaagatgatt ggtttggaag atctcattgg tgataattac agcaaaatag gaaatctcgt
+      781 gctgcctcct ggaacttctc ttggaagtgg gctcacacca gaggcagcca aagagctggg
+      841 tcttcccccg ggcattgctg tggcagcctc actcattgac gcccatgcag gaggactagg
+      901 agtaattgga gcagatgtga gaggttatgg tctcgtctgt gaggaacagc cagtgacatc
+      961 acggctagct gtcatctgtg gaacatcatc ttgtcacatg gggatcagca aagatccaat
+     1021 ttttgtgcca ggcgtttggg gaccttattt ctcagccatg gttcctggct tctggctgaa
+     1081 tgaaggtggt cagagtgtga ctggaaaatt gatagaccat atggtgcaga gccatgctgc
+     1141 ttttcctgaa ctacaagcca aggccacagc cagatgccag agtatatatg catatttgaa
+     1201 cagtcacctg gatctgatta agaaggctca gcctgtgggt ttcctcactg ttgatttaca
+     1261 tgtttggcca gatttccatg gcaaccgatc tcccttagca gatctgactc taaagggcat
+     1321 ggtcactgga ttgacactgt ctcagggcct tgatgatctt gccatcctct acctcgccac
+     1381 tgttcaagcc attgcttttg ggactcgttt catcattgag gccatgcaga cagcagggca
+     1441 ctctctcagt accctcttct tatgtggagg cctaagcaag aacccccttt ttgtgcagat
+     1501 gcatgctgac attactggca tgcctgtggt cctgtcacaa gaggtggagt ctgtcctcgt
+     1561 gggtgctgct gttctgggtg cctgtgcctc tggggacttc acatctgtgc aggaggcaat
+     1621 ggcgagaatg agcaaagtgg ggaaagttgt gttcccaaga cgtgaggata aaaaaatatc
+     1681 ccgtaaatat ctctacgtga agatgaggaa gtttctgcac aaacgggtta tgtatcatat
+     1741 ccaagtttac acagatatta tgacaagaag tatcaagtat ttctgaagat ggtggaacac
+     1801 cagaaggagt attcggcaat catgaatgga aactgaacag cgtttgtggg tgccaatcca
+     1861 gaaagactct gtgccatttg ttaggcgtcc ctgcatttcc atcttatatt caatgccctt
+     1921 taggtattat gttggcatac ctgtctcatc ttctaataaa aattttggca tgcacaagca
+//
+
+LOCUS       XM_016975574            2935 bp    mRNA    linear   ROD 27-MAY-2016
+DEFINITION  PREDICTED: Cricetulus griseus calcyphosine 2 (Caps2), transcript
+            variant X1, mRNA.
+ACCESSION   XM_016975574
+VERSION     XM_016975574.1  GI:1032844467
+DBLINK      BioProject: PRJNA72741
+KEYWORDS    RefSeq.
+SOURCE      Cricetulus griseus (Chinese hamster)
+  ORGANISM  Cricetulus griseus
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Glires; Rodentia;
+            Sciurognathi; Muroidea; Cricetidae; Cricetinae; Cricetulus.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_003613895.1) annotated using gene prediction method: Gnomon.
+            Also see:
+                Documentation of NCBI's Annotation Process
+            
+            ##Genome-Annotation-Data-START##
+            Annotation Provider         :: NCBI
+            Annotation Status           :: Full annotation
+            Annotation Version          :: Cricetulus griseus Annotation
+                                           Release 102
+            Annotation Pipeline         :: NCBI eukaryotic genome annotation
+                                           pipeline
+            Annotation Software Version :: 7.0
+            Annotation Method           :: Best-placed RefSeq; Gnomon
+            Features Annotated          :: Gene; mRNA; CDS; ncRNA
+            ##Genome-Annotation-Data-END##
+FEATURES             Location/Qualifiers
+     source          1..2935
+                     /organism="Cricetulus griseus"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:10029"
+                     /chromosome="Unknown"
+                     /cell_line="CHO-K1"
+     gene            1..2935
+                     /gene="Caps2"
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: Gnomon. Supporting evidence
+                     includes similarity to: 1 Protein, and 100% coverage of
+                     the annotated genomic feature by RNAseq alignments,
+                     including 6 samples with support for all annotated
+                     introns"
+                     /db_xref="GeneID:100760290"
+     CDS             296..2083
+                     /gene="Caps2"
+                     /codon_start=1
+                     /product="calcyphosin-2 isoform X1"
+                     /protein_id="XP_016831063.1"
+                     /db_xref="GI:1032844468"
+                     /db_xref="GeneID:100760290"
+                     /translation="MDLEVKGVAASRSHPRFFSRRKNSLHQGWTSRSRAIQNPCLTMV
+                     PPLDLGSLIDSDEEDDFSQTPPSTLNVHLKPPQLPSAVGWVVPYTQHHLNEEQDIIPE
+                     DLPAPTGKYKLKYQQYATEMKEGYKQYIQRIADKAKITSMQDTSRNKVNEKHDQEEEA
+                     SVDDLVTLDRKALLQQGYADSPYHIRNSVRKSDAETVAAEKKKQTVVEQMMLDHLSRA
+                     VISDPEQGLNTEEQESSPVPPDPEGAPLRVRRRTLHETKIRTTSTLTVNDLAQKVEFD
+                     GRVLSRNGRDACRELIGFFFTHNQSLAVYEYRKFGKNRTNVLPFITKDTYSHQCGRRK
+                     GKPYRLGDFYTGATLTFLSCDHPSLPKSIKENTLFRLRITNIDQIALNSLKTAFDEHE
+                     EDTLSQEAQDWLVLQAIQADKLKEQLCKRGVRILTGLGKYFHHLDKAGSGLLEKADFQ
+                     QALKVFNLQVSEQDFESSWLILQGNGHGKNKVDYGEFKRAIFGEMNEYRKSFVRKAFM
+                     KLDFNKTGIVSVIDIRKCYCAKKHPSVISGHSAEEEIKSSFLETLRDACSKSDEVSYG
+                     EFEDYYEGLSIEIADDEDFVSILRTPWGI"
+ORIGIN      
+        1 gtttaggaca gagctggtgt ctcaggtctg ggagcctaca acctaaagaa gaaactcttt
+       61 aaacatcggg gtcactgaaa agagagtcat ctgaagtgtc aataggaata ttttcaagtt
+      121 tgatgattgg tcctgttttc agaatgtgtt tactcttggt tacaaaatat tcttgaattt
+      181 tctattagag taggattcct ggcctaagat cctcctgcaa tcctctttga agaacctgtg
+      241 tggatccagc aagcccaaca gtgcagcata ttgcatgaga aatacacaca tttgaatgga
+      301 tttagaggtc aaaggagtgg ctgcgtctag gagccatcct cgattctttt ctcgacgaaa
+      361 gaattcacta caccaaggat ggacttccag atcacgggca atccagaatc cctgtctaac
+      421 tatggtccca ccacttgatt tgggaagcct tattgactct gatgaggagg atgatttttc
+      481 acaaacacca cctagtacac tgaacgttca tctcaagcca ccacagttgc cttctgctgt
+      541 gggttgggtt gtgccatata ctcagcatca tctgaacgaa gaacaggaca taatacccga
+      601 ggatctgcca gccccaacag gaaaatacaa gctaaaatat cagcaatatg caactgaaat
+      661 gaaagagggt tataaacagt atattcagag aattgcagac aaggcaaaaa taactagcat
+      721 gcaagacact tcaagaaaca aggtgaatga aaagcatgac caggaggaag aagccagtgt
+      781 ggatgacctt gtgactttgg acaggaaagc cctgctgcag caaggttatg cagatagccc
+      841 ttaccacata aggaacagtg tgaggaaatc agatgcggaa actgtggctg cagagaagaa
+      901 gaagcaaact gttgtggagc aaatgatgct agaccactta tccagggctg tcatcagtga
+      961 tccagaacaa ggcttaaaca ctgaggaaca agagagttct cctgtccctc cagacccaga
+     1021 gggggcacca cttcgagtta ggagacggac cctgcatgaa acaaagataa gaaccacctc
+     1081 cacattaaca gtgaatgacc ttgctcagaa agtagaattt gatgggagag tattatcaag
+     1141 aaatggacgc gatgcctgca gagaactgat tggatttttc tttacccaca accagtccct
+     1201 agctgtgtat gaatatcgaa agtttgggaa aaacagaaca aatgtgcttc cttttattac
+     1261 aaaagacact tacagtcatc agtgtggacg aagaaaagga aagccgtacc ggcttggcga
+     1321 cttttatacg ggtgcaactt tgacattttt gagctgcgat catcctagcc ttccaaagag
+     1381 cataaaagaa aatacattgt ttagacttcg aattacaaat attgatcaaa tagctttgaa
+     1441 ttccctgaaa actgcctttg acgaacatga ggaggacacc ttgagtcagg aggcacagga
+     1501 ctggctggtg ctacaggcca ttcaggcaga caaactaaaa gaacaactct gcaagagagg
+     1561 tgttcgcatt ctgactggat tgggaaaata ctttcatcat ttggacaagg caggaagtgg
+     1621 gctgttagag aaggcagatt ttcagcaagc cctgaaagtc tttaacttac aagtgtctga
+     1681 acaggatttt gagtcttcct ggctaattct gcaaggcaat ggccatggca agaataaggt
+     1741 tgattatgga gaattcaaac gtgccatttt tggagaaatg aatgaatata ggaaatcgtt
+     1801 tgttcgaaag gccttcatga aactggattt caacaaaact ggcattgtgt ctgttataga
+     1861 cataagaaag tgctactgtg caaagaagca tccgagtgtg atttcagggc attcagcgga
+     1921 ggaggaaatc aaatcatctt ttctagagac attaagagat gcctgcagca agtctgatga
+     1981 agtttcatac ggtgaatttg aagattacta tgaaggccta agtatagaga tagcagacga
+     2041 tgaagatttt gtcagcatct tacgtactcc atggggaatt tagttttaaa taatgcacag
+     2101 tctcatcagt tccaagtatt ttatagaaaa gtttaatttt atataaaacg tgattgactt
+     2161 gtaatatatt tttcaacgat tctttacaat ttttttttca aaaaatttaa gtctgggaag
+     2221 acctatttag aaatagatgc aggtgtgttt gcaagcacac atgcatgctt acctgtccaa
+     2281 atgtttgtaa agacaggtat ttgtgttatt cctttccctt ttattttaga aaattagttt
+     2341 agaaattagc ctcagtagag aagtaagatc cccattaaac tgttccagga cttgtataga
+     2401 gtaattaagt ttcctatcct ttctcaaatt tctaataacc ttttcctaga atatacttgc
+     2461 caccattctc aatttaatga cccaattcag atcaaagctg aaaagtgcaa cttgtttgaa
+     2521 gcacaaaatt ttaacatata tacaaaagca atgtcataat cagtatgatt ataggtgttt
+     2581 tctgtgcatt atattttgaa tggctggtgt ttacccctca gtgtttcttg aaaaagactt
+     2641 gtcatatata tttttgtctt caaaattaca tactgctctc tgttcagtgg gaaaaattcc
+     2701 actgtacttt tcattttagc tgtcatattt tctgtataca aatgttatat ataaacaata
+     2761 aaatgtagaa aatattggaa tgtagaaata tcttctgaga ctactaagtg aagaattcaa
+     2821 ggataactca acagtttttt agacaaagtg taaatcatat tttgtgtcac aaaatgaaga
+     2881 tgtgatatcc taagtacctc tgtttgttat aataaacaga atcttttctt ctaaa
+//
+
