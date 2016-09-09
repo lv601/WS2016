@@ -1,3 +1,5 @@
+# Angabe nicht gefunden...
+
 def get_segments(sequence, window_size):
     # Possible number of seqs are string length - window size + 1
     for i in range(0, len(sequence) - window_size + 1):
