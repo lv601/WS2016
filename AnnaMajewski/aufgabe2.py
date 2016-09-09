@@ -30,9 +30,11 @@ print("Der IQ beträgt:", addressbuch[0]["Eigenschaften"]["IQ"])
 
 # Geben Sie die Anzahl der Hobbies aus
 
-count = 0
-for x in addressbuch[0]["Hobbies"]:
-    count += 1
+for index, x in enumerate(addressbuch[0]["Hobbies"]):
+    count = index+1
+# mit enumerate und index den Index mitzählen lassen
+# Zählen beginnt mit 0 deshalb +1
+
 print("Die Anzahl der Hobbies ist:", count)
 
 # Fügen Sie einen ähnlichen Datensatz hinzu.
