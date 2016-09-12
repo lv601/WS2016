@@ -1,6 +1,9 @@
 ## Date: 05.09.2016
 ## Author: Anna Majewski
 ## Description: Bitweise Opertoren und ihre Anwendung
+## Ich habe 2 Funktionen geschrieben, weil ich nicht nur abfragen wollte, welche Flags gesetzt sind,
+## sondern auch selbst welche setzen wollte.
+## Mit set() kann man jetzt Flags aufaddieren und mit isset() anzeigen welche Flags gesetzt sind.
 
 # gesetzte Flags kombinieren: flag1 | flag3
 

@@ -130,13 +130,18 @@ def get_gc_content(db, index):
     """reads database and returns GC content of the sequence in % """
     seq = db[index]["sequence"]
     count = 0
+# count wird verwendet für die Anzahl der A und Ts
     for ind, char in enumerate(seq):
         if (char == "A") or (char == "T"):
             continue
+# Wenn ein A oder ein T erkannt wird, springt die Schleife zur nächsten Iteration
         else:
             count +=1
+# Sonst wird count um 1 erhöht.
     content = count / (ind+1)
+# Die Anzahl der Basen in der Sequenz gibt mir ind, man muss aber +1 rechnen
     content *= 100
+# Die Zahl wird mit 100 multipliziert um es in Prozent angeben zu können.
     return content
 
 print(get_gc_content(my_db, 9))
