@@ -9,7 +9,7 @@
 + Aufgabe 4 - aufgabe4.py
 
 ## Infos
-*Nachdem jeder meine lokalen Dateien auf seinem PC liegen hat,
+*Nachdem jeder meine Dateien auf seinem PC liegen hat,
 werden die immer wieder hochgeladen, selbst wenn ich meine Dateien lösche.*
 
 ### Eigentlich gelöschte Dateien
