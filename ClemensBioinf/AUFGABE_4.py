@@ -8,10 +8,13 @@ v7 = 64
 v8 = 128
 
 pruef = v1 | v2 | v6 | v8
+print(bin(pruef))
 
 print(pruef)
 
 for i in range(8):
     if pruef & 2**i:
         print("{} set.".format(2**i))
+
+
 
