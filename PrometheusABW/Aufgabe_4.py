@@ -1,3 +1,7 @@
+# TIPP: Verwenden Sie für Konstanten wie diese uppercase Notation N1, N2, ...
+# Sehen sie z.B. das Modul re
+# import re
+# re.IGNORECASE
 flaglist = []
 a=2
 b=4

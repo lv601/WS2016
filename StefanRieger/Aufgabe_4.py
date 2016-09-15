@@ -1,3 +1,7 @@
+# TIPP: Verwenden Sie für Konstanten wie diese uppercase Notation VAR1, VAR2, ...
+# Sehen sie sich z.B. das Modul re an
+# import re
+# re.IGNORECASE
 var1 = 1
 var2 = 2
 var3 = 4
