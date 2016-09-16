@@ -25,3 +25,18 @@ print("Vorspeisen:\n".ljust(120))
 print(("Suppe deluxe").ljust(50), ("Für die große Geldbörse").ljust(50), ("{tausend}.{hundert},{cent} €").format(tausend="1", hundert="300", cent="50").rjust(20))
 print(("Suppe").ljust(50), ("Tagessuppe von vorvorgestern").ljust(50), ("{euro}.{cent} €").format(euro="2",cent="30").rjust(20))
 print(("").center(123, '*'))
+
+print("\n")
+
+#Oh Tannenbaum#
+
+for i in (range(1,22,2)):
+    if i == 1:
+        print(("x").center(30))
+        i+=1
+    elif i < 20:
+        print(("#"*i).center(30))
+        i+=1
+    else:
+        print(("H").center(30))
+
