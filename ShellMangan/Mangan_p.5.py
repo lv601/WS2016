@@ -6,8 +6,9 @@ add_contact(Addressbuch, Vorname="Pia", Nachname="Bauer", Hobbies=["Boxen"], Alt
 add_contact(Addressbuch, **Addressbuch[0])
 print(Addressbuch[-1])
 
+# ACHTUNG da waren ein paar Typos drin
 def get_sequence(sequence, window_size):
-    for i in range(o, len(sequence)-window_size+l):
-        print(" "*i, sequence[i:i+windows_size], sep= " ")
+    for i in range(0, len(sequence) - window_size + 1):
+        print(" "*i, sequence[i:i+window_size], sep=" ")
 
-        
+get_sequence("ABCDEFGHIJ", 4)

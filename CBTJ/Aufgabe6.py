@@ -7,6 +7,9 @@ list_of_dict = []
 def pars4fasta (list_of_dict, file_path):
     file_handle = open(file_path, "r")
 
+    # TIPP: zaehler wird nicht gebraucht. Auf das letzte Element in einer Liste
+    # können Sie einfach mit dem ersten negativen Index zugreifen
+    # list_of_dict[-1]['sequence']+= sequence
     zaehler = -1                                         # -1 Anzahl der Dict. in Liste
 
     for line in file_handle:
@@ -21,6 +24,8 @@ def pars4fasta (list_of_dict, file_path):
             zaehler +=1
 
         else:
+            # TIPP: Kann gekürzt werden
+            # sequence = line.strip()                         #entfernt linefeed, newline
             sequence = line
             sequence = sequence.strip()                         #entfernt linefeed, newline
 
@@ -33,7 +38,3 @@ def pars4fasta (list_of_dict, file_path):
 
 
 pars4fasta(list_of_dict, "/home/claudia/ws2016/examples/sequence.fasta")
-
-
-
-
