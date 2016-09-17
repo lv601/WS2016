@@ -34,6 +34,7 @@ def parse_fasta2(file_name, db):
           db[-1]['sequence'] += (line.rstrip())
           db[-1]['raw'] += (line)
 
+
 def stop_time(func, *args, **kargs):
     import time
     start = time.time()
@@ -49,4 +50,4 @@ stop_time(parse_fasta1, "../examples/long.fasta", db=d)
 stop_time(parse_fasta2, "../examples/long.fasta", db=d)
 
 # Compare both sequences
-d[0]['sequence'] == d[1]['sequence'].decode()
+print(d[0]['sequence'] == d[1]['sequence'].decode())

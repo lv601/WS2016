@@ -22,6 +22,19 @@ print("\n")
 
 print((" Menü ").center(123, '*'))
 print("Vorspeisen:\n".ljust(120))
+# TIPP: anstatt Zahlen aufzusplitten können Sie mit
+# "{:,.2f}".format(1500.50) ebenfalls das Tausender-
+# trennzeichen ausgeben. Leider habe ich so keine
+# Möglichkeit für float Zeichen gefunden, die die
+# deutsche Notation verwendet. Sie können aber die
+# die Zahl vorher mit locale Modul formatieren.
+#
+# import locale
+# locale.setlocale(locale.LC_NUMERIC, 'de_DE.utf8')
+# "{:,.2f}".format(1500.50)
+#
+# Verfügbare locals auf ihrem Computer bekommen Sie
+# mit 'locale -a'
 print(("Suppe deluxe").ljust(50), ("Für die große Geldbörse").ljust(50), ("{tausend}.{hundert},{cent} €").format(tausend="1", hundert="300", cent="50").rjust(20))
 print(("Suppe").ljust(50), ("Tagessuppe von vorvorgestern").ljust(50), ("{euro}.{cent} €").format(euro="2",cent="30").rjust(20))
 print(("").center(123, '*'))
@@ -30,6 +43,8 @@ print("\n")
 
 #Oh Tannenbaum#
 
+# Sehr hübsch jetzt fehlen nur noch die Kerzen "\U0001F56F"
+# am Rand und ein paar Christbaumkugeln ...
 for i in (range(1,22,2)):
     if i == 1:
         print(("x").center(30))
