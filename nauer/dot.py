@@ -10,4 +10,4 @@ def dot_plot(seq1, seq2):
         print()
     print("  " + "|".join([c for c in seq2]))
 
-dot_plot("ABCDEFGHIKLMO", "ABCFHJKLNO")
+dot_plot("ABCDEFGHIKLMO", "CBAABCFHJKLNOEDC")

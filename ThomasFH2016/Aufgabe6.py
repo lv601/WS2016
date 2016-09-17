@@ -36,6 +36,10 @@ def get_fasta(db, index):
     fasta += insert_linebreak(get_sequence(db, index), 80)
     return fasta
 
+# TIPP: verwenden Sie das Underscore Zeichen um Hilfsfunktionen zu kennzeichnen,
+# die nicht für den direkten Aufruf von außen gedacht sind, und nur modulintern
+# verwendet werden
+# def _insert_linebreak(string, length):
 def insert_linebreak(string, length):
     lines = ''
     for i in range(0, len(string), length):
