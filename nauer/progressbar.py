@@ -3,7 +3,7 @@ def print_progress_bar(percent, length=80, spinner=[]):
     effective_length = length - 6
     progress = int(effective_length / 100 * percent)
 
-    # spinner must be a mutable to save state between different finction calls
+    # spinner must be a mutable to save state between different function calls
     if not spinner:
         spinner.append("/")
 
