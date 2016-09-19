@@ -57,7 +57,7 @@ class Menu:
         sVorspeisen = self.strVorspeise
         for entry in self.lVorspeisen:
             sVorspeisen += u'\u2551' + ("  \u257A {vorspeisen[0]:<15}{vorspeisen[1]:<30}"
-                           "{vorspeisen[2]:>10,.2f} €\n").format(vorspeisen=entry)
+                           "{vorspeisen[2]:>10,.2f} €" + " "*12  + "\u2551\n").format(vorspeisen=entry)
         return sVorspeisen
 
     def Write_Hauptspeisen(self):
@@ -71,7 +71,7 @@ class Menu:
         sHauptspeisen += self.strHauptspeise
         for entry in self.lHauptspeisen:
             sHauptspeisen += u'\u2551' + ("  \u257A {hauptspeisen[0]:<15}{hauptspeisen[1]:<30}"
-                           "{hauptspeisen[2]:>10,.2f} €\n").format(hauptspeisen=entry)
+                           "{hauptspeisen[2]:>10,.2f} €" + " "*12  + "\u2551\n").format(hauptspeisen=entry)
         return sHauptspeisen
 
     def Write_Nachspeisen(self):
@@ -85,7 +85,7 @@ class Menu:
         sNachspeisen += self.strNachspeise
         for entry in self.lNachspeisen:
             sNachspeisen += u'\u2551' + ("  \u257A {nachspeisen[0]:<15}{nachspeisen[1]:<30}"
-                           "{nachspeisen[2]:>10,.2f} €\n").format(nachspeisen=entry)
+                           "{nachspeisen[2]:>10,.2f} €" + " "*12  + "\u2551\n").format(nachspeisen=entry)
         return sNachspeisen
 
     def Write_Footer(self):
