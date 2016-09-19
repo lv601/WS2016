@@ -20,17 +20,15 @@ def ratespiel(versuche):
         elif int(eingabezahl) == zahl:
             print("Juhu Sie haben die gesuchte Zahl gefunden")
             print("Sie haben", i+1, "Versuche gebraucht")
-            # TIPP: Anstatt nur die Schleife zu verlassen, können Sie mit return
-            # auch gleich die Funktion verlassen und auch gleich einen Rückgabewert
-            # mitgeben. Z.B. bei Erfolg die erratete Zahl und bei nicht Erfolg None
-            # zurückgeben. Somit können Sie den Rückgabewert der Funktion in andern
-            # Funktionen mitverabrbeiten, wenn gewünscht.
-            #    return zahl
-            #    return None # in Zeile 33
+            return zahl #so kann die zu erratende Zahl später in einer Variable gespeichert werden
             break
         else:
             print("Leider haben Sie die gesuchte Zahl nicht erraten können, es war die ", zahl)
+            return None #aus der Funktion kommt kein Rückgabewert
             break
 
 eingabe = int(input("Wie oft wollen Sie raten?"))
-ratespiel(eingabe)
+
+return_wert = ratespiel(eingabe)
+
+print(return_wert)
