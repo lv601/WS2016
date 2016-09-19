@@ -19,8 +19,9 @@ deluxe_preis = deluxe[1]
 
 print(menue.center(40, ' '),"\n",vors.ljust(40, ' '),"\n",tages_name.ljust(40, ' '),"\n",tages_preis.ljust(40, ' '),"\n",deluxe_name.ljust(40, ' '),"\n",deluxe_preis.ljust(40, ' '))
 
-#print(vors)
-#print(suppe)
+print(vors)
+print(suppe)
+print(suppe)
 #print(tages_name)
 #print(tages_preis)
 #print(deluxe_name)
