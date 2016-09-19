@@ -1,3 +1,5 @@
+from time import time
+
 def fasta_parser(path):
     data = []
     total_raw = ""
@@ -145,7 +147,9 @@ def get_output(db, index, type="markdown"):
         return attributes + "\n" + attribute_content
 
 
-
-#fasta_parser("../examples/sequence.fasta")
+start = time()
+fasta_parser("../examples/sequence.fasta")
+end = time()
+print("Total time: {}".format(round(end-start, 5)))
 #db = genbank_parser("../examples/sequence.gb")
 
