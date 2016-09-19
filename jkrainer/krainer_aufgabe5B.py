@@ -20,10 +20,15 @@ def ratespiel(versuche):
         elif int(eingabezahl) == zahl:
             print("Juhu Sie haben die gesuchte Zahl gefunden")
             print("Sie haben", i+1, "Versuche gebraucht")
+            return zahl #so kann die zu erratende Zahl später in einer Variable gespeichert werden
             break
         else:
             print("Leider haben Sie die gesuchte Zahl nicht erraten können, es war die ", zahl)
+            return None #aus der Funktion kommt kein Rückgabewert
             break
 
 eingabe = int(input("Wie oft wollen Sie raten?"))
-ratespiel(eingabe)
+
+return_wert = ratespiel(eingabe)
+
+print(return_wert)

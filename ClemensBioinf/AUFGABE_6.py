@@ -7,8 +7,17 @@ def fasta_parser(path):
     for sequence in total_raw.split(">")[1:]:
         header = True
         curr_seq = {}
+        # TIPP: Hier könnten Sie gleich sequence übergeben
+        # curr_seq["raw"] = sequence
         curr_seq["raw"] = ""
         curr_seq["sequence"] = ""
+
+        # TIPP: Da Header immer in der ersten Zeile steht, könnten Sie den Code
+        # folgendermaßen umformen um zeitfressende Abfragen zu vermeiden.
+        # lines = sequence.split("\n") oder besser lines = sequence.splitlines()
+        # header = sequence.partition(" ")
+        # curr_seq["id"] = header[0]
+        # curr_seq["desc"] = header[2] Vermeidet Error falls Header keine description enthält
         for line in sequence.split("\n"):
             if header is True:
                 curr_seq["id"] = line.split(" ")[0]
@@ -93,6 +102,9 @@ def get_fasta(db, index):
     header = ""
     seq = ""
     char_count = 0
+
+    # Die 80 Zeichen Grenze gilt für Fasta Header nicht. Das File wäre nicht
+    # mehr valide, wenn der Header über 2 Zeilen geht. Konnten Sie nicht wissen
     for char in db[index]["id"] + "| " + db[index]["description"]:
         char_count += 1
         if char_count % 80 == 0:
@@ -100,6 +112,14 @@ def get_fasta(db, index):
         header += char
 
     char_count = -1
+    # UGH: Sie loopen über jedes Zeichen in der Sequenz, dass kostet viel Zeit.
+    # Verwenden Sie lieber den Indexoperator mit dem range der Zeilenlänge
+    # lines = []
+    # for i in range(0, (len(sequence) // line_length) * line_length, step=line_length):
+    #     lines.append(sequence[i:i + line_length])
+    #
+    # if len(sequence) % line_length > 0:
+    #     lines.append(sequence[i:])
     for char in db[index]["sequence"]:
         char_count += 1
         if char_count % 80 == 0:
@@ -148,4 +168,3 @@ def get_output(db, index, type="markdown"):
 
 #fasta_parser("../examples/sequence.fasta")
 #db = genbank_parser("../examples/sequence.gb")
-

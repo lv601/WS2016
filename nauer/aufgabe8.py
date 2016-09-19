@@ -1,3 +1,5 @@
+import time
+
 def parse_fasta1(file_name, db):
     file_handle = open(file_name, "r")  # Change mode to binary
 
@@ -34,20 +36,21 @@ def parse_fasta2(file_name, db):
           db[-1]['sequence'] += (line.rstrip())
           db[-1]['raw'] += (line)
 
-import time
+# Stop time of function calls
+def stop_time(func, *args, **kargs):
+    start = time.time()
+
+    result = func(*args, **kargs)
+
+    end = time.time()
+    print("Function {} takes {:.3} seconds".format(func.__name__, end - start))
+    return result
 
 d = []
-# string version
-start = time.time(); \
-parse_fasta1("../examples/long.fasta", d); \
-end = time.time()
-print("{:.3} seconds".format(end-start))
 
-# bytearray version
-start = time.time(); \
-parse_fasta2("../examples/long.fasta", d); \
-end = time.time()
-print("{:.3} seconds".format(end-start))
+res1 = stop_time(parse_fasta1, "../examples/long.fasta", db=d)
+res2 = stop_time(parse_fasta2, "../examples/long.fasta", db=d)
 
 # Compare both sequences
-d[0]['sequence'] == d[1]['sequence'].decode()
+print(d[0]['sequence'] == d[1]['sequence'].decode())
+

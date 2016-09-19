@@ -63,12 +63,12 @@ def get_gc_content(db, index):
 
 if __name__=="__main__":
     db=[]
-    parse_fasta(db,"sequence.fasta")
-    parse_gb(db,"sequence.gb")
-    pprint(db[20])
+    parse_fasta(db,"../examples/sequence.fasta")
+    #parse_gb(db,"sequence.gb")
+#    pprint(db[20])
     print(db[0]["id"])
     print(get_raw(db, 5))
-    print(get_fasta(db, 20))
+   # print(get_fasta(db, 20))
     add_sequence_object(db, "myid","mydescription","ATG-OLE", organism="Student",test=[1,2,3])
     pprint(db[0])
     print(db)

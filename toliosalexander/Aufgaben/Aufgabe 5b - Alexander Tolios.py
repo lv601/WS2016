@@ -41,18 +41,31 @@ from random import randint
 
 def ratespiel(bereich, versuche):
     errate = randint(*bereich)
-    
+
     for i in range(versuche):
         rate = input("Insert number between " + str(bereich[0]) + " and " + str(bereich[1]) + ": ")
+
         if bereich[0] > int(rate) or bereich[1] < int(rate):
             print("Bist angrennt? Du bist gesperrt!")
             break
 
-
+        # ACHTUNG: errate ist bereits int 'rate' gehört konvertiert
         if rate == int(errate):
             print("Leiwi!")
+            # TIPP: Anstatt nur die Schleife zu verlassen, können Sie mit return
+            # auch gleich die Funktion verlassen und auch gleich einen Rückgabewert
+            # mitgeben. Z.B. bei Erfolg die erratete Zahl und bei nicht Erfolg None
+            # zurückgeben. Somit können Sie den Rückgabewert der Funktion in andern
+            # Funktionen mitverabrbeiten, wenn gewünscht.
+            #    return zufallszahl
+            #    return None # in Zeile 50 und 69
             break
-    
+
+        # TIPP: Anstatt die letzte Iteration zu prüfen, können Sie auch den
+        # 'else'-Zweig der for Schleife verwenden. Vorteil weniger Abfragen und
+        # übersichtlicher
+        # else:
+        #   print("You lost! You can't even guess ", errate, "!", sep="")
         if i == versuche - 1:
             print("You lost! You can't even guess ", errate, "!", sep="")
         elif i == versuche - 2:

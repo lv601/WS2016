@@ -5,6 +5,10 @@ Created on Mon Sep  5 22:04:39 2016=
 @author: Martin Gollobich Aufgabe 4
 """
 
+# TIPP: Verwenden Sie für Konstanten wie diese uppercase Notation VAR1, VAR2, ...
+# Sehen sie z.B. das Modul re
+# import re
+# re.IGNORECASE
 var1 = 1
 var2 = 2
 var3 = 4

@@ -1,18 +1,22 @@
-file_handle = open("/home/julie/Desktop/FH/EPROG/examples/sequence.fasta", "r")
+from pprint import pprint
 
-db =[{}]
+# TIPP: Packen Sie alles in eine Funktion, der Sie den Filenamen übergeben,
+# dann können Sie den Code leicht mehrmals verwenden
+def parse_fasta(file):
+    file_handle = open(file, "r")
 
-for line in file_handle:
-    if line.startswith(">"): #wenn das hier TRUE ist, dann wird ein neues Objekt erstellt und die anschließenden Sachen werden auf die weiteren Indices weiter gegeben
-        description, id = line[1:].split(maxsplit=1) #aus beiden Teilen wird eine Variable erstellt; es wird genau einmal gesplittet
-        #print(description)
-        #print(id)
-        db = {"id":id, "description":description}
-        #print(db)
-    else:
-        raw = line
-        #print(raw) #dings.strip()
-        sequence = line.rstrip()
-        db["sequence"] = sequence
+    db =[]
+    for line in file_handle:
+        # TIPP: Wenn Sie wie hier nur auf ein Zeichen prüfen, können Sie auch
+        # den Indexoperator benutzen. Der ist schneller.
+        if line[0] == ">":
+        #if line.startswith(">"): #wenn das hier TRUE ist, dann wird ein neues Objekt erstellt und die anschließenden Sachen werden auf die weiteren Indices weiter gegeben
+            description, id = line[1:].split(maxsplit=1) #aus beiden Teilen wird eine Variable erstellt; es wird genau einmal gesplittet
+            db.append({'id': id, 'description': description, 'sequence': "", 'raw': line})
+        else:
+            db[-1]['sequence'] += line.rstrip()
+            db[-1]['raw'] += line
 
-print(db)
+    pprint(db)
+    print(len(db))
+parse_fasta("../examples/sequence.fasta")

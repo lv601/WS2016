@@ -17,6 +17,9 @@ def parse_fasta(db):
     obj = {}
     for line in file_handle:
         line = line.strip()
+        # TIPP: Wenn Sie wie hier nur auf ein Zeichen prüfen, können Sie auch
+        # den Indexoperator benutzen. Der ist schneller.
+        # if zeile[0] == ">":
         if line.startswith('>'):
             if obj:
                 db.append(obj)
@@ -26,6 +29,10 @@ def parse_fasta(db):
             obj["id"] = obj["id"][1:]
         else:
             obj["sequence"] += line
+
+        # ACHTUNG: line wurde bereits verändert 'line.strip()'
+        # und ist nicht mehr raw. Verschieben Sie die Zeile
+        # nach ganz oben im Loop
         obj["raw"] += line
             
 
