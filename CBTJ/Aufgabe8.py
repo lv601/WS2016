@@ -11,7 +11,8 @@ def pars4fasta (list_of_dict, file_path):
 
     for line in file_handle:
         if line[0] == ">":                               #def erste Zeile die mit > eingeleitet wird
-
+            # TIPP: das erste Zeichen entfernen und den Split können Sie gleich auf einmal durchführen
+            # id, desc = line[1:].split(maxsplit=1)
             id, desc = line.split(maxsplit=1)      #teilt zeile beim leerzeichen; durch maxsplit definiert man wie oft
             id = id[1:]                                 # entfernt >
             desc = desc.strip()                             #entfernt linefeed, newline
@@ -22,7 +23,10 @@ def pars4fasta (list_of_dict, file_path):
 
             sequence = line.strip()                         #entfernt linefeed, newline, gekürzte form von sequence = line sequence= sequence.strip()
 
-
+            # TIPP: Bei sequence sollten sie die Zeilentrenner entfernen. In sequence
+            # wollen sie z. B. einen Teilsequenz wie einen Primer suchen. Die scheitert
+            # aber, wenn der Primer gerade dort ist wo das newline Zeichen ist.
+            # Deshalb besser mit .rsplit() diese Zeichen entfernen
             list_of_dict[-1]['sequence']+= sequence     #[-1] ersetzt zähler; + da sequ über mehrere zeilen geht
 
             list_of_dict[-1]['raw']+= line                  #w.o. line da Rohdaten gewuenscht
@@ -36,7 +40,7 @@ def pars4fasta_bytearray (list_of_dict, file_path):
 
 
     for line in file_handle:
-        if line[0] == 62:                               #def erste Zeile die mit > (Dec=62, Ascii) eingeleitet wird
+        if line[0] == 62:                               #def erste Zeile die mit > (Dec=62, Ascii) eingeleitet wird ord('>')
 
             id, desc = line.split(maxsplit=1)
             id = id[1:]
@@ -48,7 +52,7 @@ def pars4fasta_bytearray (list_of_dict, file_path):
 
             sequence = line.strip()
 
-
+            # Das selbe hier .rsplit()
             list_of_dict[-1]['sequence']+= sequence
 
             list_of_dict[-1]['raw']+= line

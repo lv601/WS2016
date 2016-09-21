@@ -1,6 +1,5 @@
 import time
 
-
 import re
 from pprint import pprint
 
@@ -28,12 +27,11 @@ def parse_fasta(db, file_name):
             db[-1]['sequence'] += line.rstrip()
             db[-1]['raw'] += line
 
+# ACHTUNG: Einige Typos
+d = []
 
-
-
-
-start = time.time();
-parse_fasta(d, "fasta.fa");
+start = time.time()
+parse_fasta(d, "fasta.fa")
 end = time.time()
-print("{:.3} seconds".format(endstart))
+print("{:.3} seconds".format(end-start))
 
