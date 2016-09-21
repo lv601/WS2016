@@ -5,6 +5,8 @@ import sys, io
 
 def exerc10(file=None):
     if file:
+        # ACHTUNG: Wenn Sie das File so öffnen, wird es beim öffnen automatisch gelöscht ("w")
+        # Sie müssen mode "r+" oder nur "r" verwenden sonst ist f.readline() immer leer
         f = open(file, "w+")
     else:
         f = sys.stdout

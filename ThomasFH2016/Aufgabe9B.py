@@ -18,6 +18,10 @@ def parse_fasta_string(file, db):
 def parse_fasta_bytearray(file, db):
     file_handle = open(file, 'rb')
     for line in file_handle:
+        # TIPP: Wenn Sie immer das gleiche Zeichen prüfen, ist es hier besser den
+        # Wert vorher schon zu berechnen und gleich diesen anzugeben. In diesem
+        # fall 62. Das spart ihnen einen Funktionsaufruf pro Zeile
+        # if line[0] == 62:
         if line[0] == ord('>'):
             ident, desc = line[1:].strip().split(maxsplit=1)
             db.append({'id': ident,
