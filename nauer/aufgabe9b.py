@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-
 import io
 import time
+
 
 # Use string operator +=
 def parse_fasta1(file_name, db):

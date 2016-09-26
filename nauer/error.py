@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# error.py
+
 import sys
 
 # Write to stdout

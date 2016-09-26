@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-
 import sys
+
 
 def func(filename=None):
     if filename:

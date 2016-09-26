@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import time
 
 def parse_fasta1(file_name, db):
