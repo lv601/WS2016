@@ -1,21 +1,16 @@
-# TIPP: Verwenden Sie für Konstanten wie diese uppercase Notation N1, N2, ...
-# Sehen sie z.B. das Modul re
-# import re
-# re.IGNORECASE
-v1 = 1
-v2 = 2
-v3 = 4
-v4 = 8
-v5 = 16
-v6 = 32
-v7 = 64
-v8 = 128
+import re
+re.IGNORECASE
 
-pruef = v1 | v2 | v6 | v8
-# bin() Ah nett, kannte ich noch nicht
-print(bin(pruef))
+V1 = 1
+V2 = 2
+V3 = 4
+V4 = 8
+V5 = 16
+V6 = 32
+V7 = 64
+V8 = 128
 
-print(pruef)
+pruef = V1 | V2 | V6 | V8
 
 for i in range(8):
     if pruef & 2**i:
