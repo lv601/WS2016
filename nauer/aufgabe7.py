@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 menu = [("Suppe", "Tagessuppe von vorvorgestern", 2.3),
         ("Suppe deluxe", "Für die große Geldbörse", 1300.5),
         ("Spaghetti", "Spaghetti ala Susi und Strolch", 7.70)]

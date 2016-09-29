@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 # Create simple dot plot
 def dot_plot(seq1, seq2):
     for c1 in seq1:

@@ -8,17 +8,26 @@ def parse_fasta_bytearray(file):
     for line in file_handle:
         fastaDict = {}
         #Kopfzeile erkennen
+        # TIPP: Wenn Sie immer nur das gleiche Zeichen prüfen, können Sie den Code
+        # beschleunigen, indem Sie gleich das Ergebnis von ord(">") einsetzen. In dem
+        # Fall 62. Das erpart Ihnen einen Funktionsaufruf pro Zeile
+        # if line[0] == 62:  # ord(">")
         if line[0] == ord(">"):
             parts = line[1:].strip().split(maxsplit=1)
             #print(parts)
             fastaDict["id"] = parts[0]
             fastaDict["description"] = parts[1]
+            # TIPP: Sie sollten auch in fastaDict["raw"] ein bytearray() Typ verwenden
             fastaDict["raw"] = line
             fastaDict["sequence"] = bytearray()
             fastaList.append(fastaDict)
             #print(fastaList)
         else:
             #print(type(line))
+            # TIPP: Der cast hier ist nicht nötig. Sie haben file schon im binär Mode
+            # geöffnet. Zudem würde ich hier line.rstrip() verwenden. Denken Sie daran
+            # das File könnte unter Windows generiert worden sein, dann besteht das
+            # newline aus zwei Zeichen anstatt einem.
             fastaList[-1]["sequence"] += bytearray(line[:-1])
             fastaList[-1]["raw"] += line
     return(fastaList)
@@ -39,6 +48,10 @@ def parse_fasta(file):
             fastaDict["sequence"] = ""
             fastaList.append(fastaDict)
         else:
+            # TIPP: Der cast hier ist nicht nötig. Sie haben file schon im binär Mode
+            # geöffnet. Zudem würde ich hier line.rstrip() verwenden. Denken Sie daran
+            # das File könnte unter Windows generiert worden sein, dann besteht das
+            # newline aus zwei Zeichen anstatt einem.
             fastaList[-1]["sequence"] += line[:-1]
             fastaList[-1]["raw"] += line
     return(fastaList)
