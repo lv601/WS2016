@@ -1,4 +1,7 @@
-
+# TIPP: Verwenden Sie für Konstanten wie diese uppercase Notation FLAG1, FLAG2, ...
+# Sehen sie z.B. das Modul re
+# import re
+# re.IGNORECASE
 Flag1 = 2
 Flag2 = 4
 Flag3 = 8

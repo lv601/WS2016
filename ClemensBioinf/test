@@ -1,7 +1,0 @@
-def feed(liste):
-    import time
-    for index in range(len(liste)):
-      print(liste[index],end="\r")
-      time.sleep(1)
-
-feed(["Max", "Pia", "Herbert", "Nor", "***"])

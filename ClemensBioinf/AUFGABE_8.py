@@ -4,7 +4,7 @@ def fasta_parser(path):
     data = []
     total_raw = bytearray(b"")
     for line in open(path, "r"):
-        line_bytearray = str.encode(line)
+        line_bytearray = bytearray(str.encode(line))
         total_raw += line_bytearray
 
     for sequence in total_raw.split(b">")[1:]:
