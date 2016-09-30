@@ -2,9 +2,10 @@ import time
 import sys
 
 def parse_fasta(stream, db=None):
-    if not db:
+    if db is None:
         db = []
 
+    # Test if stream from type binary
     if isinstance(stream.read(0), (bytes, bytearray)):
         for line in stream:
             if line[0] == 62:  # ord(">") bytes are stored as numbers
@@ -22,7 +23,8 @@ def parse_fasta(stream, db=None):
                 db[-1]['raw'] += (line)
         return db
     else:
-        print("Stream must be binary", file=sys.stderr)
+        print("Stream must be opened as binary", file=sys.stderr)
+        # Exit script with -1. Signals an error to the operationg system
         exit(-1)
 
 def get_raw(db, index):
@@ -80,6 +82,36 @@ def stop_time(func, *args, **kargs):
     print("Function {} takes {:.3} seconds".format(func.__name__, end - start))
     return result
 
+
+# Test if library have been imported or run directly 
 if __name__ == "__main__":
     # Run test code
     print(__file__)
+    print(__name__)
+
+    import io
+
+    b_io = io.BytesIO(b">Header\nATGCTTGTGTC")
+    data = []
+    parse_fasta(b_io, data)
+    print(data)
+    print("GC-Content: {:.2f}%".format(get_gc_content(data, 0)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
