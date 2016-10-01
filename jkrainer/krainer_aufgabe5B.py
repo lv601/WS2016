@@ -9,7 +9,11 @@ def ratespiel(versuche):
     for i in range(versuche):
         eingabezahl = input("Bitte geben Sie eine Zahl zwischen 0 und 10 ein:")
         #eingabezahl = int(eingabezahl)
-        if int(eingabezahl) > zahl:
+        if int(i+1 == versuche):
+            print("Leider haben Sie die gesuchte Zahl nicht erraten können, es war die ", zahl)
+            return None  # aus der Funktion kommt kein Rückgabewert
+            break
+        elif int(eingabezahl) > zahl:
             print("Die eingegebene Zahl ist größer als die gesuchte Zahl, probieren Sie es erneut")
             print("Sie haben noch", versuche - i-1, "Versuche")
             continue
@@ -21,10 +25,6 @@ def ratespiel(versuche):
             print("Juhu Sie haben die gesuchte Zahl gefunden")
             print("Sie haben", i+1, "Versuche gebraucht")
             return zahl #so kann die zu erratende Zahl später in einer Variable gespeichert werden
-            break
-        else:
-            print("Leider haben Sie die gesuchte Zahl nicht erraten können, es war die ", zahl)
-            return None #aus der Funktion kommt kein Rückgabewert
             break
 
 eingabe = int(input("Wie oft wollen Sie raten?"))
