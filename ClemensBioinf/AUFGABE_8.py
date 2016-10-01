@@ -2,31 +2,22 @@ from time import time
 
 def fasta_parser(path):
     data = []
-    total_raw = bytearray(b"")
-    for line in open(path, "r"):
-        line_bytearray = bytearray(str.encode(line))
-        total_raw += line_bytearray
+    total_raw = bytearray()
+    for line in open(path, 'r'):
+        total_raw += str.encode(line)
 
-    for sequence in total_raw.split(b">")[1:]:
-        header = True
+    for sequence in total_raw.split(b'>')[1:]:
+        header = sequence.partition(b' ')
         curr_seq = {}
-        curr_seq["raw"] = bytearray(b"")
-        curr_seq["sequence"] = bytearray(b"")
-        for line in sequence.split(b"\n"):
-            if header is True:
-                curr_seq["id"] = line.split(b" ")[0]
-                curr_seq["description"] = b" ".join(line.split(b" ")[1:])
-                header = False
-            else:
-                curr_seq["sequence"] += line
-
-            curr_seq["raw"] += line
-
+        curr_seq['raw'] = bytes(sequence)
+        curr_seq['sequence'] = b''.join(sequence.splitlines()[3:])
+        curr_seq['id'] = header[0]
+        curr_seq['description'] = header[2]
         data.append(curr_seq)
-
     return data
 
+
 start = time()
-fasta_parser("/home/vortex/Desktop/Bioinformatik/Programmieren/WS2016/examples/sequence.fasta")
+print(type(fasta_parser("/home/vortex/Desktop/Bioinformatik/Programmieren/WS2016/examples/sequence.fasta")))
 end = time()
 print("Total time: {}".format(round(end-start, 5)))
