@@ -12,8 +12,6 @@ n7 = 128
 n8 = 256
 flags = n1 | n3 | n8
 print (flags)
-
-def func (flag):
-    for i in range(8):
+for i in range(8):
         if flags & 2**1:
             print("Flags", 2**i, "was set.")
