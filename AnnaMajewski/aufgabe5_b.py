@@ -20,6 +20,14 @@ def guess_game(min, max, guesses):
 
     print("Willkommen beim Ratespiel. Erraten Sie eine Zahl zwischen", min, "und", max, "!")
 
+    # TIPP: Hier können Sie den 'else'-Zweig der for Schleife verwenden, um noch eine game_over
+    # Nachricht zu schicken
+    # else:
+    #   print("Du hast leider verloren.")
+
+    # TIPP: enumerate können Sie sich hier sparen, da index hier
+    # gleich x ist
+    # for index range(anzahl):
     for index, x in enumerate(range(anzahl)):
         eingabe = input("Geben Sie Ihre Zahl ein:")
     # Eingabe wird direkt in einer Variable gespeichert.
@@ -27,6 +35,12 @@ def guess_game(min, max, guesses):
     # Die Zahl wird von einem String zu einem Integer umgewandelt.
         if eingabe == zahl:
             print("SUPER! Sie haben die Zahl erraten!")
+            # TIPP: Anstatt nur die Schleife zu verlassen, können Sie mit return
+            # auch gleich die Funktion verlassen und auch gleich einen Rückgabewert
+            # mitgeben. Z.B. bei Erfolg die erratete Zahl und bei nicht Erfolg None
+            # zurückgeben. Somit können Sie den Rückgabewert der Funktion in andern
+            # Funktionen mitverabrbeiten, wenn gewünscht.
+            #    return zahl
             break
         elif eingabe < zahl:
             print("Zu niedrig. Die Zahl ist größer!", "Sie haben noch", anzahl-1-index, "Versuche!")

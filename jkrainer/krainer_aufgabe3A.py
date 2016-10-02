@@ -1,10 +1,12 @@
 import random #Importiert das Modul "random"
 
 
-from random import randint #die Funktion "randint" wird geholt
+from random import randint #die Funktion "randint" wird importiert
 
 
 versuche = 5
+
+
 antwort = "Ja"
 while antwort == "Ja":
     zahl = randint(0, 10)  # eine Zufallszahl wird generiert

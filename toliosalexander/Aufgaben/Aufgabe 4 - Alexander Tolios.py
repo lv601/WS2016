@@ -1,6 +1,9 @@
 ### Aufgabe 4 - Alexander Tolios - last modified 06.09.2016 ; siehe Mitschrift vom 05.09.2016 ###
 
-
+# TIPP: Verwenden Sie für Konstanten wie diese uppercase Notation VAR1, VAR2, ...
+# Sehen sie z.B. das Modul re
+# import re
+# re.IGNORECASE
 var1 = 1
 var2 = 2
 var3 = 4

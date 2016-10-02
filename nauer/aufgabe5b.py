@@ -8,23 +8,30 @@ def run_game(bereich, versuche):
     # Loops through all attempts
     for i in range(versuche):
         # Ask for input
-        rate = input("Geben Sie eine Zahl zwischen " +
-            str(bereich[0]) + " und " + str(bereich[1]) + " ein: ")
+        rate = int(input("Geben Sie eine Zahl zwischen {0} un {1} ein: ".format(*bereich)))
 
         # guess right
-        if rate == str(errate):
+        if rate == errate:
             print("Super! Sie haben die Zahl erraten.")
-            break # Leave loop - game finished
-
-        # No attempts left
-        if i == versuche - 1:
-            print("Sorry, Sie haben verloren. Die Zahl war ",
-                errate, "!", sep="")
-        # Last attempt
-        elif i == versuche - 2:
-            print("Sie haben noch 1 Versuch")
-        # Next attempt
+            return errate
+        elif rate < errate:
+            print("Zu niedrig!")
         else:
-            print("Sie haben noch", versuche - i -1, "Versuche")
+            print("Zu hoch!")
 
-run_game((3, 7), 4)
+        # Last attempt
+        if versuche - 1 > i >= 0:
+            if i == versuche - 2:
+                print("Sie haben noch 1 Versuch")
+            # Next attempt
+            else:
+                print("Sie haben noch {} Versuche".format(versuche - i - 1))
+    else:
+        # No attempts left
+        print("Sorry, Sie haben verloren. Die Zahl war {}!".format(errate))
+        return None
+
+while run_game((3, 7), 4):
+    print("\nSehr gut! Gleich das nächste Spiel\n")
+else:
+    print("\nGame Over\n")

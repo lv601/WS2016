@@ -1,3 +1,7 @@
+# TIPP: Verwenden Sie für Konstanten wie diese uppercase Notation N1, N2, ...
+# Sehen sie z.B. das Modul re
+# import re
+# re.IGNORECASE
 n1 = 2
 n2 = 4
 n3 = 8

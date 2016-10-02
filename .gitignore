@@ -90,3 +90,5 @@ ENV/
 
 # pycharm project files
 .idea
+.fa
+.fasta

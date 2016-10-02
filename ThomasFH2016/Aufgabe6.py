@@ -33,10 +33,14 @@ def get_sequence(db, index):
 
 def get_fasta(db, index):
     fasta = get_id(db, index) + get_description(db, index) + '\n'
-    fasta += insert_linebreak(get_sequence(db, index), 80)
+    fasta += _insert_linebreak(get_sequence(db, index), 80)
     return fasta
 
-def insert_linebreak(string, length):
+# TIPP: verwenden Sie das Underscore Zeichen um Hilfsfunktionen zu kennzeichnen,
+# die nicht für den direkten Aufruf von außen gedacht sind, und nur modulintern
+# verwendet werden
+# def _insert_linebreak(string, length):
+def _insert_linebreak(string, length):
     lines = ''
     for i in range(0, len(string), length):
         lines += string[i:i+length] + '\n'
