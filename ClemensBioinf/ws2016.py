@@ -1,37 +1,25 @@
 ## Aufgabe 11 ##
 
-def fasta_parser(user_input):
+def fasta_parser(path):
     data = []
-    total_raw = ""
-    for line in user_input:
-        total_raw += line
+    total_raw = bytearray(path)
 
-    for sequence in total_raw.split(">")[1:]:
-        header = True
+    for sequence in total_raw.split(b'>')[1:]:
+        header = sequence.partition(b' ')
         curr_seq = {}
-        curr_seq["raw"] = ""
-        curr_seq["sequence"] = ""
-
-        for line in sequence.split("\n"):
-            if header is True:
-                curr_seq["id"] = line.split(" ")[0]
-                curr_seq["description"] = " ".join(line.split(" ")[1:])
-                header = False
-            else:
-                curr_seq["sequence"] += line
-
-            curr_seq["raw"] += line
-
+        curr_seq['raw'] = bytes(sequence)
+        curr_seq['sequence'] = b''.join(sequence.splitlines()[3:])
+        curr_seq['id'] = header[0]
+        curr_seq['description'] = header[2]
         data.append(curr_seq)
-
-    #print(data)
     return data
+
 
 def get_raw(db,	index):
     return db[index]["raw"]
 
 def get_id(db, index):
-    return db[index]["id"]
+    return db[index]["id"].decode("utf-8")
 
 def get_description(db,	index):
     return db[index]["description"]
@@ -71,7 +59,7 @@ def add_sequence_object(db, id, description, sequence, **features):
 
 def get_gc_content(db, index):
     seq = db[index]["sequence"].lower()
-    return str(round((seq.count("c") + seq.count("g")) * 100 / len(seq),2)) + "%"
+    return str(round((seq.count(b"c") + seq.count(b"g")) * 100 / len(seq),2)) + "%"
 
 def get_output(db, index, type="markdown"):
     if type == "markdown":

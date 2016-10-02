@@ -1,6 +1,6 @@
 from time import time
 
-def fasta_parser(path):
+def fasta_parser(total_raw):
     data = []
     total_raw = ''
     for line in open(path, 'r'):
