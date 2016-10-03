@@ -26,6 +26,7 @@ class Adressbuch:
                 print(attribute, self.eintraege[index][attribute])
             return self.eintraege[index]
         else:
+            print(self.eintraege[index][key])
             return self.eintraege[index][key]
 
 
@@ -33,4 +34,4 @@ adressbuch1 = Adressbuch({})
 
 max_mustermann = Eintrag('Max','Mustermann', 'Programmieren', '50', 'keine', 'maennlich')
 adressbuch1.add(max_mustermann.eintrag)
-print(adressbuch1.get(0))
+adressbuch1.get(0, 'Hobbies')
