@@ -20,33 +20,17 @@ class Adressbuch:
         self.eintraege.append(eintrag)
         print('Eintrag hinzugefuegt: {} {}'.format(eintrag['Vorname'], eintrag['Nachname']))
 
-    def get(self, index, key):
-        return self.eintraege[index][key]
+    def get(self, index, key=None):
+        if key == None:
+            for attribute in self.eintraege[index]:
+                print(attribute, self.eintraege[index][attribute])
+            return self.eintraege[index]
+        else:
+            return self.eintraege[index][key]
 
 
 adressbuch1 = Adressbuch({})
 
 max_mustermann = Eintrag('Max','Mustermann', 'Programmieren', '50', 'keine', 'maennlich')
 adressbuch1.add(max_mustermann.eintrag)
-print(adressbuch1.get(0, 'Alter'))
-
-
-
-
-
-
-
-
-# Adressbuch = [{
-#     "Vorname": "Max",
-#     "Nachname": "Mustermann",
-#     "Hobbies": ["Schwimmen", "Tanzen", "Lesen"],
-#     "Alter": 43,
-#     "Eigenschaften": {
-#         "Geschicklichkeit": 10,
-#         "IQ": 98,
-#         "Gewicht": 88,
-#         "Haarfarbe": "blond"
-#         },
-#     "Geschlecht": "maennlich"
-#     }]
+print(adressbuch1.get(0))
