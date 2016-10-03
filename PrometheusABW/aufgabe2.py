@@ -25,3 +25,4 @@ print(eigenschaften['IQ'])
 print(len(Adressbuch['Hobbies']))
 #addiere aehnlichen datensatz
 #zeige länge des adressbuches
+
