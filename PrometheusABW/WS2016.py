@@ -33,11 +33,11 @@ def fasta_file_parser(stream_handle, data_object=None):
             data_dict["sequence"] += i[:-2]
     return data_object
     
-def GC_content(data_object ,index):
+def GC_content(sequence):
     Gcounter=0
     Ccounter=0    
-    lenght = len(data_object[index]["sequnce"])
-    for letter in data_object[index]["sequnce"]:
+    lenght = len(sequence)
+    for letter in sequence:
         if letter == "G":
             Gcounter += 1
         if letter == "C":
