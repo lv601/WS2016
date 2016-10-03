@@ -1,14 +1,16 @@
-import random #Importiert das Modul "random"
+from random import randint
+from argparse import ArgumentParser
+parser = ArgumentParser()
 
+parser.add_argument("-v", "--versuche", type=int, help="Anzahl der maximalen Versuche")
 
-from random import randint #die Funktion "randint" wird importiert
+args = parser.parse_args()
 
 def ratespiel(versuche):
 
     zahl = randint(0, 10)  # eine Zufallszahl wird generiert
     for i in range(versuche):
         eingabezahl = input("Bitte geben Sie eine Zahl zwischen 0 und 10 ein:")
-        #eingabezahl = int(eingabezahl)
         if int(i+1 == versuche):
             print("Leider haben Sie die gesuchte Zahl nicht erraten können, es war die ", zahl)
             return None  # aus der Funktion kommt kein Rückgabewert
@@ -27,8 +29,6 @@ def ratespiel(versuche):
             return zahl #so kann die zu erratende Zahl später in einer Variable gespeichert werden
             break
 
-eingabe = int(input("Wie oft wollen Sie raten?"))
-
-return_wert = ratespiel(eingabe)
+return_wert = ratespiel(args.versuche)
 
 print(return_wert)
