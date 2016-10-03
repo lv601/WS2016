@@ -136,7 +136,7 @@ def mainc():
 	infile_lines = temp_infile.splitlines()
 	#loop over and hang into dictionaries
 	for i in infile_lines:
-		if i.startswith((ord(">")):
+		if i.startswith(ord(">")):
 			data_object.append(data_dict)
 			
 			data_dict["raw"] = i.split(" ")[0]
