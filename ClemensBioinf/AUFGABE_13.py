@@ -18,6 +18,7 @@ class Adressbuch:
 
     def add(self, eintrag):
         self.eintraege.append(eintrag)
+        print('Eintrag hinzugefuegt: {} {}'.format(eintrag['Vorname'], eintrag['Nachname']))
 
     def get(self, index, key):
         return self.eintraege[index][key]
@@ -25,7 +26,7 @@ class Adressbuch:
 
 adressbuch1 = Adressbuch({})
 
-max_mustermann = Eintrag(adressbuch1, 'Max','Mustermann', 'Programmieren', '50', 'keine', 'maennlich')
+max_mustermann = Eintrag('Max','Mustermann', 'Programmieren', '50', 'keine', 'maennlich')
 adressbuch1.add(max_mustermann.eintrag)
 print(adressbuch1.get(0, 'Alter'))
 
