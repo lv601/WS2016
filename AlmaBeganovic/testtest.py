@@ -1,1 +1,0 @@
-print ("Das ist nicht die richtige Zahl")
