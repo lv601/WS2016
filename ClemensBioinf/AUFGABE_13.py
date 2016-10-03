@@ -1,6 +1,5 @@
 class Eintrag:
-    def __init__(self, adressbuch, vorname, nachname, hobbies, alter, eigenschaften, geschlecht):
-        self.adressbuch = adressbuch
+    def __init__(self, vorname, nachname, hobbies, alter, eigenschaften, geschlecht):
         self.vorname = vorname
         self.nachname = nachname
         self.hobbies = hobbies
@@ -8,10 +7,9 @@ class Eintrag:
         self.eigenschaften = eigenschaften
         self.geschlecht = geschlecht
 
-    def eintrag_hinzufuegen(self):
-        self.adressbuch.add({'Vorname':self.vorname, 'Nachname':self.nachname, 'Hobbies':self.hobbies,\
+        self.eintrag = ({'Vorname':self.vorname, 'Nachname':self.nachname, 'Hobbies':self.hobbies,\
                             'Alter':self.alter, 'Eigenschaft':self.eigenschaften, 'Geschlecht':self.geschlecht})
-        return('{} {} hinzugefuegt'.format(self.vorname, self.nachname))
+
 
 class Adressbuch:
     def __init__(self, eintrag):
@@ -28,7 +26,7 @@ class Adressbuch:
 adressbuch1 = Adressbuch({})
 
 max_mustermann = Eintrag(adressbuch1, 'Max','Mustermann', 'Programmieren', '50', 'keine', 'maennlich')
-max_mustermann.eintrag_hinzufuegen()
+adressbuch1.add(max_mustermann.eintrag)
 print(adressbuch1.get(0, 'Alter'))
 
 
