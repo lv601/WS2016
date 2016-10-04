@@ -1,4 +1,19 @@
-## Aufgabe 11 ##
+## Aufgabe 11 & 14##
+
+class SeqRecord:
+    def __init__(self, seq, id, raw):
+        self.seq = seq
+        self.id = id
+        self.raw = raw
+
+class SeqRecordFasta(SeqRecord):
+    def __inti__(self, seq, id, raw, description):
+        super().__init__(seq, id, raw)
+        self.description = description
+
+class SeqRecordGenbank(SeqRecordFasta):
+    def __inti__(self, seq, id, raw, description):
+        super().__init__(seq, id, raw, description)
 
 def fasta_parser(path):
     data = []

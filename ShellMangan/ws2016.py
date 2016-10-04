@@ -20,6 +20,17 @@ def parse_fasta(filestream, db):
           db[-1]["raw"] += line
                 
 
+def get_gc_content(db, index):
+    seq = db[index]["sequence"]
+    count = 0
+    for ind, char in enumerate(seq):
+        if (char == "A") or (char == "T"):
+            continue
+        else:
+            count +=1
+    content = count / (ind+1)
+    content *= 100
+    return content
 
 
 #time add-on
