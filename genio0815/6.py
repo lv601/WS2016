@@ -71,11 +71,10 @@ def parseGb(db, file):
             else:
                 raw += line
 
+    # (dbId, start token, end token)
     gbStructure = [('id', 'ACCESSION', 'VERSION'), ('description', 'DEFINITION', 'ACCESSION'),
-                 ('ORIGIN', 'ORIGIN', 'DONE'), ('FEATURES', 'FEATURES', 'ORIGIN'),
+                 ('sequence', 'ORIGIN', 'DONE'), ('features', 'FEATURES', 'ORIGIN'),
                  ('organism', 'ORGANISM', 'COMMENT')]
-
-    #features = []
 
     for i in range(len(rawData)):
         for dbId, fromStr, toStr in gbStructure:
