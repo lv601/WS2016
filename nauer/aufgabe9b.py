@@ -2,7 +2,6 @@
 import io
 import time
 
-
 # Use string operator +=
 def parse_fasta1(file_name, db):
     file_handle = open(file_name, "r")  # Change mode to binary
