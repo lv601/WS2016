@@ -6,6 +6,12 @@ Kopieren Sie den Code der schnellsten fasta_parser Implementierung nach ws2016.p
 um, dass sie einen Stream anstelle eines Filenamens übergeben. Importieren Sie in fasta_parser.py das Modul ws2016 und
 rufen Sie die fasta_parser Funktion auf. Erstellen Sie fasta_parser.py so, dass es den Filenamen aus der Kommandozeile
 mit sys.argv liest
+
+Aufgabe 14
+Wandeln Sie die ws2016 Bibliothek so um damit Sie Klassen statt einfacher Funktionen verwendet. Erstellen Sie eine
+Klasse SeqRecord in der Sie nur die Sequenz, Id und Raw speichern. Leiten Sie von dieser Klasse eine spezialisiertere
+Klasse SeqRecordFasta und SeqRecordGenbank mit zusätzlichen Feldern ab. Erzeugen Sie eine weitere Klasse Parser, in der
+Sie die gesamte Funktionalität des fasta-Parsers implementieren
 """
 
 import time
