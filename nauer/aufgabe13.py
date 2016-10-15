@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 
-from pprint import pprint
-
+""" Aufgabe 13
+Wandeln Sie das Adressbuch Beispiel von Ausgabe 2 in eine Klasse um. Erstellen Sie eine Klasse für den Adresseintrag
+selbst und eine Klasse für das Adressbuch das die Einträge aufnimmt. Dem Adresseintrag-Konstruktor übergeben Sie die
+Personendaten. Der Adressbuch-Klasse fügen Sie eine Methode zum einfachen Hinzufügen von Adresseinträgen zu.
+"""
 
 class Eintrag:
     def __init__(self, vorname, nachname, alter, geschlecht, hobbies, eigenschaften):

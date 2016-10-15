@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+
+""" Aufgabe 9b
+Gehen Sie zu Aufgabe 8 zurück und erstellen Sie eine fasta_parser3() und fasta_parser4() Funktion in der Sie statt des
+Bytearray die StringIO und BytesIO Klasse verwenden.
+
+Testen Sie die Geschwindigkeitsunterschiede
+"""
+
 import io
 import time
 

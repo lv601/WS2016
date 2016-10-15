@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+""" Aufgabe 5a
+Erstellen Sie eine Funktion um dem Dictionary von Aufgabe 2 weite Datensätze hinzuzufügen
+"""
+
 from pprint import pprint
 
 # Define function

@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+""" Aufgabe 12a
+Wandeln Sie das Beispiel von Aufgabe 5b so um, dass Sie die Funktions-Parameter des Spiels als Kommandozeilenparameter
+mit dem argparse Modul einlesen.
+"""
 from random import randint
 from argparse import ArgumentParser
 

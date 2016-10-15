@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 
+""" Aufgabe 7
+Erstellen Sie eine Menukarte mit Hilfe des Formatstrings.
+
+*************************** Menu ***************************
+Vorspeisen:
+Suppe          Tagessuppe von vorvorgestern        2.30 €
+Suppe deluxe   Für die große Geldbörse         1,300.50 €
+
+************************************************************
+"""
 menu = [("Suppe", "Tagessuppe von vorvorgestern", 2.3),
         ("Suppe deluxe", "Für die große Geldbörse", 1300.5),
         ("Spaghetti", "Spaghetti ala Susi und Strolch", 7.70)]
