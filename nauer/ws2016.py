@@ -12,6 +12,10 @@ Wandeln Sie die ws2016 Bibliothek so um damit Sie Klassen statt einfacher Funkti
 Klasse SeqRecord in der Sie nur die Sequenz, Id und Raw speichern. Leiten Sie von dieser Klasse eine spezialisiertere
 Klasse SeqRecordFasta und SeqRecordGenbank mit zusätzlichen Feldern ab. Erzeugen Sie eine weitere Klasse Parser, in der
 Sie die gesamte Funktionalität des fasta-Parsers implementieren
+
+Aufgabe 16b
+Fügen Sie die 3 spezial Methoden __str__(), __repr__() und __bytes__() der RecordXXX Klassen aus Aufgabe 14 hinzu
+Verwenden Sie hier die raw Ausgabe für die __str__() und __byte__() Funktion
 """
 
 import time
@@ -33,8 +37,11 @@ class Feature:
             string += ("  {:<" + str(self.max_lengh) + "} = {}\n").format(key, self.fields[key].decode())
         return string
 
+    def __repr__(self):
+        return "Feature('{0.name}', {0.start}, {0.end}, **{1})".format(self, self.fields)
+
 class SeqRecord:
-    def __init__(self, id , seq, raw):
+    def __init__(self, id, seq, raw):
         self.id = id
         self.seq = seq
         self.raw = raw
@@ -42,14 +49,11 @@ class SeqRecord:
     def __str__(self):
         return self.raw.decode()
 
-    def get_raw(self):
-        """
-        Return original text data
-        :param db:
-        :param index:
-        :return: str
-        """
-        return self.raw.decode()
+    def __bytes__(self):
+        return self.raw
+
+    def __repr__(self):
+        return "SeqRecord({0.id}, {0.seq}, {0.raw})".format(self)
 
     def get_fasta(self, line_length=80):
         """
@@ -79,6 +83,9 @@ class SeqRecordFasta(SeqRecord):
         super().__init__(id, seq, raw)
         self.desc = desc
 
+    def __repr__(self):
+        return "SeqRecordFasta({0.id}, {0.seq}, {0.raw}, {0.desc})".format(self)
+
 
 class SeqRecordGenbank(SeqRecordFasta):
     def __init__(self, id, seq, raw, desc, locus, version, keywords, source, organism, taxonomy, features):
@@ -90,6 +97,9 @@ class SeqRecordGenbank(SeqRecordFasta):
         self.organism = organism
         self.taxonomy = taxonomy
         self.features = features
+
+    def __repr__(self):
+        return "SeqRecordGenbank({0.id}, {0.seq}, {0.raw}, {0.desc}, {0.locus}, {0.version}, {0.keywords}, {0.source}, {0.organism}, {0.taxonomy}, {0.features})".format(self)
 
 class Parser:
     def __init__(self):
@@ -112,7 +122,7 @@ class Parser:
             for line in stream:
                 if line[0] == 62:  # ord(">") bytes are stored as numbers
                     if db:
-                        self._records.append(SeqRecordFasta(**db))
+                        self._records.append(SeqRecordFasta(db['id'], bytes(db['seq']), bytes(db['raw']), db['desc']))
                         db = {}
 
                     # New fasta sequence starts - parse header
@@ -350,9 +360,14 @@ if __name__ == "__main__":
         for item in parser:
             print(item.id)
 
+    rec = parser._records[10]
 
 
+    print("\n", rec)
+    print(repr(rec))
 
+    rec2 = eval(repr(rec))
+    print(rec2.id, rec2.desc, rec2.locus, rec2.features[0])
 
 
 
