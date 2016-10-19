@@ -41,3 +41,7 @@ Erstellung eines datenbankbasierten Webinterfaces das einfache Formulare einlies
 ## Webscraping Tool für die automatisierte Abfrage von Aktienkursen
 
 Einfaches Clientprogramm, dass automatisch Aktienkurse von vorgegeben Aktien in kurzen Zeitintervallen abruft.
+
+## Client Server Programm - Uno über das Netzwerk spielen
+
+Computer über Sockets verbinden und Daten (Spielkarten) austauschen.
