@@ -1,10 +1,11 @@
 #! /usr/bin/env python3
 
-""" Aufgabe 16a
-Fügen Sie die 3 spezial Methoden __str__(), __repr__() und __bytes__() der Eintrag Klasse aus Aufgabe 13 hinzu.
+""" Aufgabe 17a
+Fügen Sie die 3 spezial Methoden __getitem__(), __iter__() und __len__() der Eintrag Klasse aus Aufgabe 16a hinzu.
 """
 
 import pprint
+
 
 class Eintrag:
     def __init__(self, vorname, nachname, alter, geschlecht, hobbies, eigenschaften):
@@ -30,10 +31,20 @@ class Adressbuch:
     def __init__(self):
         self.Einträge = []
 
+    def __getitem__(self, item):
+        return self.Einträge[item]
+
+    def __iter__(self):
+        for item in self.Einträge:
+            yield item
+
+    def __len__(self):
+        return len(self.Einträge)
+
     def eintrag_hinzufügen(self, eintrag):
         self.Einträge.append(eintrag)
 
-
+# Run examples
 adressen = Adressbuch()
 
 # Wrap it by a list [] to allow more entries
@@ -55,8 +66,9 @@ data = [{'vorname': "Max", 'nachname': "Mustermann",
 adressen.eintrag_hinzufügen(Eintrag(**data[0]))
 adressen.eintrag_hinzufügen(Eintrag(**data[1]))
 
-print(adressen.Einträge[0])
-print(bytes(adressen.Einträge[0]))
-print(repr(adressen.Einträge[0]))
+for eintrag in adressen:
+    print(eintrag)
 
-print(eval(repr(adressen.Einträge[0])))
+print(adressen[1].vorname)
+
+print(len(adressen))

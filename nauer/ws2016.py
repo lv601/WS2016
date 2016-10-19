@@ -14,8 +14,12 @@ Klasse SeqRecordFasta und SeqRecordGenbank mit zusätzlichen Feldern ab. Erzeuge
 Sie die gesamte Funktionalität des fasta-Parsers implementieren
 
 Aufgabe 16b
-Fügen Sie die 3 spezial Methoden __str__(), __repr__() und __bytes__() der RecordXXX Klassen aus Aufgabe 14 hinzu
+Fügen Sie die 3 spezial Methoden __str__(), __repr__() und __bytes__() der SeqRecordXXX Klassen aus Aufgabe 14 hinzu
 Verwenden Sie hier die raw Ausgabe für die __str__() und __byte__() Funktion
+
+Aufgabe 17b
+Fügen Sie die 3 spezial Methoden __getitem__(), __iter__() und __len__() der Container Klasse aus Aufgabe 16b hinzu,
+die, die einzelnen Records verwaltet
 """
 
 import time
@@ -101,6 +105,8 @@ class SeqRecordGenbank(SeqRecordFasta):
     def __repr__(self):
         return "SeqRecordGenbank({0.id}, {0.seq}, {0.raw}, {0.desc}, {0.locus}, {0.version}, {0.keywords}, {0.source}, {0.organism}, {0.taxonomy}, {0.features})".format(self)
 
+
+# Container Class
 class Parser:
     def __init__(self):
         self._records = []
@@ -114,6 +120,9 @@ class Parser:
 
     def __setitem__(self, item, value):
         self._records[item] = value
+
+    def __len__(self):
+        return len(self._records)
 
     def parse_fasta(self, stream):
         # Test if stream from type binary
