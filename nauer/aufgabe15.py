@@ -35,9 +35,9 @@ def parse_fasta(file_name):
             # Sequence line
             db['seq'] += line.rstrip()
             db['raw'] += line
-
-    # Returns last entry when 'for line in file_handle:' is not called anymore
-    yield db
+    else: # End of for loop
+        # Returns last entry when 'for line in file_handle:' is not called anymore
+        yield db
 
 
 for seq in parse_fasta("../examples/long.fasta"):
