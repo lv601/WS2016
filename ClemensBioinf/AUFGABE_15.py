@@ -19,4 +19,3 @@ def fasta_parser(n):
 
 for result in fasta_parser(5):
     print(result['id'],result['description'])
-
