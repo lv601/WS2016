@@ -1,4 +1,4 @@
-# Initialisierung der Klasse, in die einzelne Eintraege zuerst geladen werden
+# Initialisierung der Klasse, in die die einzelnen Eintraege zuerst geladen werden
 class Eintrag:
     def __init__(self, vorname, nachname, hobbies, alter, eigenschaften, geschlecht):
         self.vorname = vorname

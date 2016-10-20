@@ -11,5 +11,3 @@ except:
 
 # Enter attribute function you want to use (see ws2016.py)
 print('{}: {}'.format(ws2016.get_id(data,index), ws2016.get_gc_content(data,index)))
-
-

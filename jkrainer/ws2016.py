@@ -34,3 +34,20 @@ def take_time(func, args): #**kwargs ist für das Dictionary (keyworded argument
     func(args)
     end = time.time()
     print("Function takes {:.3} seconds".format(end-start)) #hier wird auf drei Nachkommastellen reduziert
+
+
+def parse_fasta_gc(file):
+    db = []
+
+    for line in file:
+        if line[0] == 62:
+            description, id = line[1:].split(
+                maxsplit=1)  # aus beiden Teilen wird eine Variable erstellt; es wird genau einmal gesplittet
+            db.append({'id': id,
+                       'description': description,
+                       'sequence': bytearray(),
+                       'raw': bytearray()})
+        else:
+            db[-1]['sequence'] += line.rstrip()
+            db[-1]['raw'] += line
+
