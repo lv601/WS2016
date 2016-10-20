@@ -24,10 +24,24 @@ Nach Abschluss dieser Vorlesung können Sie natürlich diese Projekte in Eigenve
 Wie gesagt Python wird heute bereits universal für so ziemlich alles eingesetzt. Lassen Sie sich von meinen Vorschlägen inspirieren aber bedenken Sie, dass Sie bei den meisten Projekten Zeit und manchmal sogar Geld (kauf eines Raspberry) investieren müssen um sich in die zu verwendeten Frameworks oder andere Technologien (HTML, Image Processing) einzuarbeiten.
 
 
+# Vorschläge:
 
+## Formularauswertung von gescannten Dokumenten (Tolios, Alexander):
 
-###################################
+Schreiben einer OMR-Software zur automatischen Erkennung sowie Auswertung von gescannten Dokumenten (z.B. Fragebögen).
 
-Vorschläge für Python-Projekte:
+## Annotation Browser
 
-Vorschlag von Tolios, Alexander: Schreiben einer OMR-Software zur automatischen Erkennung sowie Auswertung von gescannten Dokumenten (z.B. Fragebögen).
+Ein Programm zur einfachen Visualisierung von Gen/Sequenz Annotation im Vektor-Grafikformat für das Internet oder für Publikationen.
+
+## Web-Client für Datenbank ein- oder abfragen
+
+Erstellung eines datenbankbasierten Webinterfaces das einfache Formulare einliest und auswertet.
+
+## Webscraping Tool für die automatisierte Abfrage von Aktienkursen
+
+Einfaches Clientprogramm, dass automatisch Aktienkurse von vorgegeben Aktien in kurzen Zeitintervallen abruft.
+
+## Client Server Programm - Uno über das Netzwerk spielen
+
+Computer über Sockets verbinden und Daten (Spielkarten) austauschen.

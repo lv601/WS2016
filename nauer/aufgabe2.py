@@ -1,4 +1,19 @@
 #!/usr/bin/env python3
+""" Aufgabe 2
+Erstellen Sie ein Dictionary das folgende Datensatz speichern kann
+
+Adressbuch:
+  Vorname: Max
+  Nachname: Mustermann
+  Hobbies: Schwimmen, Tanzen, Lesen
+  Alter: 43
+  Eigenschaften:
+    Gechicklichkeit: 10
+    IQ: 98
+    Gewicht: 88
+    Haarfarbe: blond
+  Gechlecht: männlich
+"""
 
 # Wrap it by a list [] to allow more entries
 Adressbuch = [{'Vorname':"Max", 'Nachname': "Mustermann",

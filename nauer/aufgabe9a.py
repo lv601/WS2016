@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 
+""" Aufgabe 9a
+Erstellen Sie zwei Funktionen, die einen String (string) und einen Integer (repeat) übernehmen.
+
+Die Funktion soll in einer for-Schleife, die 'repeat' mal wiederholt wird, 'string' immer wieder aneinander ketten und
+den entstandenen String am Ende zurückgeben.
+
+In der ersten Funktion verwenden sie den Typ str mit dem += Operator und in der zweiten Funktion die StringIO Klasse.
+Vergleichen Sie am Ende die Geschwindigkeit der beiden Funktionen.
+"""
+
 import time, io
 
 # Use StringIO class

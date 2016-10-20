@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+""" Aufgabe 8
+Ändern Sie den fasta Parser aus Aufgabe 6 so um, damit er anstatt des Type str den Typ bytearray verwendet. Testen Sie
+den Geschwindikeitszuwachs mit dem Modul time und längeren fasta Sequenzen (WS2016/examples/long.fasta)
+"""
 import time
 
 def parse_fasta1(file_name, db):

@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+
+""" Aufgabe 6
+Schreiben Sie eine Funktion, die ein Fasta File (WS2016/examples/sequence.fasta) einliest, parst und in ein Daten-Objekt
+einfügt.
+
+Schreiben Sie eine Funktion, die ein Genbank File (WS2016/examples/sequence.gb) einliest, parst und in ein Daten-Objekt
+einfügt.
+
+Siehe WS2016/exercises/aufgabe6.pdf
+"""
+
 import re
 from pprint import pprint
 

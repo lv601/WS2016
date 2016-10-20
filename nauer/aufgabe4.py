@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+""" Aufgabe 4
+Erstellen Sie 8 Variablen, die je einer Bit Position von 1 bis 256 entsprechen. Verknüpfen Sie einige Variablen mit dem
+bitweisen ODER Operator. Erstellen Sie eine Schleife und fragen Sie die gesetzten Flags ab.
+"""
 
 # Define constant varibales
 flags = dict(FLAG_1=1,

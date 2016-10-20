@@ -51,7 +51,7 @@ def fasta_parser2(filename):
             header = header[1:]
             desc = desc.strip()
             if index == 0:
-# Eine Datenbank wird erstellt. Leere Felder erhalten bytearry() statt ""
+# Eine Datenbank wird erstellt. Leere Felder erhalten bytearray() statt ""
                 db = [{"id": header, "desc": desc, "sequence": bytearray(), "raw": line}]
             else:
 # In die vorhandene Datenbank wird ein neuer Eintrag eingefügt.
@@ -68,11 +68,13 @@ def fasta_parser2(filename):
 import time
 
 start = time.time()
-fasta_parser("../examples/sequence.fasta")
+fasta_parser("../examples/long.fasta")
 end = time.time()
 print("Dauer des Parsens mit Strings: {:.3} Sekunden".format(end-start))
 
 start = time.time()
-fasta_parser2("../examples/sequence.fasta")
+fasta_parser2("../examples/long.fasta")
 end = time.time()
 print("Dauer des Parsens mit Bytearray: {:.3} Sekunden".format(end-start))
+
+## Das Bytearray benötigt deutlich weniger Zeit und das schon bei kurzen Sequenzen.

@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+""" Aufgabe 5b
+Schreiben Sie das Ratespiel von Aufgabe 3a so um damit sie eine Funktion verwenden
+"""
 from random import randint
 
 def run_game(bereich, versuche):
