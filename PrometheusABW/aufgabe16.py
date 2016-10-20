@@ -50,7 +50,7 @@ class ADRESSBUCH():
     def __init__(self):
         self.eintraege = []
     
-    def GetValue(self, value):
+    def __getitem__(self, value):
         return self.eintraege[value]
         
    # def SetValue(self, item, method, *Args):
@@ -70,6 +70,11 @@ class ADRESSBUCH():
         return "No bytes here"
     def __repr__(self):
         return "Don't care"
+    def __len__(self):
+        return len(self.eintraege)
+    def __iter__(self):
+        for item in self.eintraege:
+            yield item
             
 
 Adressbuch1 = {'Vorname':'Max', 'Nachname':'Mustermann','Hobbies': ('Schwimmen','Tanzen','lesen') , 'Alter':'43' , 
