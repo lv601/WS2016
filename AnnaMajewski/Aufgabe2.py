@@ -1,23 +1,48 @@
-adr =  {"Vorname":"Max", "Nachname":"Mustermann", "Hobbies": ["Schwimmen", "Tanzen", "Lesen"], "Alter": 43, "Eigenschaften": {"Geschicklichkeit": 10, "IQ":98, "Gewicht": 88, "Haarfarbe": "blond"}, "Geschlecht": "männlich"}
-zweites = {"Vorname":"Anna", "Nachname":"Majewski", "Hobbies": ["Dota", "Japanisch", "Webdesign"], "Alter": 27, "Eigenschaften": {"Geschicklichkeit": 12, "IQ":80, "Gewicht": 78, "Haarfarbe": "blond"}, "Geschlecht": "weiblich"}
-print(adr)
+## Date: 04.09.2016
+## Author: Anna Majewski
+## Description: Aufgabe 2
+## Zuerst ein Dictionary erstellen, Sachen mit Indizes herauslesen, dann zusätzlichen Eintrag speichern.
 
 from pprint import pprint
+# damit Sachen schick angezeigt werden
 
-# pprint(adr)
+buch = {"Vorname":"Max",
+         "Nachname": "Mustermann",
+         "Hobbies": ["Schwimmen", "Tanzen", "Lesen"],
+# Hobbies wird als Liste eingefügt, da es nicht immer gleich viele Felder haben wird.
+         "Alter": 43,
+         "Eigenschaften":
+# Eigenschaften ist ein eigenes dictionary.
+            {"Geschicklichkeit": 10,
+             "IQ": 98,
+             "Gewicht": 88,
+             "Haarfarbe": "blond"},
+        "Geschlecht": "männlich"}
 
-buch = [adr]
+## Wrap it up in a list
+addressbuch = [buch]
+pprint(addressbuch)
 
-print(adr["Hobbies"])
+## Zusätzliche Aufgaben:
+# Geben Sie den IQ aus.
 
-print("Der IQ beträgt", adr["Eigenschaften"]["IQ"])
+print("Der IQ beträgt:", addressbuch[0]["Eigenschaften"]["IQ"])
 
-print("Der IQ beträgt: ",buch[0]["Eigenschaften"]["IQ"])
+# Geben Sie die Anzahl der Hobbies aus
 
-count = 0
-for x in adr["Hobbies"]:
-    count = count + 1
-print("Es gibt", count, "Hobbies.")
+for index, x in enumerate(addressbuch[0]["Hobbies"]):
+    count = index+1
+# mit enumerate und index den Index mitzählen lassen
+# Zählen beginnt mit 0 deshalb +1
 
-print("Die Länge der Liste ist:",len(buch))
-print("Die Länge des Dictionary ist:",len(adr))
+print("Die Anzahl der Hobbies ist:", count)
+
+# Fügen Sie einen ähnlichen Datensatz hinzu.
+# Da es eine Liste ist, kann man mit .append einen Eintrag hinzufügen.
+
+addressbuch.append({"Vorname": "Taka", "Nachname": "Baka", "Hobbies": ["Games", "Webdesign"], "Eigenschaften": {"Haarfarbe": "braun"},"Geschlecht": "weiblich"})
+
+# Zeigen Sie die Länge des Addressbuchs an
+
+length = len(addressbuch)
+print ("Die Länge des Addressbuchs ist:", length)
