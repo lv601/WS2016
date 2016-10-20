@@ -3,7 +3,6 @@ import time, io
 def parse_fasta(file, db):
     file_handle = open(file, "r")
 
-
     for line in file_handle:
         if line[0] == ">":
             description, id = line[1:].split(maxsplit=1) #aus beiden Teilen wird eine Variable erstellt; es wird genau einmal gesplittet
@@ -44,7 +43,6 @@ def parse_fasta_io(file, db):
             db[-1]['sequence'].write(line.rstrip())
             db[-1]['raw'].write(line)
 
-
 def parse_fasta_binary_io(file, db):
     file_handle = open(file, "rb")
 
@@ -58,7 +56,6 @@ def parse_fasta_binary_io(file, db):
         else:
             db[-1]['sequence'].write(line.rstrip())
             db[-1]['raw'].write(line)
-        #pprint(db)
 
 def take_time(func, args, **kwargs): #**kwargs ist für das Dictionary (keyworded arguments)
     start = time.time() #speichert die aktuelle Zeit in eine Variable (Sekunden seit epoch - 1.1.1970 0 Uhr 0:0)
