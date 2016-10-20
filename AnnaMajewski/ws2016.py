@@ -4,12 +4,17 @@
 ## Author: Anna Majewski
 ## Description: Modul, das wir immer weiter erweitern
 
+## Beschreibung des Codes // hier wird immer wieder upgedatet.
+#1. Aufgabe 11: Zuerst Einfuegen des schnellsten Parsers. In meinem Fall ist das bytesIO Parser.
+# Dann Bearbeiten, sodass Eingabe kein Filename sondern stream ist.
+# Hinzufuegen von Test-Code, damit man sieht ob library direkt ausgefuehrt wird.
+
+#2. Aufgabe 11: Alle weiteren Funktionen aus Uebung 6 eingefuegt und zur besseren Lesbarkeit,
+# die Kommentare entfernt (Kommentare weiterhin in aufgabe6.py zu finden.
+# Die Funktion get_fasta wurde nach den Tipps von nauer verbessert.
+
 import io
 import sys
-
-
-# zuerst einfuegen des schnellsten Parsers (bytesIO Parser)
-# dann bearbeiten, dass Eingabe kein filename sondern bereits stream ist.
 
 def fasta_parser(stream):
     """fasta parser, reads fasta file and introduces content into list"""
@@ -30,8 +35,7 @@ def fasta_parser(stream):
         print("Der Stream muss binaer sein.", file=sys.stderr)
         exit(-1)
 
-## Weitere Funktionen einfügen (Aufgabe 6)
-# zur besseren Lesbarkeit entferne ich die Dokumentationen
+## WEITERE FUNKTIONEN
 
 def get_raw(db, index):
     """reads database and returns field 'raw'"""
@@ -95,3 +99,9 @@ def get_output(db, index, type):
     else:
         output = db[index]["id"] + db[index]["desc"] + db[index]["sequence"]
     return output
+
+## TESTCODE
+
+if __name__ == "__main__":
+# Run test code
+    print(__file__)
