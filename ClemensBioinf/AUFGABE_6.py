@@ -1,6 +1,6 @@
 from time import time
 
-def fasta_parser(total_raw):
+def fasta_parser(path):
     data = []
     total_raw = ''
     for line in open(path, 'r'):
@@ -12,7 +12,7 @@ def fasta_parser(total_raw):
         curr_seq['raw'] = sequence
         curr_seq['sequence'] = ''.join(sequence.splitlines()[3:])
         curr_seq['id'] = header[0]
-        curr_seq['description'] = header[2]
+        curr_seq['description'] = header[2].split('\n')[0]
         data.append(curr_seq)
     return data
 
@@ -148,9 +148,8 @@ def get_output(db, index, type='markdown'):
                 attribute_content += db[index][attribute] +  '~'
         return attributes + '\n' + attribute_content
 
-
 start = time()
-fasta_parser('../examples/sequence.fasta')
+data = fasta_parser('../examples/sequence.fasta')
 end = time()
-print('Total time: {}'.format(round(end-start, 5)))
+print('Total time: {}'.format(round(end-start, 2)))
 #db = genbank_parser('../examples/sequence.gb')

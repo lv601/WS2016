@@ -41,3 +41,12 @@ Erstellung eines datenbankbasierten Webinterfaces das einfache Formulare einlies
 ## Webscraping Tool für die automatisierte Abfrage von Aktienkursen
 
 Einfaches Clientprogramm, dass automatisch Aktienkurse von vorgegeben Aktien in kurzen Zeitintervallen abruft.
+
+## Client Server Programm - Uno über das Netzwerk spielen
+
+Computer über Sockets verbinden und Daten (Spielkarten) austauschen.
+
+## Trainingsdaten von Geräten (z.B.Sportuhren) und APPS (z.B.Runtastic) einlesen und auswerten (Michael Lehrach)
+
+*.tcx , *.gpx (=XML) Parser , csv - mit Weitergabe an R und Datenbank zur Auswertung / Sicherung => Berechnung Vorgabe von weiteren Traingsdaten - vgl Polar Flow oder Velo Hero - besonders interessant wäre ein Sportartenübergreifende Eingliederung da es dies noch nicht verbreitet
+
