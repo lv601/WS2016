@@ -15,5 +15,11 @@ def parse_fasta(file):
     else:
         yield db
 
-for item in parse_fasta("../examples/sequence.fasta"):
-    print(item)
+
+#Hier wird gleich alles ausgegeben
+#for item in parse_fasta("../examples/sequence.fasta"):
+#    print(item)
+
+#hier wird immer nur der nächste Eintrag ausgegeben
+test = parse_fasta("../examples/sequence.fasta")
+next(test)
