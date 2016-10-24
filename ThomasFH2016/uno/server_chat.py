@@ -6,7 +6,7 @@ import select
 
 HOST = '141.244.83.209'
 SOCKET_LIST = []
-RECV_BUFFER = 4096
+RECV_BUFFER = 4096 #int(sys.argv[2])
 PORT = 9009
 
 
@@ -44,6 +44,7 @@ def chat_server():
                     data = sock.recv(RECV_BUFFER)
                     if data:
                         # there is something in the socket
+                        print(data)
                         broadcast(server_socket, sock, "\r" + '[' + str(sock.getpeername()) + '] ' + data)
                     else:
                         # remove the socket that's broken

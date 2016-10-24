@@ -20,7 +20,7 @@ if __name__ == "__main__":
     my_data = foo(10,14)
     print(my_data)
 
-    HOST = 'localhost'    # The remote host
+    HOST = '141.244.83.209'    # The remote host
     PORT = 1235              # The same port as used by the server
 
     # Create client socket (IP4 TCP socket)
