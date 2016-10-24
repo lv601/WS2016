@@ -1,3 +1,4 @@
+user_list=[]  #in case of deleting list upon add_new_player
 class Player:
     #Attributes: name ip-address cards other_player next_player
     def __init__(self, player, ip, cards, next_user, other_user):
@@ -7,15 +8,25 @@ class Player:
         self.next_user=next_user
         self.other_user=other_user
 
-    def call_attribute_messages(self, ip, cards):
+    def call_attr_msg(self, ip, cards):
         #talk with server, messages required
         pass
 
     def ask_name(self, player):
-        #unique name
+        #unique name!
         player=input("Please enter your user name: ")
-        #vergleiche mit datenbank/liste/session
-        return player
+        while player in user_list:
+           print("This name has been taken.")
+           self.ask_name
+        else:
+            return player
+        
+
+    def add_user(self, player):
+        if player in user_list:
+            pass
+        else:
+            user_list.append
 
 if __name__=="__main__":
     print(__file__)
