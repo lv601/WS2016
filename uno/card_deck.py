@@ -6,7 +6,7 @@ class Deck:
         pass
 
     def new_deck(self):
-
+        pass
 
 
 
