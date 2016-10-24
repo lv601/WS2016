@@ -6,8 +6,7 @@ def parseFastaFile(file):
     seq_list = []
 
     for line in file_handler:
-
-        if line.startswith('>'):
+        if zeile[0] == ">":
             seq_dict = dict()
             seq_dict['id'] = line.split()[0][1:]
             seq_dict['description'] = line.split(maxsplit=1)[1].strip()  # .rstrip('\n')

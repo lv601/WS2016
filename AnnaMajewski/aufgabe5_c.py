@@ -16,7 +16,12 @@ def substring_gen(sublen, string = ""):
         # Eingabe in Variable eingabe gespeichert.
     else:
         eingabe = string
+
+    # TIPP: Das ist nicht nötig. Sie können direkt mit sublen arbeiten
     length = sublen
+    # TIPP: Schreiben Sie Kommentare über oder rechts neben den Code den Sie kommentieren
+    # möchten. Darunter ist sehr ungewöhnlich und erschwert den Austausch von Code mit
+    # anderen
     # Länge des Substrings
     strlen = len(eingabe)
     # Länge des eingegebenen Strings

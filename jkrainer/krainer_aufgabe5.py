@@ -1,5 +1,7 @@
-
-
+# Tipp: Sie haben Duplikate in ihrem Projektordner
+# krainer_aufgabe5.py und krainer_aufgabe5a.py sind ident. Sie
+# können die Duplikate einfach mit 'git rm krainer_aufgabe5.py'
+# aus dem Repository löschen
 adressbuch = [{"Vorname":"Max", "Nachname":"Mustermann", "Hobbies":("Schwimmen", "Tanzen", "Lesen"), "Alter":43, "Eigenschaften":{"Geschicklichkeit":10, "IQ":98, "Gewicht": 88, "Haarfarbe":"blond"}, "Geschlecht":"männlich"}]
 
 print(len(adressbuch))

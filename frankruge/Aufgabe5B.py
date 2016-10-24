@@ -28,6 +28,8 @@ def guess_number(randomNumber, count):
 	if(count==10):
 		return ("zu viele Versuche")
 	else:
+		# TIPP:Anstatt die verschiedenen Versuche rekursiv
+		# aufzurufen verwenden Sie lieber eine Schleife
 		userNumber = int(input("geben sie eine Zahl zwischen 1 und 10  ein:"))
 		if(randomNumber == userNumber):
 			print("richtig!")
@@ -41,6 +43,10 @@ def guess_number(randomNumber, count):
 
 
 from random import randint
+
+# TIPP: erzeugen Sie die Zufallszahl besser in der Funktion.
+# Sie können den Ratebereich als Parameter übergeben z.B.:
+# guess_number((1,10), 10)
 randomNumber=randint(1,10)
 count=0
 guess_number(randomNumber, count)

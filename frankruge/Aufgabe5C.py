@@ -15,11 +15,20 @@ for i in range(len(theString)):
 
 
 def stringlooper(theString):
+
     for i in range(len(theString)):
         if(len(theString[i:i+3]) == 3):
             print(" "*i+theString[i:i+3])
         else:
             return 0
+
+	for i in range(len(theString)):
+			# TIPP: Achten sie auf den richtigen Einzug
+	        if(len(theString[i:i+3]) == 3):
+	                print(" "*i+theString[i:i+3])
+	        else:
+	                return 0
+
 
 stringlooper(input("geben sie einen string ein: \n"))
 

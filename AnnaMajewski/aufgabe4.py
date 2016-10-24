@@ -18,6 +18,11 @@ def set(*settings):
     """Setting flags and returning the total"""
 ## Der User sagt mir welche Flags er setzen möchte,
 ## ich returne ihm welche Summe daraus gebildet wird.
+
+    # TIPP: Verwenden Sie für Konstanten wie diese uppercase Notation FLAG1, FLAG2, ...
+    # Sehen sie z.B. das Modul re
+    # import re
+    # re.IGNORECASE
     flag1 = 2
     flag2 = 4
     flag3 = 8
