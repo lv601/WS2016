@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+
+""" Aufgabe 6
+Schreiben Sie eine Funktion, die ein Fasta File (WS2016/examples/sequence.fasta) einliest, parst und in ein Daten-Objekt
+einfügt.
+
+Schreiben Sie eine Funktion, die ein Genbank File (WS2016/examples/sequence.gb) einliest, parst und in ein Daten-Objekt
+einfügt.
+
+Siehe WS2016/exercises/aufgabe6.pdf
+"""
+
 import re
 from pprint import pprint
 
@@ -129,28 +140,19 @@ def get_raw(db, index):
     return db[index]['raw']
 
 
-def get_fasta(db, index):
+def get_fasta(db, index, line_length=80):
     """
     Return sequence in fasta format
     :param db:
     :param index:
     :return: str
     """
-    str = ">" + db[index]['id'] + " " + db[index]['description'] + "\n"
+    strings = [">{0[id]}|{0[description]}".format(db[index])]
 
-    # Calculate how many rows with 80 characters
-    rows = divmod(len(db[index]['sequence']), 80)
+    for i in range(0, len(db[index]['sequence']), line_length):
+        strings.append(db[index]['sequence'][i:i + line_length])
 
-    # If Module not 0 than 1 not full row more
-    if rows[1] > 0:
-        r = rows[0] + 1
-    else:
-        r = rows[0]
-
-    for i in range(r):
-        str += db[index]['sequence'][i * 80: i * 80 + 80] + "\n"
-
-    return str
+    return "\n".join(strings)
 
 
 def add_sequence_object(db, id, description, sequence, **features):

@@ -1,6 +1,9 @@
 ## Date: 05.09.2016
 ## Author: Anna Majewski
 ## Description: Bitweise Opertoren und ihre Anwendung
+## Ich habe 2 Funktionen geschrieben, weil ich nicht nur abfragen wollte, welche Flags gesetzt sind,
+## sondern auch selbst welche setzen wollte.
+## Mit set() kann man jetzt Flags aufaddieren und mit isset() anzeigen welche Flags gesetzt sind.
 
 # gesetzte Flags kombinieren: flag1 | flag3
 
@@ -15,6 +18,11 @@ def set(*settings):
     """Setting flags and returning the total"""
 ## Der User sagt mir welche Flags er setzen möchte,
 ## ich returne ihm welche Summe daraus gebildet wird.
+
+    # TIPP: Verwenden Sie für Konstanten wie diese uppercase Notation FLAG1, FLAG2, ...
+    # Sehen sie z.B. das Modul re
+    # import re
+    # re.IGNORECASE
     flag1 = 2
     flag2 = 4
     flag3 = 8

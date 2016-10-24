@@ -3,7 +3,7 @@
 #from Aufgabe5_functions import add_contact
 
 def add_contact(dictionary, **kwargs):
-        dictionary.append(**kwargs)
+        dictionary.append(dict(**kwargs))
 
 
 ##############fehlermeldung

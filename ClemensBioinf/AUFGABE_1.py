@@ -27,3 +27,4 @@ except TypeError:
 ### Was ergibt eine Division von einer Ganzzahl (integer) durch eine Gleitkommazahl (float)? ###
 # Eine Gleitkommazahl. siehe
 print(type(10 / 2.5))
+

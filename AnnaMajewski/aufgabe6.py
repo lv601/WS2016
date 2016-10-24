@@ -14,8 +14,13 @@ def fasta_parser(filename):
     position = 0
     for index, line in enumerate(file_handle):
 # Index, weil für den ersten Eintrag eine Datenbank erstellt werden muss.
+        # TIPP: In dem Fall, dass nur ein Zeichen geprüft wird, können Sie auch
+        # einfach den Indexoperator verwenden. Der ist schneller.
+
+        # if line[0] == ">":
         if line.startswith(">"):
             line = line.strip()
+            # TIPP: Das geht einfacher mit .split() oder .partition(" ")
             position = line.index(" ")
             header = line[0:position-1]
             desc = line[position+1:]
@@ -34,7 +39,7 @@ def fasta_parser(filename):
     return(db)
 # Ich habe die gesamte Datenbank als Rückgabewert gespeichert.
 
-my_db = fasta_parser("sequence.fasta")
+my_db = fasta_parser("../examples/sequence.fasta")
 
 ## Der Parser ist erstellt, jetzt die zusätzlichen Funktionen.
 # F1: get_raw(db,	index))	-	gibt	den	raw	String	des	indizierten	Sequenz-Objekt	zurück
@@ -75,11 +80,24 @@ def get_sequence(db, index):
 # F5: get_fasta(db,	index) - Kreiert aus id, desc + seq eine Fasta Seq mit max 80 Zeichen pro Zeile.
 
 def get_fasta(db, index):
+    # ACHTUNG: Die 80 Zeichen Regel gilt nicht für den Header.
+    # Fasta Sequenzen mit mehreren Header Lines sind nicht
+    # erlaubt. 1. Zeile Header dann Sequenz. Konnten Sie
+    # nicht wissen.
     """reads database and returns fasta file with max. 80 chars in line"""
     fasta_seq = db[index]['id']+db[index]['desc']+db[index]['sequence']
 # fasta_seq ist die gesamte Sequenz, die sich aus den Teilen zusammensetzt.
     new_seq = ""
 # Initiation der Variable new_seq, in die die "neue" Sequenz gespeichert wird.
+    # UGH: Sie loopen über jedes Zeichen in der Sequenz, dass kostet viel Zeit.
+    # Verwenden Sie lieber den Indexoperator mit dem range der Zeilenlänge
+    # lines = []
+    # for i in range(0, (len(db[index]['sequence']) // line_length) * line_length, step=line_length):
+    #     lines.append(db[index]['sequence'][i:i + line_length])
+    #
+    # if len(sequence) % line_length > 0:
+    #     lines.append(sequence[i:])
+    # "\n".join(lines)
     for index, char in enumerate(fasta_seq):
         if (index+1) % 80 == 0:
 # Wenn der Index (+1) durch 80 dividiert 0 ergibt, so haben wir 80 Zeichen in der Zeile.
@@ -130,13 +148,18 @@ def get_gc_content(db, index):
     """reads database and returns GC content of the sequence in % """
     seq = db[index]["sequence"]
     count = 0
+# count wird verwendet für die Anzahl der A und Ts
     for ind, char in enumerate(seq):
         if (char == "A") or (char == "T"):
             continue
+# Wenn ein A oder ein T erkannt wird, springt die Schleife zur nächsten Iteration
         else:
             count +=1
+# Sonst wird count um 1 erhöht.
     content = count / (ind+1)
+# Die Anzahl der Basen in der Sequenz gibt mir ind, man muss aber +1 rechnen
     content *= 100
+# Die Zahl wird mit 100 multipliziert um es in Prozent angeben zu können.
     return content
 
 print(get_gc_content(my_db, 9))

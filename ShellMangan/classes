@@ -1,0 +1,11 @@
+class Car:
+    def drive(self, here, to, mode="fastest"):
+    string="Auto fährt von {} nach {} im Mode {}"
+    print(string.format(here, to, mode)
+
+    def compare(self, car2, field):
+        pass
+car1=Car()
+car1.drive("A","B")
+
+
