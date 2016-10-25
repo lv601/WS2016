@@ -1,6 +1,16 @@
 # Echo client program
 import socket
 import pickle
+from threading import Thread
+import selectors
+
+
+HOST = '141.244.134.225' # The remote host
+LOKAL_HOST = '141.244.134.225'
+
+PORT = 5002              # (Sending) The same port as used by the server
+PORT2= 5003              # (Receiving)
+
 
 class foo:
     def __init__(self, x, y):
@@ -15,20 +25,70 @@ class foo:
         return pickle.dumps(self)
 
 
+class output:
+    def update(self, msg):
+        print("I'm an instance of class Output:", msg)
+
+
+# Create listening server - runs in it own thread
+def create_socket(ref):
+    sel = selectors.DefaultSelector()
+
+    # Accept connection to socket sock
+    def accept(sock, mask):
+        conn, addr = sock.accept()  # Should be ready
+        # conn.setblocking(False)
+        # Register callback function read for conn
+        sel.register(conn, selectors.EVENT_READ, read)
+
+    # Data is send to socket sock
+    def read(conn, mask):
+        # Read max.1024 bytes
+        data = conn.recv(4096)  # Should be ready
+
+        # Do something with the received data
+        ref.update(data)
+
+        sel.unregister(conn)
+        conn.close()
+
+    sock = socket.socket()
+    sock.bind((LOKAL_HOST, PORT2))
+    sock.listen(1)  # Only listen to server
+
+    # Allows muliple connections at the same time
+    # sock.setblocking(False)
+
+    # Register callback function accept() for sock
+    sel.register(sock, selectors.EVENT_READ, accept)
+
+    while True:
+        events = sel.select()
+        for key, mask in events:
+            callback = key.data
+            callback(key.fileobj, mask)
+
+
 if __name__ == "__main__":
     # Create data instance
     my_data = foo(10,14)
     print(my_data)
 
-    HOST = 'localhost'    # The remote host
-    PORT = 1235              # The same port as used by the server
+    ref = output()  # Replace by output instance
 
-    # Create client socket (IP4 TCP socket)
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.connect((HOST, PORT))
-        # Send data to server
-        s.sendall(bytes(my_data))  # bytes call __bytes__() Methode which pickles the object to bytes string
-        # Wait for data from the server and close socket
-        data = s.recv(1024)
-        # Unpickle data back to foo instance
-        print('Received', pickle.loads(data))
+    # Start client listening server
+    t1 = Thread(target=create_socket, args=(ref,))
+    t1.start()
+
+    # Application main loop
+    while True:
+        msg = input("Eingabe: ")
+
+        # Create client socket (IPv4 TCP socket) - Send message to server
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.connect((HOST, PORT))
+            # Send data to server
+            s.sendall(msg.encode())  # bytes call __bytes__() Methode which pickles the object to bytes string
+            s.close()
+
+
