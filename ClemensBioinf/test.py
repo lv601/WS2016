@@ -1,15 +1,12 @@
 class A:
-    def __init__(self, *args):
-        self.data = args
-    def __getitem__(self, key):
-        return self.data[key]
-    def __setitem__(self, key, value):
-        self.data[key] = value
-    def __iter__(self):
-        for item in self.data:
-            yield item
-
-a = A("Hello", "World", "!")
-#print(a[1])
-for item in a:
-    print(item)
+    def __repr__(self):
+        return "A()"
+    def __str__(self):
+        return "Ich bin vom Typ A"
+    def __bytes__(self):
+        return b"Ich bin vom Typ A"
+a = A()
+str(a)
+repr(a)
+print(hash(a))
+print(a)
