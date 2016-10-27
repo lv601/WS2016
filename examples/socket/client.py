@@ -8,9 +8,17 @@ import selectors
 HOST = '141.244.134.225' # The remote host
 LOKAL_HOST = '141.244.134.225'
 
-PORT = 5002              # (Sending) The same port as used by the server
-PORT2= 5003              # (Receiving)
+PORT = 6010              # (Sending) The same port as used by the server
+PORT2= 6000              # (Receiving)
 
+
+with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+    # Try to connect to googles DNS server
+    sock.connect(("8.8.8.8", 80))
+    # return network ip address
+    LOKAL_HOST = sock.getsockname()[0]
+
+HOST = LOKAL_HOST
 
 class foo:
     def __init__(self, x, y):
