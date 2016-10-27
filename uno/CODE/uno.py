@@ -100,9 +100,9 @@ def client(args):
     while True:
         inp = input("Eingabe: ")
 
-        msg = Message("chat", inp, n.c_host)
+        msg = Message("chat", inp, n.port)
 
-        n.send_message(n.s_host, pickle.dumps(msg))
+        n.send_message(n.remote_ip, pickle.dumps(msg))
 
         time.sleep(1)
 
