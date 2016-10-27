@@ -52,19 +52,32 @@ def server(args):
     """
     print("Start ZUNO game as server on port {}".format(args.server_port))
 
+    WAIT_FOR_PLAYER = True
+    player_list = {}
+
     n = Network(args.client_port, args.server_port)
 
     def callback(conn, data):
+        nonlocal WAIT_FOR_PLAYER
+
         # Unpickle data
         msg = pickle.loads(data)
 
-        if msg.recipient == "all":
-            for addr in n.connected_clients:
-                print("Send message '{}' to: {}".format(msg.msg, addr))
-                n.send_message(addr, msg.msg.encode())
+        if WAIT_FOR_PLAYER:
+            if msg.type == "WAIT_FOR_PLAYER":
+                player_list[msg.msg] = msg.sender
+                print("Login player {}:{}".format(msg.msg, msg.sender))
+                if len(player_list) >= 2:
+                    WAIT_FOR_PLAYER = False
         else:
-            print("Send message '{}' to: {}".format(msg.msg, msg.recipient))
-            n.send_message(msg.recipient, msg.msg.encode())
+            if msg.type == "CHAT":
+                if msg.recipient == "all":
+                    for addr in n.connected_clients:
+                        print("Send message '{}' to: {}".format(msg.msg, addr))
+                        n.send_message(addr, msg.msg.encode())
+                else:
+                    print("Send message '{}' to: {}:{}".format(msg.msg, msg.recipient, player_list[msg.recipient]))
+                    n.send_message(player_list[msg.recipient], msg.msg.encode())
 
         conn.close()
         n.selectors.unregister(conn)
@@ -97,12 +110,16 @@ def client(args):
     t1 = Thread(target=n.run_listen_socket)
     t1.start()
 
+    # Login
+    msg = Message("WAIT_FOR_PLAYER", args.nickname, n.ip, "")
+    n.send_message(n.remote_ip, pickle.dumps(msg))
+
     # Start main loop
     while True:
         inp = input("Eingabe: ")
         inp2 = input("Senden an: ")
 
-        msg = Message("chat", inp, {args.nickname:n.ip}, inp2)
+        msg = Message("CHAT", inp, {args.nickname:n.ip}, inp2)
 
         n.send_message(n.remote_ip, pickle.dumps(msg))
 
@@ -115,19 +132,20 @@ def main(argv=None):
     if DEBUG:
         sys.argv.append("--server-ip")
         sys.argv.append("141.244.113.120")
-        sys.argv.append("--nick")
-        sys.argv.append("A")
+
+
 
         # sys.argv.append("-d")
         # sys.argv.append("-r")
-        # sys.argv.append("7001")
+        # sys.argv.append("7002")
         # sys.argv.append("-p")
-        # sys.argv.append("7011")
+        # sys.argv.append("7012")
 
         sys.argv.append("-r")
-        sys.argv.append("7001")
+        sys.argv.append("7012")
         sys.argv.append("-p")
-        sys.argv.append("7011")
+        sys.argv.append("7002")
+        sys.argv.append("nauer")
         pass
 
     if argv:
