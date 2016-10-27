@@ -38,12 +38,18 @@ def start(args):
     if DEBUG:
         print(args)
 
+    # Run as game server or client
     if args.daemon:
         server(args)
     else:
         client(args)
 
 def server(args):
+    """
+    Run app as deamon process
+    :param args:
+    :return:
+    """
     print("Start ZUNO game as server on port {}".format(args.server_port))
 
     n = Network(args.client_port, args.server_port)
@@ -66,6 +72,11 @@ def server(args):
 
 
 def client(args):
+    """
+    Run as client
+    :param args:
+    :return:
+    """
     print("Start ZUNO game as client on port {}".format(args.client_port))
 
     n = Network(args.client_port, args.server_port, server_ip_address=args.server_ip)

@@ -3,21 +3,28 @@ import socket
 import pickle
 
 class Network:
-    def __init__(self, client_port, server_port, client_ip_address=None, server_ip_address=None):
-        self.c_port = client_port
-        self.s_port = server_port
+    def __init__(self, port, remote_port, ip_address=None, remote_ip_address=None):
+        """
+        Create a listener and a receiver socket pair
+        :param port: locale instance port
+        :param remote_port: remote instance port
+        :param ip_address: locale ip address
+        :param remote_ip_address: remote ip address
+        """
+        self.port = port
+        self.remote_port = remote_port
         self.selectors = selectors.DefaultSelector()
         self.connected_clients = set()
 
-        if server_ip_address:
-            self.s_host = server_ip_address
+        if remote_ip_address:
+            self.remote_ip = remote_ip_address
         else:
-            self.s_host = self.get_ip_address()
+            self.remote_ip = self.get_ip_address()
 
-        if client_ip_address:
-            self.c_host = client_ip_address
+        if ip_address:
+            self.ip = ip_address
         else:
-            self.c_host = self.get_ip_address()
+            self.ip = self.get_ip_address()
 
 
     @staticmethod  # similar to staticmethod(get_ip_address)
@@ -30,8 +37,8 @@ class Network:
 
     def send_message(self, addr, message, buffer_size=4096):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            print("send_message:", addr, self.c_port)
-            s.connect((addr, self.c_port))
+            print("send_message:", addr, self.remote_port)
+            s.connect((addr, self.remote_port))
             # Send data to server
             s.sendall(message)
             s.close()
@@ -55,8 +62,8 @@ class Network:
             callback(conn, data)
 
         sock = socket.socket()
-        print("{} - Listen on port {}: ".format(self.s_host, self.s_port))
-        sock.bind((self.s_host, self.s_port))
+        print("{} - Listen on port {}: ".format(self.ip, self.port))
+        sock.bind((self.ip, self.port))
         sock.listen(100)
         # Allows muliple connections at the same time
         sock.setblocking(False)
