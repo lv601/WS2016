@@ -68,7 +68,7 @@ def server(args):
 def client(args):
     print("Start ZUNO game as client on port {}".format(args.client_port))
 
-    n = Network(args.server_port, args.client_port)
+    n = Network(args.server_port, args.client_port, server_ip_address=args.server_ip)
     ref = Output()
 
     def callback(conn, msg):
@@ -101,7 +101,7 @@ def main(argv=None):
     # Debug parameter
     if DEBUG:
         sys.argv.append("--server-ip")
-        sys.argv.append("192.168.192.22")
+        sys.argv.append("141.244.113.120")
 
         # sys.argv.append("-d")
         # sys.argv.append("-r")

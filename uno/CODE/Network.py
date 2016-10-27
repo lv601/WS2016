@@ -30,6 +30,7 @@ class Network:
 
     def send_message(self, addr, message, buffer_size=4096):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            print("send_message:", addr, self.c_port)
             s.connect((addr, self.c_port))
             # Send data to server
             s.sendall(message)
