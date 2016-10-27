@@ -55,7 +55,7 @@ class Network:
             callback(conn, data)
 
         sock = socket.socket()
-        print("Listen on port {}: ".format(self.s_port))
+        print("{} - Listen on port {}: ".format(self.s_host, self.s_port))
         sock.bind((self.s_host, self.s_port))
         sock.listen(100)
         # Allows muliple connections at the same time
