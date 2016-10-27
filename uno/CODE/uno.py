@@ -62,6 +62,9 @@ def server(args):
             for addr in n.connected_clients:
                 print("Send message '{}' to: {}".format(msg.msg, addr))
                 n.send_message(addr, msg.msg.encode())
+        else:
+            print("Send message '{}' to: {}".format(msg.msg, msg.recipient))
+            n.send_message(msg.recipient, msg.msg.encode())
 
         conn.close()
         n.selectors.unregister(conn)
@@ -77,7 +80,7 @@ def client(args):
     :param args:
     :return:
     """
-    print("Start ZUNO game as client on port {}".format(args.client_port))
+    print("Player {} start ZUNO game as client on port {}".format(args.nickname, args.client_port))
 
     n = Network(args.client_port, args.server_port, remote_ip_address=args.server_ip)
     ref = Output()
@@ -90,8 +93,6 @@ def client(args):
 
     n.create_listen_socket(callback)
 
-
-
     # Start client listening server
     t1 = Thread(target=n.run_listen_socket)
     t1.start()
@@ -99,8 +100,9 @@ def client(args):
     # Start main loop
     while True:
         inp = input("Eingabe: ")
+        inp2 = input("Senden an: ")
 
-        msg = Message("chat", inp, n.port)
+        msg = Message("chat", inp, {args.nickname:n.ip}, inp2)
 
         n.send_message(n.remote_ip, pickle.dumps(msg))
 
@@ -113,6 +115,8 @@ def main(argv=None):
     if DEBUG:
         sys.argv.append("--server-ip")
         sys.argv.append("141.244.113.120")
+        sys.argv.append("--nick")
+        sys.argv.append("A")
 
         # sys.argv.append("-d")
         # sys.argv.append("-r")
@@ -140,6 +144,7 @@ def main(argv=None):
         parser.add_argument('-r', '--server-port', type=int, default=6010, help="Set remote server port. Default = 6010")
         parser.add_argument('-i', '--server-ip', type=str, default=None, help="Remote Server IP-address. Default = Host IP-address")
         parser.add_argument('-d', '--daemon', action="store_true", help="Run as game server")
+        parser.add_argument('nickname', type=str, help="Player nickname. Must be unique")
 
         # Process arguments
         args = parser.parse_args()
