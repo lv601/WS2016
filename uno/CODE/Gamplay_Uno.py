@@ -26,7 +26,8 @@ class Gameplay_Uno(Gameplay):
         for Player.other_player:
             num_of_cards.append(Player.cards)
 
-
+def main():
+    Gameplay_Uno()
 
 if __name__ == "__main__":
-    gameplay()
+    main()
