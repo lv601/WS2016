@@ -28,9 +28,10 @@ class Output:
         print("I'm an instance of class Output:", msg)
 
 class Message:
-    def __init__(self, type, msg, sender, recipient="all"):
+    def __init__(self, type, msg, sender, recipient="all", data=None):
         self.type = type
         self.msg = msg
+        self.data = data
         self.sender = sender
         self.recipient = recipient
 
@@ -64,6 +65,7 @@ def server(args):
         msg = pickle.loads(data)
 
         if WAIT_FOR_PLAYER:
+            # Registry players
             if msg.type == "WAIT_FOR_PLAYER":
                 player_list[msg.msg] = msg.sender
                 print("Login player {}:{}".format(msg.msg, msg.sender))
@@ -158,11 +160,17 @@ def main(argv=None):
         # Setup argument parser
         parser = ArgumentParser()
         parser.add_argument('-V', '--version', action='version', version=__version__)
-        parser.add_argument('-p', '--client-port', type=int, default=6000, help="Set local server port. Default = 6000")
-        parser.add_argument('-r', '--server-port', type=int, default=6010, help="Set remote server port. Default = 6010")
+        subparsers = parser.add_subparsers(help='sub-command help')
+
+        parser_server = subparsers.add_parser('server', help='Start ZUNO game server')
+        parser_client = subparsers.add_parser('server', help='Start ZUNO game client')
+
+        parser_server.add_argument('-r', '--server-port', type=int, default=6010, help="Set remote server port. Default = 6010")
         parser.add_argument('-i', '--server-ip', type=str, default=None, help="Remote Server IP-address. Default = Host IP-address")
         parser.add_argument('-d', '--daemon', action="store_true", help="Run as game server")
         parser.add_argument('nickname', type=str, help="Player nickname. Must be unique")
+        parser_client.add_argument('-p', '--client-port', type=int, default=6000,
+                                   help="Set local server port. Default = 6000")
 
         # Process arguments
         args = parser.parse_args()
