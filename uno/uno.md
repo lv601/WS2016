@@ -32,7 +32,7 @@ class GamePlay_Uno(GamePlay):
   card_deck = Card_Deck_Uno
   rules = Rules_Uno()
 
-# Spielvogel, Basilio, gollobich, Rieger
+# Spielvogel, Basilio, gollobich, Rieger, Tolios
 class Card:
 color=
 symbol
@@ -55,6 +55,7 @@ class Rules:
 
 class Rules_Uno(Rules):
 
+Card1 = Card("")
 
 class Output:
   print_player_cards()
