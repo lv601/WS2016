@@ -57,15 +57,12 @@ class Rules:
 
 
 class Rules_Uno(Rules):
-```
 
 Card1 = Card("")
-
-=======
 ```
+
 Buchner, Tomaselli,  Niessner, Bindeus
 ```python
->>>>>>> f50e0d0cfe694e72a021fb5c09730aeb17228a12
 class Output:
   print_player_cards()
   print_current_card()
