@@ -34,12 +34,8 @@ class GamePlay_Uno(GamePlay):
   rules = Rules_Uno()
 ```
 
-<<<<<<< HEAD
-# Spielvogel, Basilio, gollobich, Rieger, Tolios
-=======
-Spielvogel, Basilio, gollobich, Rieger
+Spielvogel, Basilio, gollobich, Rieger, Tolios
 ```python
->>>>>>> f50e0d0cfe694e72a021fb5c09730aeb17228a12
 class Card:
 color=
 symbol
@@ -55,13 +51,13 @@ class Card_Deck:
 
 class Card_Deck_Uno:
   create_deck()
-```
-```python
+
+
 class Rules:
 
 
 class Rules_Uno(Rules):
-<<<<<<< HEAD
+```
 
 Card1 = Card("")
 
