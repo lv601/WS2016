@@ -15,8 +15,13 @@
 + Aufgabe 11 - fasta_parser.py, ws2016 - *Library und Ausführen von Library*
 + Aufgabe 12 - aufgabe12.py - *argparser für das Zahlenratespiel*
 + Aufgabe 13 - aufgabe13.py - *Einführung in Klassen und Objekte*
++ Aufgabe 12b - aufgabe12b.py - *argparser für fasta_parser.py*
++ Aufgabe 14 - ws2016.py - *3 Klassen erstellt und __init__ Methoden hinzugefuegt*
++ Aufgabe 15 - aufgabe15.py - *Generatorfunktion für den Fasta Parser aus Aufgabe 6*
++ Aufgabe 16a - aufgabe16.py - *3 Magic Methods zu Aufgabe13 hinzugefügt*
++ Aufgabe 16b - ws2016.py - *3 Magic Methods zu ws2016.py hinzugefügt*
++ Aufgabe 17a - aufgabe17.py - *3 weitere Magic Methods zu Aufgabe 16a hinzugefügt*
++ Aufgabe 17b - ws2016.py - *3 weitere Magic Methods zu ws2016.py hinzugefügt*
 
 ## Noch fehlende Aufgaben
-+ Aufgabe 11 - *weitere Funktionen einfügen und ausgeben*
-+ Aufgabe 12b - *argparser für fasta_parser.py*
-+ Aufgabe 14 - *Klassen und Objekte um die Library legen*
++ nichts mehr :D

@@ -36,4 +36,3 @@ parser.set_defaults(func=guess_game) #Funktion wird zugewiesen, die als Standard
 
 args = parser.parse_args()
 args.func(args) #Funktion wird mit Argumenten aufgerufen.
-

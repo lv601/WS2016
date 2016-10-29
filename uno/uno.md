@@ -34,7 +34,7 @@ class GamePlay_Uno(GamePlay):
   rules = Rules_Uno()
 ```
 
-Spielvogel, Basilio, gollobich, Rieger
+Spielvogel, Basilio, gollobich, Rieger, Tolios
 ```python
 class Card:
 color=
@@ -51,13 +51,16 @@ class Card_Deck:
 
 class Card_Deck_Uno:
   create_deck()
-```
-```python
+
+
 class Rules:
 
 
 class Rules_Uno(Rules):
+
+Card1 = Card("")
 ```
+
 Buchner, Tomaselli,  Niessner, Bindeus
 ```python
 class Output:
