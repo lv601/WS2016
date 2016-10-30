@@ -18,6 +18,7 @@ import pickle
 from argparse import ArgumentParser
 from Network import Network
 from threading import Thread
+import socket
 import time
 
 __version__ = "v0.1"
@@ -26,7 +27,7 @@ DEBUG = False
 
 class Output:
     def update(self, msg):
-        print("I'm an instance of class Output:", msg)
+        print(msg)
 
 class Message:
     def __init__(self, type, msg, sender, recipient="all", data=None):
@@ -36,6 +37,8 @@ class Message:
         # Sender is defined as [nickname, ip-address, listening port]
         self.sender = sender
         self.recipient = recipient
+    def __str__(self):
+        return "\nMESSAGE\nType: {0.type}\nMessage: {0.msg}\nData: {0.data}\nFrom: {0.sender}\nTo: {0.recipient}".format(self)
 
 def server(args):
     """
@@ -49,13 +52,10 @@ def server(args):
     player_list = {}
 
     n = Network(args.server_port)
+    print(args.server_port)
 
     def callback(conn, data):
         nonlocal WAIT_FOR_PLAYER
-
-        # If no client is connected stop server
-        if player_list is None:
-            n.stop_listen_socket()
 
         # Unpickle data
         msg = pickle.loads(data)
@@ -63,10 +63,15 @@ def server(args):
         if WAIT_FOR_PLAYER:
             # Registry players
             if msg.type == "WAIT_FOR_PLAYER":
+                print(msg.sender)
                 player_list[msg.sender[0]] = msg.sender[1:]
                 print("Login player {}:{}:{}".format(*msg.sender))
                 if len(player_list) >= args.players:
                     WAIT_FOR_PLAYER = False
+
+                respond = Message("REGISTER", "OK", ["server", n.ip, n.port], msg.sender[0], player_list)
+
+                n.send_message(*msg.sender[1:], pickle.dumps(respond))
         else:
             if msg.type == "CHAT":
                 if msg.recipient == "all":
@@ -78,6 +83,10 @@ def server(args):
                     n.send_message(player_list[msg.recipient], msg.msg.encode())
             elif msg.type == "UNREGISTER":
                 pass
+
+        # If no client is connected stop server
+        if player_list is None:
+           n.stop_listen_socket()
 
         conn.close()
         n.selectors.unregister(conn)
@@ -95,10 +104,11 @@ def client(args):
     """
     print("Player {} start ZUNO game as client on port {}".format(args.nickname, args.client_port))
 
-    n = Network(args.client_port, args.server_port, remote_ip_address=args.server_ip)
+    n = Network(args.client_port)
     ref = Output()
 
-    def callback(conn, msg):
+    def callback(conn, response):
+        msg = pickle.loads(response)
         ref.update(msg)
 
         conn.close()
@@ -111,8 +121,18 @@ def client(args):
     t1.start()
 
     # Login
-    msg = Message("WAIT_FOR_PLAYER", "", {args.nickname:[n.ip, n.port]}, "")
-    n.send_message(n.remote_ip, pickle.dumps(msg))
+    msg = Message("WAIT_FOR_PLAYER", "", [args.nickname, n.ip, n.port], "")
+
+    try:
+        print("Send message to {0.server_ip}:{0.server_port}".format(args))
+        n.send_message(args.server_ip, args.server_port, pickle.dumps(msg))
+    except socket.timeout:
+        print("Can not connect to server {0.server_ip}:{0.server_port}. Connection timeout!".format(args),
+              file=sys.stderr)
+        n.stop_listen_socket()
+        exit(-1)
+
+    time.sleep(1)
 
     # Start main loop
     while True:
@@ -121,9 +141,13 @@ def client(args):
 
         msg = Message("CHAT", inp, [args.nickname, n.ip, n.port], inp2)
 
-        n.send_message(n.remote_ip, pickle.dumps(msg))
-
-        time.sleep(1)
+        try:
+            n.send_message(args.server_ip, args.server_port, pickle.dumps(msg))
+        except socket.timeout:
+            print("Can not connect to server {0.server_ip}:{0.server_port}. Connection timeout!".format(args),
+                  file=sys.stderr)
+            n.stop_listen_socket()
+            exit(-1)
 
 def main(argv=None):
     """ Command line options """

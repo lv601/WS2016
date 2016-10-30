@@ -2,7 +2,7 @@ import selectors
 import socket
 
 class Network:
-    def __init__(self, port, ip_address=None, remote_ip_address=None):
+    def __init__(self, port, ip_address=None):
         """
         Create a listener and a receiver socket pair
         :param port: listen port
@@ -11,12 +11,6 @@ class Network:
         """
         self.port = port
         self.selectors = selectors.DefaultSelector()
-        #self.connected_clients = set()
-
-        if remote_ip_address:
-            self.remote_ip = remote_ip_address
-        else:
-            self.remote_ip = self.get_ip_address()
 
         if ip_address:
             self.ip = ip_address
@@ -37,10 +31,11 @@ class Network:
 
     def send_message(self, remote_ip, remote_port, message):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            print("send_message:", remote_ip, remote_port, message.decode())
+            s.settimeout(3)
             s.connect((remote_ip, remote_port))
             # Send data to server
             s.sendall(message)
+
             s.close()
 
     def create_listen_socket(self, callback, buffer_size=4096):
@@ -92,27 +87,50 @@ class Network:
         self.send_message(self.ip, self.port, b"Close socket")
 
 
-
 if __name__ == "__main__":
-    n = Network(5000)
-    n.remote_ip = n.ip
+    from threading import Thread
+    import time
 
-    def callback(conn, data):
-        print(data.decode())
+    # Socket 1
+    n1 = Network(5020)
+    n1.remote_ip = n1.ip
+
+    def callback1(conn, data):
+        print("n1 receive:", data.decode(), conn)
 
         conn.close()
-        n.selectors.unregister(conn)
+        n1.selectors.unregister(conn)
 
-    n.create_listen_socket(callback)
+    n1.create_listen_socket(callback1)
 
-    from threading import Thread
+    # Socket 2
+    n2 = Network(5070)
+    n2.remote_ip = n2.ip
+
+
+    def callback2(conn, data):
+        print("n2 receive:", data.decode(), conn)
+
+        conn.close()
+        n2.selectors.unregister(conn)
+
+
+    n2.create_listen_socket(callback2)
 
     # Start client listening server
-    t1 = Thread(target=n.run_listen_socket)
+    t1 = Thread(target=n1.run_listen_socket)
+    t2 = Thread(target=n2.run_listen_socket)
+
     t1.start()
+    t2.start()
+    print("Thread 1 tid:", t1.ident)
+    print("Thread 2 tid:", t2.ident)
 
-    n.send_message(n.remote_ip, n.port, b"Hello World"*3)
-    n.send_message(n.remote_ip, n.port, b"Goodbye World"*3)
+    # Send messages from socket 1 to socket 2 and vice versa
+    n1.send_message(n2.ip, n2.port, b"Hello World")
+    n2.send_message(n1.ip, n1.port, b"Goodbye World")
 
-    # Send close signal
-    n.stop_listen_socket()
+    # Send close signal to stop listening socket and thread t1
+    time.sleep(1)  # Wait to receive all messages before closing the sockets
+    n1.stop_listen_socket()
+    n2.stop_listen_socket()
