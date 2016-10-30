@@ -22,7 +22,7 @@ import time
 
 __version__ = "v0.1"
 
-DEBUG = True
+DEBUG = False
 
 class Output:
     def update(self, msg):
@@ -157,7 +157,7 @@ def main(argv=None):
         parser_server.add_argument('-i', '--server-ip', type=str, default=None, help="Remote Server IP-address. Default = Host IP-address")
         parser_server.set_defaults(func=server)
 
-        parser_client = subparsers.add_parser('server', help='Start ZUNO game client')
+        parser_client = subparsers.add_parser('client', help='Start ZUNO game client')
         parser_client.add_argument('-p', '--client-port', type=int, default=6010, help="Set client port. Default = 6000")
         parser_client.add_argument('-i', '--server-ip', type=str, default=None, help="Remote Server IP-address. Default = Host IP-address")
         parser_client.add_argument('-r', '--server-port', type=int, default=6010, help="Set remote server port. Default = 6010")
