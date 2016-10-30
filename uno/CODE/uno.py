@@ -21,6 +21,7 @@ from threading import Thread
 import time
 
 __version__ = "v0.1"
+
 DEBUG = True
 
 class Output:
@@ -34,16 +35,6 @@ class Message:
         self.data = data
         self.sender = sender
         self.recipient = recipient
-
-def start(args):
-    if DEBUG:
-        print(args)
-
-    # Run as game server or client
-    if args.daemon:
-        server(args)
-    else:
-        client(args)
 
 def server(args):
     """
