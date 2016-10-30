@@ -1,5 +1,6 @@
 import selectors
 import socket
+import sys
 
 class Network:
     def __init__(self, port, ip_address=None):
@@ -31,7 +32,6 @@ class Network:
 
     def send_message(self, remote_ip, remote_port, message):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.settimeout(3)
             s.connect((remote_ip, remote_port))
             # Send data to server
             s.sendall(message)
@@ -40,29 +40,34 @@ class Network:
 
     def create_listen_socket(self, callback, buffer_size=4096):
         # Accept connection to socket sock
-        def accept(sock, mask):
+        def accept(sock, mask, comm=None):
             conn, addr = sock.accept()  # Should be ready
 
-            # Add client-adress to client list
-            # Remove clients only when the socket can not connect
-            conn.setblocking(False)
+            #conn.setblocking(False)
             # Register callback function read for conn
             self.selectors.register(conn, selectors.EVENT_READ, read)
             # Data is send to socket sock
 
-        def read(conn, mask):
+        def read(conn, mask, comm=None):
             msg = bytearray()
 
             data = None
 
             # Read as long data is sended
             while data != b"":
-                data = conn.recv(buffer_size)
-                msg += data
-
-            callback(conn, msg)
+                try:
+                    data = conn.recv(buffer_size)
+                    msg += data
+                except BlockingIOError:
+                    print("Got BlockingIOError", file=sys.stderr)
+                    time.sleep(1)
+            if comm:
+                callback(conn, msg, comm)
+            else:
+                callback(conn, msg)
 
         sock = socket.socket()
+        sock.settimeout(3)
         print("{} - Listen on port {}: ".format(self.ip, self.port))
         sock.bind((self.ip, self.port))
         sock.listen(100)
@@ -72,14 +77,18 @@ class Network:
         # Register callback function accept() for sock
         self.selectors.register(sock, selectors.EVENT_READ, accept)
 
-    def run_listen_socket(self):
+    def run_listen_socket(self, comm=None):
+        print("Run_listen:", comm)
         while True:
             if self._stop:
                 break
             events = self.selectors.select()
             for key, mask in events:
                 callback = key.data
-                callback(key.fileobj, mask)
+                if comm:
+                    callback(key.fileobj, mask, comm)
+                else:
+                    callback(key.fileobj, mask)
         print("Close listening socket")
 
     def stop_listen_socket(self):

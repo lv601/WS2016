@@ -16,29 +16,15 @@ Playing Uno or other card games over the network
 import sys
 import pickle
 from argparse import ArgumentParser
+from PyQt5.QtWidgets import QApplication
+
+from Message import Message
 from Network import Network
-from threading import Thread
-import socket
-import time
+from gui import ZUNO
 
 __version__ = "v0.1"
 
 DEBUG = False
-
-class Output:
-    def update(self, msg):
-        print(msg)
-
-class Message:
-    def __init__(self, type, msg, sender, recipient="all", data=None):
-        self.type = type
-        self.msg = msg
-        self.data = data
-        # Sender is defined as [nickname, ip-address, listening port]
-        self.sender = sender
-        self.recipient = recipient
-    def __str__(self):
-        return "\nMESSAGE\nType: {0.type}\nMessage: {0.msg}\nData: {0.data}\nFrom: {0.sender}\nTo: {0.recipient}".format(self)
 
 def server(args):
     """
@@ -52,7 +38,6 @@ def server(args):
     player_list = {}
 
     n = Network(args.server_port)
-    print(args.server_port)
 
     def callback(conn, data):
         nonlocal WAIT_FOR_PLAYER
@@ -60,29 +45,35 @@ def server(args):
         # Unpickle data
         msg = pickle.loads(data)
 
-        if WAIT_FOR_PLAYER:
-            # Registry players
-            if msg.type == "WAIT_FOR_PLAYER":
-                print(msg.sender)
+        if DEBUG:
+            print(msg)
+
+        # Registry players
+        if msg.type == "REGISTER":
+            if WAIT_FOR_PLAYER:
                 player_list[msg.sender[0]] = msg.sender[1:]
                 print("Login player {}:{}:{}".format(*msg.sender))
-                if len(player_list) >= args.players:
-                    WAIT_FOR_PLAYER = False
 
-                respond = Message("REGISTER", "OK", ["server", n.ip, n.port], msg.sender[0], player_list)
+                respond = Message("REGISTER", args.players - len(player_list), [msg.sender[0], n.ip, n.port], "Server", player_list)
+                for nick in player_list:
+                    print(nick)
+                    if len(player_list) >= args.players:
+                        WAIT_FOR_PLAYER = False
+                        respond.msg = "FINISHED"
 
-                n.send_message(*msg.sender[1:], pickle.dumps(respond))
-        else:
-            if msg.type == "CHAT":
-                if msg.recipient == "all":
-                    for addr in n.connected_clients:
-                        print("Send message '{}' to: {}".format(msg.msg, addr))
-                        n.send_message(addr, msg.msg.encode())
-                else:
-                    print("Send message '{}' to: {}:{}".format(msg.msg, msg.recipient, player_list[msg.recipient]))
-                    n.send_message(player_list[msg.recipient], msg.msg.encode())
-            elif msg.type == "UNREGISTER":
-                pass
+                    n.send_message(*player_list[nick], pickle.dumps(respond))
+        elif msg.type == "CHAT":
+
+            if msg.recipient == "all":
+                for nick in player_list:
+                    # Do not send back message to sender
+                    if nick == msg.sender[0]:
+                        continue
+                    n.send_message(*player_list[nick], pickle.dumps(msg))
+            else:
+                n.send_message(*player_list[msg.recipient], pickle.dumps(msg))
+        elif msg.type == "UNREGISTER":
+            pass
 
         # If no client is connected stop server
         if player_list is None:
@@ -91,8 +82,8 @@ def server(args):
         conn.close()
         n.selectors.unregister(conn)
 
+    # Create and start server listening socket
     n.create_listen_socket(callback)
-
     n.run_listen_socket()
 
 
@@ -102,52 +93,25 @@ def client(args):
     :param args:
     :return:
     """
-    print("Player {} start ZUNO game as client on port {}".format(args.nickname, args.client_port))
-
+    # Create socket instance
     n = Network(args.client_port)
-    ref = Output()
+    args.client_ip = n.ip
 
-    def callback(conn, response):
+    def callback(conn, response, comm):
         msg = pickle.loads(response)
-        ref.update(msg)
-
+        comm.signal.emit(msg)
         conn.close()
         n.selectors.unregister(conn)
 
     n.create_listen_socket(callback)
 
-    # Start client listening server
-    t1 = Thread(target=n.run_listen_socket)
-    t1.start()
+    # Create GUI
+    app = QApplication([args])
+    gui = ZUNO(app, n, args)
 
-    # Login
-    msg = Message("WAIT_FOR_PLAYER", "", [args.nickname, n.ip, n.port], "")
+    # Start Gui main loop
+    return gui.run()
 
-    try:
-        print("Send message to {0.server_ip}:{0.server_port}".format(args))
-        n.send_message(args.server_ip, args.server_port, pickle.dumps(msg))
-    except socket.timeout:
-        print("Can not connect to server {0.server_ip}:{0.server_port}. Connection timeout!".format(args),
-              file=sys.stderr)
-        n.stop_listen_socket()
-        exit(-1)
-
-    time.sleep(1)
-
-    # Start main loop
-    while True:
-        inp = input("Eingabe: ")
-        inp2 = input("Senden an: ")
-
-        msg = Message("CHAT", inp, [args.nickname, n.ip, n.port], inp2)
-
-        try:
-            n.send_message(args.server_ip, args.server_port, pickle.dumps(msg))
-        except socket.timeout:
-            print("Can not connect to server {0.server_ip}:{0.server_port}. Connection timeout!".format(args),
-                  file=sys.stderr)
-            n.stop_listen_socket()
-            exit(-1)
 
 def main(argv=None):
     """ Command line options """
