@@ -132,22 +132,21 @@ def main(argv=None):
 
     # Debug parameter
     if DEBUG:
+        # Server
+        sys.argv.append("server")
+        sys.argv.append("-p")
+        sys.argv.append("6010")
+
+        sys.argv.append("client")
         sys.argv.append("--server-ip")
         sys.argv.append("141.244.113.120")
 
-
-
-        # sys.argv.append("-d")
+        # Client
         # sys.argv.append("-r")
-        # sys.argv.append("7002")
-        # sys.argv.append("-p")
         # sys.argv.append("7012")
-
-        sys.argv.append("-r")
-        sys.argv.append("7012")
-        sys.argv.append("-p")
-        sys.argv.append("7002")
-        sys.argv.append("nauer")
+        # sys.argv.append("-p")
+        # sys.argv.append("7002")
+        # sys.argv.append("nauer")
         pass
 
     if argv:
@@ -163,19 +162,21 @@ def main(argv=None):
         subparsers = parser.add_subparsers(help='sub-command help')
 
         parser_server = subparsers.add_parser('server', help='Start ZUNO game server')
-        parser_client = subparsers.add_parser('server', help='Start ZUNO game client')
+        parser_server.add_argument('-p', '--server-port', type=int, default=6010, help="Set remote server port. Default = 6010")
+        parser_server.add_argument('-i', '--server-ip', type=str, default=None, help="Remote Server IP-address. Default = Host IP-address")
+        parser_server.set_defaults(func=server)
 
-        parser_server.add_argument('-r', '--server-port', type=int, default=6010, help="Set remote server port. Default = 6010")
-        parser.add_argument('-i', '--server-ip', type=str, default=None, help="Remote Server IP-address. Default = Host IP-address")
-        parser.add_argument('-d', '--daemon', action="store_true", help="Run as game server")
-        parser.add_argument('nickname', type=str, help="Player nickname. Must be unique")
-        parser_client.add_argument('-p', '--client-port', type=int, default=6000,
-                                   help="Set local server port. Default = 6000")
+        parser_client = subparsers.add_parser('server', help='Start ZUNO game client')
+        parser_client.add_argument('-p', '--client-port', type=int, default=6010, help="Set client port. Default = 6000")
+        parser_client.add_argument('-i', '--server-ip', type=str, default=None, help="Remote Server IP-address. Default = Host IP-address")
+        parser_client.add_argument('-r', '--server-port', type=int, default=6010, help="Set remote server port. Default = 6010")
+        parser_client.add_argument('nickname', type=str, help="Player nickname. Must be unique")
+        parser_client.set_defaults(func=client)
 
         # Process arguments
         args = parser.parse_args()
 
-        return start(args)
+        return args.func(args)
 
     except KeyboardInterrupt:
         ### Handle keyboard interrupt ###
