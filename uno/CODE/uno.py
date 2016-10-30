@@ -62,6 +62,13 @@ def server(args):
                         respond.msg = "FINISHED"
 
                     n.send_message(*player_list[nick], pickle.dumps(respond))
+        elif msg.type == "UNREGISTER":
+            print(msg)
+            del player_list[msg.sender[0]]
+
+            msg.data = player_list
+            for nick in player_list:
+                n.send_message(*player_list[nick], pickle.dumps(msg))
         elif msg.type == "CHAT":
 
             if msg.recipient == "all":
@@ -72,8 +79,8 @@ def server(args):
                     n.send_message(*player_list[nick], pickle.dumps(msg))
             else:
                 n.send_message(*player_list[msg.recipient], pickle.dumps(msg))
-        elif msg.type == "UNREGISTER":
-            pass
+
+
 
         # If no client is connected stop server
         if player_list is None:

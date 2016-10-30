@@ -27,6 +27,7 @@ class ZUNO(QWidget):
 
     def initUI(self):
         lbl = QLabel("Send message to:")
+        lbl2 = QLabel("Chat Log:")
         self.textbox = QLineEdit()
 
         self.button = QPushButton()
@@ -39,14 +40,13 @@ class ZUNO(QWidget):
 
         self.log = QTextEdit()
         self.log.setReadOnly(True)
-        self.log.setLineWrapMode(QTextEdit.NoWrap)
-        self.log.append("Chat Log:")
+        # self.log.setLineWrapMode(QTextEdit.NoWrap)
         self.log_cursor = self.log.textCursor() #QTextCursor(self.log.document())
         self.format = QTextCharFormat()
         self.format.setForeground(QColor('black'))
 
-        layoutH = QHBoxLayout()
         layoutV = QVBoxLayout(self)
+        layoutH = QHBoxLayout()
 
         layoutH.addWidget(self.textbox)
         layoutH.addWidget(self.combo)
@@ -54,6 +54,7 @@ class ZUNO(QWidget):
 
         layoutV.addWidget(lbl)
         layoutV.addLayout(layoutH)
+        layoutV.addWidget(lbl2)
         layoutV.addWidget(self.log)
         layoutV.addStretch()
 
@@ -63,6 +64,9 @@ class ZUNO(QWidget):
     # If window is destroyed
     def closeEvent(self, event):
         self.n.stop_listen_socket()
+        msg = Message("UNREGISTER", "", [self.args.nickname, self.n.ip, self.n.port], "")
+        self.n.send_message(self.args.server_ip, self.args.server_port, pickle.dumps(msg))
+
 
 
     # Run Gui
@@ -86,17 +90,9 @@ class ZUNO(QWidget):
 
         return(self.app.exec_())
 
-
     def process_message(self, msg):
         if msg.type == "REGISTER":
-            self.player = msg.data
-
-            # Update combobox
-            self.combo.clear()
-            self.combo.addItem("all")
-
-            for player in self.player:
-                self.combo.addItem(player)
+            self._update_combobox(msg.data)
 
             # Send message to log box
             self.log.setTextColor(QColor("red"))
@@ -108,7 +104,14 @@ class ZUNO(QWidget):
         if msg.type == "CHAT":
             self.log.setTextColor(QColor("green"))
             self.log.append("{}".format(msg.sender[0]))
-            self.log_cursor.insertText(": {} [{}]".format(msg.msg, msg.recipient),self.format)
+            self.log_cursor.insertText(": {} [{}]".format(msg.msg, msg.recipient), self.format)
+        elif msg.type == "UNREGISTER":
+            self._update_combobox(msg.data)
+
+            # Send message to log box
+            self.log.setTextColor(QColor("red"))
+            self.log.append("Player {} has quit the game. Shame on him...".format(msg.sender[0]))
+
 
 
 
@@ -125,6 +128,16 @@ class ZUNO(QWidget):
                   file=sys.stderr)
             self.n.stop_listen_socket()
             exit(-1)
+
+    def _update_combobox(self, player):
+        self.player = player
+
+        # Update combobox
+        self.combo.clear()
+        self.combo.addItem("all")
+
+        for player in self.player:
+            self.combo.addItem(player)
 
 if __name__ == '__main__':
     ex = ZUNO()
