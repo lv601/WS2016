@@ -25,6 +25,7 @@ def game(val1, val2, attempts):
             # TIPP: You can also use return here to leave the
             # function and add a return value. So other functions
             # can work with that.
+            return number
             break
         elif rate < number:
             print("you are to low. the number is higher", "you have still", guess-1-i, "attempts")
