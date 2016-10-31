@@ -22,9 +22,8 @@ def pars4fasta_bytearray (list_of_dict, file_handle):
 
             sequence = line.strip()
 
-
             list_of_dict[-1]['sequence'].write(sequence)
-
+            list_of_dict[-1]['raw'].seek(0, 2)
             list_of_dict[-1]['raw'].write(line)
 
 

@@ -1,4 +1,5 @@
-# Noch nicht fertig. Siehe Block 8, S14
+# Teil A
+# Erweitertung der Eintrag-Klasse aus Aufgabe 13
 
 class Eintrag:
     def __init__(self, vorname, nachname, hobbies, alter, eigenschaften, geschlecht):
@@ -13,7 +14,28 @@ class Eintrag:
                             'Alter':self.alter, 'Eigenschaft':self.eigenschaften, 'Geschlecht':self.geschlecht})
 
     def __str__(self):
-        return('Test')
+        # Fuer Attribute mit mehreren Punkten
+        def multi_format(attribute):
+            multi_format = '\n'
+            for element in attribute:
+                multi_format += '\t- {}\n'.format(element)
+            return multi_format.rstrip('\n')
 
-ins = Eintrag('vor','nach',['keine'],5,'keine','geschl')
+        return 'Instanz der Klasse: Eintrag\n===========================\nVorname: {0.vorname}\nNachname: {0.nachname}\
+        \nHobbies: {1}\nAlter: {0.alter}\nEigenschaften: {2}\nGeschlecht: {0.geschlecht}\n==========================='\
+        .format(self, multi_format(self.hobbies), multi_format(self.eigenschaften))
+
+    def __bytes__(self):
+        return self.__str__().encode()
+
+    def __repr__(self):
+        return "Eintrag('{0.vorname}', '{0.nachname}', '{0.hobbies}', '{0.alter}', {0.eigenschaften}, {0.geschlecht})"\
+            .format(self)
+
+ins = Eintrag('Max','Mustermann',['Wandern','Laufen','Malen'],20,['humorvoll','selbstlos'],'geschl')
+
 print(ins)
+print(repr(ins))
+
+# Teil B
+# fehlt noch

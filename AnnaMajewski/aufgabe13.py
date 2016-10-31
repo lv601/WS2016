@@ -20,12 +20,11 @@ class Adressbuch: # Eine Klasse Adressbuch wird erstellt
     def get_entry(self, index): # Methode Eintrag auslesen wird erstellt
         return self.data[index]
 
-## Eintrag mit Append eingefügt.
+#eintrag1 = Eintrag("Hans", "Gruber", "Raub und Diebstahl", 35, "ungeduldig, schiesswuetig, flugunfaehig")
 
-eintrag1 = Eintrag("Hans", "Gruber", "Raub und Diebstahl", 35, "ungeduldig, schiesswuetig, flugunfaehig")
-
-ad = Adressbuch()
-ad.add_entry(eintrag1)
-blabla = ad.get_entry(0)
-print(blabla.__dict__)
-print(eintrag1.hobbies)
+## Testen der Angaben
+#ad = Adressbuch()
+#ad.add_entry(eintrag1)
+#blabla = ad.get_entry(0)
+#print(blabla.__dict__)
+#print(eintrag1.hobbies)

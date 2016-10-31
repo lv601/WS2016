@@ -29,12 +29,15 @@ class entry:
         self.hobbies=hobbies
         self.eigenschaften=eigenschaften
 
+adressen = Addresses()
 
-#class Adressbuch
-        #def __init__(self)
-            #self.data=[]
-        #def add_entry(self, eintrag)
-            #self.data.append(eintrag)
+
+data = [{'vorname': "Max", 'nachname': "Mustermann",'alter': 43, 'geschlecht': "m",'hobbies': ("Schwimmen", "Tanzen", "Lesen"),'eigenschaften': {'Geschicklichkeit': 10,'IQ': 98,'Gewicht': 88,'Haarfarbe': 'blond'}},
+        {'vorname': "Pia", 'nachname': "Musterfrau",'alter': 34, 'geschlecht': "w",'hobbies': ("Wandern", "Tanzen", "Skydiving"),'eigenschaften': {'Geschicklichkeit': 9,'IQ': 102,'Gewicht': 68,'Haarfarbe': 'brünett'}}]
+
+adressen.add_entry(entry(**data[0]))
+adressen.add_entry(entry(**data[1]))
+
 
 
 

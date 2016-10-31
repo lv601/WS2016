@@ -26,7 +26,8 @@ def pars4fasta (list_of_dict, file_path):
 
             list_of_dict[-1]['sequence'].write(sequence)    #[-1] ersetzt zähler; + da sequ über mehrere zeilen geht
 
-            list_of_dict[-1]['raw'].write(line)                  #w.o. line da Rohdaten gewuenscht
+            list_of_dict[-1]['raw'].seek (0, 2)                  # wichtig, da raw auch id und desc beinhalten soll
+            list_of_dict[-1]['raw'].write(line)                  #schreibt Zeile in den stream
 
 
 #Wesentliche Änderungen, file binär öffnen und überall wo string war jetzt bytearray verwenden
@@ -52,6 +53,7 @@ def pars4fasta_bytearray (list_of_dict, file_path):
 
             list_of_dict[-1]['sequence'].write(sequence)
 
+            list_of_dict[-1]['raw'].seek(0, 2)
             list_of_dict[-1]['raw'].write(line)
 
 
