@@ -1,43 +1,31 @@
-# coding=utf-8
 from random import randint
 
-# Nein, Sie sollten das ganze Spiel in eine Funnktion einbetten. Nur randint
-# einzubetten ist das gleiche wenn Sie gleich randint ausführen
-# Sie können 'bereich' und 'versuche' als parameter verwenden
-def run_game(bereich):
-    zufazahl = randint(1, bereich)
-    #return zufazahl
+def run_game(bereich, versuche):
+    errate = randint(*bereich)
 
-    # Von @auer eingerückt
-    bereich = input ("Definieren Sie den Bereich für die Zufallszahl zwischen 1 und n ein: ")
 
-    versuche = input ("Bitte geben Sie Anzahl von Versuchen ein: ")
+    for i in range(versuche):
 
-    print ("Bereich ist zwischen 1 und ", bereich)
-    print ("Anzahl von Versuchen ist ", versuche)
+        rate = int(input("Geben Sie eine Zahl zwischen {0} un {1} ein: ".format(*bereich)))
 
-    #zufal_global = run_game(bereich)
-    #print (zufal_global)
 
-    # TIPP: Das selbe bekommen Sie auch so
-    # for i in range (versuche):
-    for i in range (1, versuche+1):
-        zahl = input("Bitte geben Sie eine Zahl aus dem Bereich: ")
-        # Achtung: Sie vergleichen hier int mit str Zahl 5 != '5'
-        if zahl == zufal_global:
-            print ("Zahl ist erraten", zufal_global)
-            # TIPP: Hier können Sie gleich auch die Funktion verlassen anstratt
-            # nur die Schleife und gleich noch dazu einen Rückgabewert, wie die
-            # erratene Zahl oder None, wenn Sie nicht erraten wurde
-            # return zahl
-            break;
+        if rate == errate:
+            print("Bravo! Sie haben die Zahl erraten.")
+            return errate
+        elif rate < errate:
+            print("Zahl zu niedrig!")
+        else:
+            print("Zahl zu hoch!")
 
-        if zahl < zufal_global:
-            print ("Zahl ist kleiner als Zufallszahl")
 
-        if zahl > zufal_global:
-            print ("Zahl ist grosser als Zufallszahl")
+        if versuche - 1 > i >= 0:
+            if i == versuche - 2:
+                print("Sie haben noch 1 Versuch")
+            #
+            else:
+                print("Sie haben noch {} Versuche".format(versuche - i - 1))
+    else:
 
-    # TIPP: Sie können wenn die Schleife komplett durchlaufen ist und das Spiel
-    # verloren ist, noch eine 'else' Zweig noch einbauen, der nur dann
-    # ausgeführt wird. So können Sie z.B. noch eine GAME OVER Message ausgeben
+        print("Sorry, Sie haben verloren. Die Zahl war {}!".format(errate))
+        return None
+
