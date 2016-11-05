@@ -10,8 +10,8 @@ class Eintrag:
         self.eigenschaften = eigenschaften
         self.geschlecht = geschlecht
 
-        self.eintrag = ({'Vorname':self.vorname, 'Nachname':self.nachname, 'Hobbies':self.hobbies,\
-                            'Alter':self.alter, 'Eigenschaft':self.eigenschaften, 'Geschlecht':self.geschlecht})
+        self.eintrag = ({'Vorname':self.vorname, 'Nachname':self.nachname, 'Hobbies':self.hobbies,'Alter':self.alter,\
+                         'Eigenschaft':self.eigenschaften, 'Geschlecht':self.geschlecht})
 
     def __str__(self):
         # Fuer Attribute mit mehreren Punkten
@@ -32,10 +32,22 @@ class Eintrag:
         return "Eintrag('{0.vorname}', '{0.nachname}', '{0.hobbies}', '{0.alter}', {0.eigenschaften}, {0.geschlecht})"\
             .format(self)
 
-ins = Eintrag('Max','Mustermann',['Wandern','Laufen','Malen'],20,['humorvoll','selbstlos'],'geschl')
+    def __getitem__(self, attribute):
+        return self.eintrag[attribute]
+
+    def __iter__(self):
+        for element in self.eintrag:
+            return self.eintrag[element]
+
+    def __len__(self):
+        return len(self.eintrag)
+
+
+ins = Eintrag('Max','Mustermann',['Wandern','Laufen','Malen'],20,['humorvoll','selbstlos'],'maennlich')
 
 print(ins)
 print(repr(ins))
 
+
 # Teil B
-# fehlt noch
+# siehe ws2016.py
