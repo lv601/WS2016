@@ -7,7 +7,7 @@ class Card:
         self.action = action
 
 # Card_Uno notwendig?
-class Card_uno(Card):
+class Card_Uno(Card):
     def __init__(self, color, number, action):
         Card.__init__(self, color, number, action)
 

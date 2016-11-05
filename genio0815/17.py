@@ -19,6 +19,20 @@ class Eintrag:
     def listHobbies(self):
         print(*self.hobbies)
 
+    def __str__(self):
+        pp = pprint.PrettyPrinter(indent=2, width=10)
+        return "Vorname: {0.vorname}\nNachname: {0.nachname}\nAlter: {0.alter}\nhobbies: {1}\n" \
+               "Geschlecht: {0.geschlecht}\nEigenschaften: {2}\n".format(
+                self, ",".join(self.hobbies), pp.pformat(self.eigenschaften))
+
+    def __bytes__(self):
+        return self.__str__().encode()
+
+    def __repr__(self):
+        return "Eintrag('{0.vorname}', '{0.nachname}', '{0.alter}', '{0.geschlecht}', {0.hobbies}," \
+               " {0.eigenschaften})".format(self)
+
+
 class Adressbuch:
 
     def __init__(self):
@@ -34,6 +48,16 @@ class Adressbuch:
         return self.entries[index]
 
     def getSize(self):
+        return len(self.entries)
+
+    def __getitem__(self, item):
+        return self.entries[item]
+
+    def __iter__(self):
+        for item in self.entries:
+            yield item
+
+    def __len__(self):
         return len(self.entries)
 
 person1 = Eintrag('Hugo', 'Boss', 44, 'bi', 'kicken', 'cool')

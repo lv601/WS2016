@@ -1,42 +1,38 @@
-import socket
-import sys
-import pickle
+# implementing 3-tier structure: Hall --> Room --> Clients; 
+# 14-Jun-2013
 
-# Create a TCP/IP socket
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+import select, socket, sys, pdb
+from utils import Hall, Room, Player
+import utils
 
-# Bind the socket to the address given on the command line
-server_name = "141.244.83.209" #sys.argv[1]
-server_address = (server_name, 10000)
-print('starting up on %s port %s' % server_address)
-sock.bind(server_address)
-sock.listen(1)
+READ_BUFFER = 4096
 
+host = sys.argv[1] if len(sys.argv) >= 2 else '141.244.85.187 '
+listen_sock = utils.create_socket((host, utils.PORT))
 
-class cMessage():
-    def __init__(self,id, message):
-        self.id = id
-        self.data = message
-
-    def __str__(self):
-        return str(self.id) + " " + str(self.data)
-
-
-test = cMessage("Thomas", "halo test")
-print(test)
+hall = Hall()
+connection_list = []
+connection_list.append(listen_sock)
 
 while True:
-    print('waiting for a connection')
-    connection, client_address = sock.accept()
-    try:
-        print('client connected:', client_address)
-        while True:
-            data = connection.recv(16)
-            #print('received "%s"' % data)
-            pickle.un
-            if data:
-                connection.sendall(b'back' + data)
+    # Player.fileno()
+    read_players, write_players, error_sockets = select.select(connection_list, [], [])
+    for player in read_players:
+        if player is listen_sock: # new connection, player is a socket
+            new_socket, add = player.accept()
+            new_player = Player(new_socket)
+            connection_list.append(new_player)
+            hall.welcome_new(new_player)
+
+        else: # new message
+            msg = player.socket.recv(READ_BUFFER)
+            if msg:
+                msg = msg.decode().lower()
+                hall.handle_msg(player, msg)
             else:
-                break
-    finally:
-        connection.close()
+                player.socket.close()
+                connection_list.remove(player)
+
+    for sock in error_sockets: # close error sockets
+        sock.close()
+        connection_list.remove(sock)
