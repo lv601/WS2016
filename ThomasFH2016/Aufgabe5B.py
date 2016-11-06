@@ -4,7 +4,7 @@ antwort='J'
 
 def rate_spass(minVal, maxVal, turns):
     # ACHTUNG: Sie fragen minVal und maxVal zwar ab, aber verwenden sie nicht
-    randomTarget = randint(1, 10)
+    randomTarget = randint(minVal, maxVal)
     print("Finden Sie die geheime Zahl (zwischen", minVal, "und", maxVal, ")")
     for i in range(0, turns):
         userInput = input("Geben Sie eine Zahl ein: ")
@@ -40,6 +40,6 @@ def rate_spass(minVal, maxVal, turns):
         print("Leider nicht erraten. Die Zahl war:", randomTarget)
 
 # Tipp: verwenden Sie antwort.upper() == 'J'. Dann funktioniert j und J als Antwort
-while antwort == 'J':
+while antwort.upper() == 'J':
     rate_spass(1, 10, 3)
     antwort = input("Noch eine Runde (J/N)? ")

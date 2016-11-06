@@ -1,4 +1,17 @@
-class entry: # Eine Klasse entry wird erstellt
+class Addresses:
+    def __init__(self):
+        self.entries=[]
+    def add_entry(self, entry):
+        self.entries.append(entry)
+    def __getitem__(self, item):
+        return self.add_entry[item]
+    def __iter__(self):
+        for item in self.add_entry:
+            yield item
+    def __len__(self):
+        return len(self.entry)
+
+class entry:
     def __init__(self, vorname, nachname, alter, geschlecht, hobbies, eigenschaften):
         self.vorname=vorname
         self.nachname=nachname
@@ -6,35 +19,12 @@ class entry: # Eine Klasse entry wird erstellt
         self.geschlecht=geschlecht
         self.hobbies=hobbies
         self.eigenschaften=eigenschaften
-
     def __str__(self):
-        return "Der Name des Benutzers ist " + self.vorname + " " + self.nachname
-
+        return "Vorname: {0.vorname}, Nachname: {0.nachname}, Geschlecht: {0.geschlecht}, Hobbies: {0.hobbies}, Eigenschaften: {0.eigenschaften}"
     def __bytes__(self):
-        return b"Byte time" 
-
+        return self.__str__().encode()
     def __repr__(self):
-        return "Der Name des Benutzers ist " + self.vorname + " " + self.nachname
-
-class Adresses: 
-    def __init__(self):
-        self.data =[]
-
-    def __getitem__(self, item):
-        return self.data[item] 
-
-    def __iter__(self):
-        for entry in self.data: 
-            yield entry
-
-    def __len__(self):
-        return len(self.data) 
-
-    def add_entry(self, entry): 
-        self.data.append(entry)
-
-    def get_entry(self, index):
-        return self.data[index]
+        return "Eintrag: ('{0.vorname}', {0.nachname}',{0.geschlecht}','{0.hobbies},'{0.eigenschaften}'".format(self)
 
 
 adressen = Addresses()
