@@ -1,30 +1,56 @@
 ## Aufgabe 11 & 14##
 import sys
 
-# Get-Funktionen geben teilweise keine richtigen Ausgaben (description)
-# Laden des Fasta-Datensatzes in SeqRecord-Klassen fehlt noch (Funktioniert aber auch ohne)
-
 class SeqRecord:
     def __init__(self, seq, id, raw):
         self.seq = seq
         self.id = id
         self.raw = raw
 
+    def __str__(self):
+        return 'Instanz der Klasse SeqRecord.\n', self.seq.decode(), self.id.decode(), self.raw.decode()
+
+    def __bytes__(self):
+        return self.seq, self.id, self.raw
+
 class SeqRecordFasta(SeqRecord):
     def __init__(self, seq, id, raw, description):
         super().__init__(seq, id, raw)
         self.description = description
 
+    def __str__(self):
+        return 'Instanz der Klasse SeqRecord.\n', self.seq.decode(), self.id.decode(), self.raw.decode()
+
+    def __bytes__(self):
+        return self.seq, self.id, self.raw
+
 class SeqRecordGenbank(SeqRecordFasta):
     def __init__(self, seq, id, raw, description):
         super().__init__(seq, id, raw, description)
 
+    def __str__(self):
+        return 'Instanz der Klasse SeqRecord.\n', self.seq.decode(), self.id.decode(), self.raw.decode(),\
+    self.description.decode()
+
+    def __bytes__(self):
+        return self.seq, self.id, self.raw, self.description
+
 class Parser:
     def __init__(self, path):
         self.path = path
+        self.data = []
+
+    def __getitem__(self, key):
+        return self.data[key]
+
+    def __iter__(self):
+        for element in self.data:
+            return element
+
+    def __len__(self):
+        return len(self.data)
 
     def fasta_parser(self):
-        data = []
         total_raw = bytearray(self.path)
 
         for sequence in total_raw.split(b'>')[1:]:
@@ -34,8 +60,8 @@ class Parser:
             curr_seq['sequence'] = b''.join(sequence.splitlines()[3:])
             curr_seq['id'] = header[0]
             curr_seq['description'] = header[2]
-            data.append(curr_seq)
-        return data
+            self.data.append(curr_seq)
+        return self.data
 
 
     def get_raw(self, db,	index):

@@ -36,16 +36,18 @@ class Adressbuch:
     def getSize(self):
         return len(self.entries)
 
-#person1 = Eintrag('Hugo', 'Boss', 44, 'bi', 'kicken', 'cool')
-#person2 = Eintrag('Heinz', 'Hehenberger', 49, 'maennlich', 'frech sein', 'fad')
-#person1.addHobby('schlafen')
-#person1.addHobby('essen')
+person1 = Eintrag('Hugo', 'Boss', 44, 'bi', 'kicken', 'cool')
+person2 = Eintrag('Heinz', 'Hehenberger', 49, 'maennlich', 'frech sein', 'fad')
+person1.addHobby('schlafen')
+person1.addHobby('essen')
 
-#ad = Adressbuch([person1, person2])
+print(person1.__dict__)
 
-#ad.addEntry(person2)
+ad = Adressbuch([person1, person2])
 
-#ad.getEntry(0).listHobbies()
+ad.addEntry(person2)
 
-#print("adressbook got {} entries".format(ad.getSize()))
+ad.getEntry(0).listHobbies()
+
+print("adressbook got {} entries".format(ad.getSize()))
 

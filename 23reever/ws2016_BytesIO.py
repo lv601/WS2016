@@ -21,6 +21,6 @@ def parse_fasta4(file_handle):
             fastaList[-1]["raw"].write(line)
     return (fastaList)
 
-# file_handle = open("long.fasta", 'rb')
-# parse_fasta4(file_handle)
+#file_handle = open("long.fasta", 'rb')
+#print(parse_fasta4(file_handle))
 

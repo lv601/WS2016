@@ -1,4 +1,5 @@
 # Equivalent zu Aufgabe 11 fuer Parser-Klasse statt Parser-Funktion
+# siehe ws2016.py
 import ws2016
 import sys
 
