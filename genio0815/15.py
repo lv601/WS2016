@@ -1,22 +1,21 @@
-def parse_fasta(file_name):
+def parse_fasta(infile):
 
-    file_handle = open(file_name, "r")
     db = None
+    with open(infile,'r') as f:
+        for line in f:
+            if line[0] == ">":
+                if db:
+                    yield db
+                    db = None
 
-    for line in file_handle:
-        if line[0] == ">":
-            if db:
-                yield db
-                db = None
+                ident, desc = line[1:].strip().split(maxsplit=1)
 
-            ident, desc = line[1:].strip().split(maxsplit=1)
-
-            db = {'id': ident, 'desc': desc, 'seq': "", 'raw': line}
-        else:
-            db['seq'] += line.rstrip()
-            db['raw'] += line
-    else:  # catch last element
-        yield db
+                db = {'id': ident, 'desc': desc, 'seq': "", 'raw': line}
+            else:
+                db['seq'] += line.rstrip()
+                db['raw'] += line
+        else:  # catch last element
+            yield db
 
 # test
 for seq in parse_fasta("../examples/long.fasta"):

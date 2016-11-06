@@ -36,8 +36,8 @@ def stop_time(func, *args, **kargs):
 
 d = []
 
-res1 = stop_time(parseFastaFile, "../examples/long.fasta", db=d)
-res2 = stop_time(parseFastaFile_bin, "../examples/long.fasta", db=d)
+res1 = stop_time(parseFastaFile1, "../examples/long.fasta", db=d)
+#res2 = stop_time(parseFastaFile_bin, "../examples/long.fasta", db=d)
 
 # Compare both sequences
-print(d[0]['sequence'] == d[1]['sequence'].decode())
+#print(d[0]['sequence'] == d[1]['sequence'].decode())
