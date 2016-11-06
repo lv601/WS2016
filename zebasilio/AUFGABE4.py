@@ -4,10 +4,7 @@ Created on Mon Sep 12 10:01:05 2016
 
 @author: jose
 """
-# TIPP: Verwenden Sie für Konstanten wie diese uppercase Notation VAR1, VAR2, ...
-# Sehen sie z.B. das Modul re
-# import re
-# re.IGNORECASE
+
 var1 = 1
 var2 = 2
 var3 = 4

@@ -5,7 +5,6 @@ Created on Sat Oct 29 20:18:20 2016
 @author: jose
 """
 
-
 class Entry:
     def __init__(self, firstname, lastname, age, gender, hobbies, characteristics):
         self.firstname=firstname

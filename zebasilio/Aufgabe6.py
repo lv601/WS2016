@@ -26,3 +26,5 @@ def fasta_parser (path):
     pprint(data)
     print (len(data))
 fasta_parser('/home/jose/Downloads/Introduction to Programing/sequence.fasta')
+            
+    
