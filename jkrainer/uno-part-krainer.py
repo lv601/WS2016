@@ -31,36 +31,3 @@ bla = GamePlay(players)
 print(bla.add_to_queue())
 print(bla.change_dir())
 print(bla.next_player())
-
-
-#    def __init__(self):
-#        self.queue = []
-#        self.clock_wise = True; #Auf True, außer wenn die Spezial Karte ausgespielt wird
-#    player_queue = [p1, .. , p10] #Die Reihenfolge der SpielerInnen
-#    card_deck = Card_Deck # Ein neues Kartendeck wird initiiert
-#    rules = Rules() # Die Spielregeln werden initiiert
-#    current_card = Card() #welche Karte ist gerade die oberste auf dem Stapel?#
-
-    #def shuffle_cards(): #Die Karten sollen gemischt werden
-    #def deal_cards(number_cards):
-
-    #def player_queue():
-
-
-
-#shuffle_cards()
-#draw_cards(number_cards=1)
-#play_card(number_cards=1)
-#deal_cards(number_cards)
-#wait_for_player()
-#start_game()
-
-#class GamePlay_Uno(GamePlay):
-#    def __init__(self):
-#        card_deck = card_deck_Uno
-#        number_of_cards
-#        rules = Rules_Uno()
-#    def get_first_card(self):
-
-#    def draw_cards(self):
-

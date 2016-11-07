@@ -1,5 +1,6 @@
 from random import randint
 from argparse import ArgumentParser
+
 parser = ArgumentParser()
 
 parser.add_argument("-v", "--versuche", type=int, help="Anzahl der maximalen Versuche")
@@ -32,3 +33,4 @@ def ratespiel(versuche):
 return_wert = ratespiel(args.versuche)
 
 print(return_wert)
+
