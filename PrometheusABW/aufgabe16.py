@@ -56,7 +56,7 @@ class ADRESSBUCH():
    # def SetValue(self, item, method, *Args):
    #    self.eintraege[item].method(Args[0], Args[1])
         
-    def AddEntry(self, **Args):
+    def AddEntry(self, Args):
         position = EINTRAGE()
         position.AddEintrag(Args)
         self.eintraege.append(position)

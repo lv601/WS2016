@@ -16,7 +16,7 @@ def parse_fasta(file):
  #   print(result['ID'], result['Description'], len(result['Sequence']))
                 
 Seq = parse_fasta('sequence.fasta')
-pprint(next(Seq))
+print(next(Seq))
 
 
 

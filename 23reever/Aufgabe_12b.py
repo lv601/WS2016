@@ -1,7 +1,6 @@
 #!/usr/bin/python3.5
 
 import ws2016_bytearray
-import sys
 import argparse
 
 parser = argparse.ArgumentParser(prog='PROG')

@@ -5,12 +5,12 @@ class SeqRecord:
         self.raw =raw
 
 class SeqRecordFasta(SeqRecord):
-    def __init__(self, id, seq, raw, decription):
+    def __init__(self, id, seq, raw, description):
         super()._init_(id, seq, raw)
         self.desc = description
 
 class SeqRecordGenbank(SeqRecordFasta):
-            def __init__(self, id, seq, raw, decription):
+            def __init__(self, id, seq, raw, description):
                 super()._init_(id, seq, raw, description)
                 pass
 class Parser:

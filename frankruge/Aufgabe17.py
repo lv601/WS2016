@@ -43,7 +43,7 @@ class Adressbuch:
             return (len(self.eintraege))
     #def __iter__(self):
      #   for item in self.eintraege:
-            yield item
+      #      yield item
     def __getitem__(self, item):
         return self.eintraege[item]
 

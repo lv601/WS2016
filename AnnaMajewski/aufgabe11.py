@@ -14,5 +14,5 @@ def parse_console():
         print(file) #Ausgabe der Ausgabe vom Fasta Parser
         filename.close() #Schliessen des Streams
 
-#stream = io.open("../examples/long.fasta", mode="rb")
-#ws.fasta_parser(stream)
+stream = io.open("../examples/long.fasta", mode="rb")
+ws.fasta_parser(stream)

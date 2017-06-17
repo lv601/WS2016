@@ -1,4 +1,4 @@
-import sys, io
+6import sys, io
 
 class SeqRecord:
     def __init__(self, id, seq, raw):

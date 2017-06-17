@@ -13,4 +13,4 @@ def fasta_parser():
         yield curr_seq
 
 for result in fasta_parser():
-print(result['id'],result['description'])
+    print(result['id'],result['description'])

@@ -42,4 +42,4 @@ class A:
 a = A("Hello", "World", "!")
 print(a[1])
 for item in a:
-print(item)
+    print(item)
